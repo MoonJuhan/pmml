@@ -58,18 +58,53 @@
 		<button onclick="myFunction()">테스트 버튼</button>
 		
 		<script>
+			var name;
+			var uninum;
+			var inday;
+			var outday;
+			var where;
+			var coment1;
+			var coment2;
+			
+			function input(){
+				var input_n = document.getElementById("input1").value; 
+				var input_u = document.getElementById("input2").value; 
+				var input_i = document.getElementById("input3").value; 
+				var input_o = document.getElementById("input4").value; 
+				var input_w = document.getElementById("input5").value; 
+				var input_c1 = document.getElementById("input6").value; 
+				var input_c2 = document.getElementById("input7").value; 
+				name = input_n;
+				uninum = input_u;
+				inday = input_i;
+				outday = input_o;
+				where = input_w;
+				coment1 = input_c1;
+				coment2 = input_c2;
+			}
+			
 			function myFunction() {
 				var list = document.getElementsByClassName("table")[0];
-				list.getElementsByClassName("one")[0].innerHTML = "이떙땡";
-				list.getElementsByClassName("one")[1].innerHTML = "10학번";
-				list.getElementsByClassName("one")[2].innerHTML = "11.11.11";
-				list.getElementsByClassName("one")[3].innerHTML = "13.08.11";
-				list.getElementsByClassName("one")[4].innerHTML = "1군 11사단 11부대";
-				list.getElementsByClassName("one")[5].innerHTML = "바꿨습니다.";
-				list.getElementsByClassName("two")[0].innerHTML = "야호";
+				list.getElementsByClassName("one")[0].innerHTML = name;
+				list.getElementsByClassName("one")[1].innerHTML = uninum;
+				list.getElementsByClassName("one")[2].innerHTML = inday;
+				list.getElementsByClassName("one")[3].innerHTML = outday;
+				list.getElementsByClassName("one")[4].innerHTML = where;
+				list.getElementsByClassName("one")[5].innerHTML = coment1;
+				list.getElementsByClassName("two")[0].innerHTML = coment2;
 			}
 		</script>
-
+		
+		<br />
+		<input type="text" id="input1">
+		<input type="text" id="input2">
+		<input type="text" id="input3">
+		<input type="text" id="input4">
+		<input type="text" id="input5">
+		<input type="text" id="input6">
+		<input type="text" id="input7">
+		<button onclick="input()">입력받기</button>
+		
 		
 	</body>
 	
