@@ -6,6 +6,7 @@
 		<meta name="robots" content="noindex">
 		<meta http-equiv="author" content="MJ">
 		
+		<link href="testStyleSheet.css" type="text/css" rel="stylesheet" />
 		<title>TestWeb</title>
 	</head>
 	<body>
@@ -16,10 +17,60 @@
 		</header>
 		
 		<div id="content">
-			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>이름</th>
+						<th>학번</th>
+						<th>입대일</th>
+						<th>전역일</th>
+						<th>소속</th>
+						<th>코멘트1</th>
+						<th>코멘트2</th>
+					</tr>
+
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>아무게</td>
+						<td>00학번</td>
+						<td>00.00.00</td>
+						<td>01.09.00</td>
+						<td>0군 00사단 00부대</td>
+						<td>테스트 입니다.</td>
+						<td>테스트 입니다.</td>
+					</tr>
+					
+					<tr>
+						<td class="one">김떙땡</td>
+						<td class="one">00학번</td>
+						<td class="one">00.00.00</td>
+						<td class="one">01.09.00</td>
+						<td class="one">0군 00사단 00부대</td>
+						<td class="one">테스트 입니다.</td>
+						<td class="two">테스트 입니다.</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		
-		<footer>last</footer>
+		<button onclick="myFunction()">테스트 버튼</button>
+		
+		<script>
+			function myFunction() {
+				var list = document.getElementsByClassName("table")[0];
+				list.getElementsByClassName("one")[0].innerHTML = "이떙땡";
+				list.getElementsByClassName("one")[1].innerHTML = "10학번";
+				list.getElementsByClassName("one")[2].innerHTML = "11.11.11";
+				list.getElementsByClassName("one")[3].innerHTML = "13.08.11";
+				list.getElementsByClassName("one")[4].innerHTML = "1군 11사단 11부대";
+				list.getElementsByClassName("one")[5].innerHTML = "바꿨습니다.";
+				list.getElementsByClassName("two")[0].innerHTML = "야호";
+			}
+		</script>
+
+		
 	</body>
 	
 	
