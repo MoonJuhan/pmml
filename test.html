@@ -6,6 +6,7 @@
 		<meta name="robots" content="noindex">
 		<meta http-equiv="author" content="MJ">
 		
+		<link href="testStyleSheet.css" type="text/css" rel="stylesheet" />
 		<title>TestWeb</title>
 	</head>
 	<body>
@@ -16,10 +17,95 @@
 		</header>
 		
 		<div id="content">
-			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>이름</th>
+						<th>학번</th>
+						<th>입대일</th>
+						<th>전역일</th>
+						<th>소속</th>
+						<th>코멘트1</th>
+						<th>코멘트2</th>
+					</tr>
+
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>아무게</td>
+						<td>00학번</td>
+						<td>00.00.00</td>
+						<td>01.09.00</td>
+						<td>0군 00사단 00부대</td>
+						<td>테스트 입니다.</td>
+						<td>테스트 입니다.</td>
+					</tr>
+					
+					<tr>
+						<td class="one">김떙땡</td>
+						<td class="one">00학번</td>
+						<td class="one">00.00.00</td>
+						<td class="one">01.09.00</td>
+						<td class="one">0군 00사단 00부대</td>
+						<td class="one">테스트 입니다.</td>
+						<td class="two">테스트 입니다.</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		
-		<footer>last</footer>
+		<button onclick="myFunction()">테스트 버튼</button>
+		
+		<script>
+			var name;
+			var uninum;
+			var inday;
+			var outday;
+			var where;
+			var coment1;
+			var coment2;
+			
+			function input(){
+				var input_n = document.getElementById("input1").value; 
+				var input_u = document.getElementById("input2").value; 
+				var input_i = document.getElementById("input3").value; 
+				var input_o = document.getElementById("input4").value; 
+				var input_w = document.getElementById("input5").value; 
+				var input_c1 = document.getElementById("input6").value; 
+				var input_c2 = document.getElementById("input7").value; 
+				name = input_n;
+				uninum = input_u;
+				inday = input_i;
+				outday = input_o;
+				where = input_w;
+				coment1 = input_c1;
+				coment2 = input_c2;
+			}
+			
+			function myFunction() {
+				var list = document.getElementsByClassName("table")[0];
+				list.getElementsByClassName("one")[0].innerHTML = name;
+				list.getElementsByClassName("one")[1].innerHTML = uninum;
+				list.getElementsByClassName("one")[2].innerHTML = inday;
+				list.getElementsByClassName("one")[3].innerHTML = outday;
+				list.getElementsByClassName("one")[4].innerHTML = where;
+				list.getElementsByClassName("one")[5].innerHTML = coment1;
+				list.getElementsByClassName("two")[0].innerHTML = coment2;
+			}
+		</script>
+		
+		<br />
+		<input type="text" id="input1">
+		<input type="text" id="input2">
+		<input type="text" id="input3">
+		<input type="text" id="input4">
+		<input type="text" id="input5">
+		<input type="text" id="input6">
+		<input type="text" id="input7">
+		<button onclick="input()">입력받기</button>
+		
+		
 	</body>
 	
 	
