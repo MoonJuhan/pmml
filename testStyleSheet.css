@@ -1,0 +1,12 @@
+table {
+	width: 800px;
+}
+
+th, td {
+	padding: 7px 10px 10px 10px;
+}
+
+th {
+	border-bottom: 2px solid #111111;
+	border-top: 1px solid #111111;
+}
