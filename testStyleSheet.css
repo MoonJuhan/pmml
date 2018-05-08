@@ -11,26 +11,22 @@ th {
 	border-top: 1px solid #111111;
 }
 
-#topMenu {
-	height: 30px;
-	width: auto;
-	float: right;
+.header {
+	padding: 0px 0px 0px 0px;
+	height: 100px;
+	width: 100%;
 }
 
-#topMenu ul li {
+.nav ul li {
 	list-style: none;
 	float: left;
-	line-height: 30px;
-	vertical-align: middle;
-	text-align: center;
 }
 
-#topMenu .menuLink {
-	width: 100px;
+.nav .menuLink {
 	text-decoration: none;
 	display: block;
 }
 
-#topMenu .menuLink:hover {
+.nav .menuLink:hover {
 	background-color: gray;
 }
