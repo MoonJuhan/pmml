@@ -10,3 +10,27 @@ th {
 	border-bottom: 2px solid #111111;
 	border-top: 1px solid #111111;
 }
+
+#topMenu {
+	height: 30px;
+	width: auto;
+	float: right;
+}
+
+#topMenu ul li {
+	list-style: none;
+	float: left;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#topMenu .menuLink {
+	width: 100px;
+	text-decoration: none;
+	display: block;
+}
+
+#topMenu .menuLink:hover {
+	background-color: gray;
+}
