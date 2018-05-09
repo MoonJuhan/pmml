@@ -3,37 +3,29 @@
 		src: url('Font/RBNo2Light.otf');
 }
 
-table {
-	width: 800px;
-}
-
-th, td {
-	padding: 7px 10px 10px 10px;
-}
-
-th {
-	border-bottom: 2px solid #111111;
-	border-top: 1px solid #111111;
-}
-
+/* Header Style */
 .header {
 	font-family: 'RBNo2';
-	margin: 10px 40px;
-	padding: 0px 0px 0px 0px;
+	width: 1200px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
 	height: 100px;
 }
 
 .header .title {
 	float: left;
 }
-
-.header .nav {
-	float: right;
+.header .title a {
+	font-weight: bold;
+	font-size: 3em;
+	text-decoration: none;
+	color: black;
 }
 
 .header .nav ul li {
 	list-style: none;
-	float: left;
+	float: right;
 	color: black;
 	width: 140px;
 	text-align: center;
@@ -43,10 +35,31 @@ th {
 	text-decoration: none;
 	color: black;
 	display: block;
-	font-size: 2em;
+	font-size: 2.5em;
+	/* font-weight: bold;*/
 }
 
 .header .nav .menuLink:hover {
 	background-color: gray;
 	color: white;
+}
+
+/* Content Style */
+.content {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content table {
+	width: 800px;
+}
+
+.content th, td {
+	padding: 7px 10px 10px 10px;
+}
+
+.content th {
+	border-bottom: 2px solid #111111;
+	border-top: 1px solid #111111;
 }
