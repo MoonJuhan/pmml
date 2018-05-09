@@ -1,3 +1,8 @@
+@font-face {
+		font-family: 'RBNo2';
+		src: url('Font/RBNo2Light.otf');
+}
+
 table {
 	width: 800px;
 }
@@ -12,21 +17,36 @@ th {
 }
 
 .header {
+	font-family: 'RBNo2';
+	margin: 10px 40px;
 	padding: 0px 0px 0px 0px;
 	height: 100px;
-	width: 100%;
 }
 
-.nav ul li {
-	list-style: none;
+.header .title {
 	float: left;
 }
 
-.nav .menuLink {
-	text-decoration: none;
-	display: block;
+.header .nav {
+	float: right;
 }
 
-.nav .menuLink:hover {
+.header .nav ul li {
+	list-style: none;
+	float: left;
+	color: black;
+	width: 140px;
+	text-align: center;
+}
+
+.header .nav .menuLink {
+	text-decoration: none;
+	color: black;
+	display: block;
+	font-size: 2em;
+}
+
+.header .nav .menuLink:hover {
 	background-color: gray;
+	color: white;
 }
