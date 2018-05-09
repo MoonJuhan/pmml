@@ -7,27 +7,27 @@
 		<meta http-equiv="author" content="MJ">
 		
 		<link href="testStyleSheet.css" type="text/css" rel="stylesheet" />
-		<title>PCMML</title>
+		<title>PMML</title>
 	</head>
 	<body>
 		<div class="header">
 			<div class="title">
-				<h1>
+				<a href="test.html">
 					PandoraCube Military Member List
-				</h1>
+				</a>
 			</div>
 				
 			<div class="nav">
 				<ul> 
-					<li><a href="#" class="menuLink">About</a></li>
-					<li><a href="#" class="menuLink">List</a></li>
 					<li><a href="#" class="menuLink">Edit</a></li>
+					<li><a href="#" class="menuLink">List</a></li>
+					<li><a href="#" class="menuLink">About</a></li>
 				</ul> 
 			</div>
 			
 		</div>
 		
-		<div id="content">
+		<div class="content">
 			<table class="table">
 				<thead>
 					<tr>
@@ -64,9 +64,21 @@
 					</tr>
 				</tbody>
 			</table>
+			
+			<button onclick="myFunction()">테스트 버튼</button>
+			
+			<br />
+			
+			<input type="text" id="input1">
+			<input type="text" id="input2">
+			<input type="date" id="input3">
+			<input type="date" id="input4">
+			<input type="text" id="input5">
+			<input type="text" id="input6">
+			<input type="text" id="input7">
+			<button onclick="input()">입력받기</button>
 		</div>
 		
-		<button onclick="myFunction()">테스트 버튼</button>
 		
 		<script>
 			var name;
@@ -106,15 +118,7 @@
 			}
 		</script>
 		
-		<br />
-		<input type="text" id="input1">
-		<input type="text" id="input2">
-		<input type="date" id="input3">
-		<input type="date" id="input4">
-		<input type="text" id="input5">
-		<input type="text" id="input6">
-		<input type="text" id="input7">
-		<button onclick="input()">입력받기</button>
+		
 		
 		
 	</body>
