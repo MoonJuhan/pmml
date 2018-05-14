@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery를 이용한 JSON 데이터 구하기</title>
+    <script src="Jquery/jquery-3.3.1.min.js"></script>
+	  
+    <script>
+	$(document).ready(function() {
+	  $('#target').click(function() {
+	    $.getJSON('JSON/ex1.json', function(data) {
+	      var html = '';
+	      $.each(data, function(entryIndex, entry) {
+	    	  html += '<div class="entry">';
+	    	  html += '<h3 class="term">' + entry.term + '</h3>';
+	    	  html += '<div class="part">' + entry.part + '</div>';
+	    	  html += '<div class="definition">';
+	    	  html += entry.definition;
+	    	  html += '</div>';
+	    	  html += '</div>';
+	      });
+	      console.log(html);
+	      $('#dictionary').html(html);
+	    });
+	    return false;
+	  });
+	});
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="letters">
+        <div class="letter" id="target">
+          <h3><a href="#">클릭</a></h3>
+      	</div>
+   	  </div>
+      	      
+      <div id="dictionary">
+      </div>
+
+    </div>
+  </body>
+</html>
