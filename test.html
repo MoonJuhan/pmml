@@ -6,8 +6,46 @@
 		<meta name="robots" content="noindex">
 		<meta http-equiv="author" content="MJ">
 		
-		<link href="testStyleSheet.css" type="text/css" rel="stylesheet" />
+		<link href="Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
 		<title>PMML</title>
+		
+		<script src="Jquery/jquery-3.3.1.min.js"></script>
+<!--
+		<script>
+		//$(function(){})의 기능은 body의 구조를 파악하자 마자
+			$(function(){
+				$.ajax({
+					url: "data.json",
+					dataType: "json",
+					success: function(data){
+						//json의 경우는 data는 파싱된 결과
+						//alert(data[0].num);
+						$.each(data, function(index, item){
+							alert(item.key + ":" +item.$t);
+							//객체를 가져다가 파싱
+							//var ar=data["fields"];
+							//var ar1=data["records"];
+							//alert(ar[0].id+ar1[0].재산구분)
+						})
+					}
+				})
+			})
+		</script>
+-->
+		
+		<script>
+			var GSSurl = "JSON/data.json";
+			$.getJSON(GSSurl,function(data){
+				var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
+				for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
+					$("body").append(entry[i].title.$t);// .title.$t 에는 1행의 내용이 들어있습니다.
+					$("body").append(entry[i].content.$t);// .content.$t 에는 나머지행의 데이터가 header정보와 함께 들어있습니다.
+				}
+			});
+			
+			
+		</script>
+		
 	</head>
 	<body>
 		<div class="header">
@@ -77,9 +115,32 @@
 			<input type="text" id="input6">
 			<input type="text" id="input7">
 			<button onclick="input()">입력받기</button>
+			
+			<br />
+			<br />
+			
+			<!--
+			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml?widget=true&amp;headers=false"></iframe>
+			-->
+			
+			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0">
+				
+			</iframe>
+			
+			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWPhO_Kih3NATG-5Jl7AwhwmPm5BFqEqKGDpxhzFmgNveRBQ/viewform?embedded=true" width="700" height="800" frameborder="0" marginheight="0" marginwidth="0">로드 중...</iframe>
 		</div>
 		
-		
+		<!--
+시트 쿼리
+https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/gviz/tq?tqx=out:html&tq&gid=0
+
+시트 JSON
+https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script
+https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script&min-row=1&min-col=1
+인프런
+codemike
+#zh!(qth^9Via(xA
+-->
 		<script>
 			var name;
 			var uninum;
