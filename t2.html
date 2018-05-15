@@ -6,6 +6,7 @@
     <script src="Jquery/jquery-3.3.1.min.js"></script>
 	  
     <script>
+	    /*
 	$(document).ready(function() {
 	  $('#target').click(function() {
 	    $.getJSON('JSON/ex1.json', function(data) {
@@ -17,6 +18,23 @@
 	    	  html += '<div class="definition">';
 	    	  html += entry.definition;
 	    	  html += '</div>';
+	    	  html += '</div>';
+	      });
+	      console.log(html);
+	      $('#dictionary').html(html);
+	    });
+	    return false;
+	  });
+	});
+	*/
+	    
+	    $(document).ready(function() {
+	  $('#target2').click(function() {
+	    $.getJSON('JSON/data.json', function(data) {
+	      var html = '';
+	      $.each(data, function(entryIndex, entry) {
+	    	  html += '<div class="entry">';
+	    	  html += '<div class="part">' + entry.$t + '</div>';
 	    	  html += '</div>';
 	      });
 	      console.log(html);
