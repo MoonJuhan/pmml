@@ -25,6 +25,22 @@
 	    return false;
 	  });
 	});
+		
+		$(document).ready(function() {
+	  $('#target2').click(function() {
+	    $.getJSON('JSON/data.json', function(data) {
+	      var html = '';
+	      $.each(data, function(entryIndex, entry) {
+	    	  html += '<div class="entry">';
+	    	  html += '<div class="part">' + entry.$t + '</div>';
+	    	  html += '</div>';
+	      });
+	      console.log(html);
+	      $('#dictionary').html(html);
+	    });
+	    return false;
+	  });
+	});
     </script>
   </head>
   <body>
@@ -33,6 +49,11 @@
         <div class="letter" id="target">
           <h3><a href="#">클릭</a></h3>
       	</div>
+		  
+		  <div class="letter" id="target2">
+			  <h3><a href="#">2클릭</a></h3>
+		  </div>
+		  
    	  </div>
       	      
       <div id="dictionary">
