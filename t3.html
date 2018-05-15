@@ -6,18 +6,19 @@
     <script src="Jquery/jquery-3.3.1.min.js"></script>
 	  
     <script>
+	    var j1 = 'JSON/j1.json';
+	    var j2 = 'JSON/ex1.json;
+	    var j3 = 'JSON/data.json'
+	    ;
 	    $(document).ready(function() {
 	  $('#target').click(function() {
-	    $.getJSON('JSON/data.json', function(data) {
-	      var html = '';
-	      $.each(data, function(entryIndex, entry) {
-	    	  html += '<div class="entry">';
-	    	  html += '<div class="part">' + entry.content + '</div>';
-	    	  html += '</div>';
-	      });
-	      console.log(html);
-	      $('#dictionary').html(html);
-	    });
+		  $.getJSON(j1,function(data){
+			  for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
+				  $("body").append(entry[i].title.$t);// .title.$t 에는 1행의 내용이 들어있습니다.
+				  $("body").append(entry[i].content.$t);
+			  } 
+		  });
+
 	    return false;
 	  });
 	});
