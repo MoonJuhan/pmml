@@ -34,7 +34,9 @@
 -->
 		
 		<script>
-			var GSSurl = "JSON/data.json";
+			var GSSfile = "JSON/data.json";
+			var GSSurl = "https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&callback=?";
+			
 			$.getJSON(GSSurl,function(data){
 				var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
 				for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
@@ -119,15 +121,9 @@
 			<br />
 			<br />
 			
-			<!--
-			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml?widget=true&amp;headers=false"></iframe>
-			-->
-			
 			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0">
 				
 			</iframe>
-			
-			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWPhO_Kih3NATG-5Jl7AwhwmPm5BFqEqKGDpxhzFmgNveRBQ/viewform?embedded=true" width="700" height="800" frameborder="0" marginheight="0" marginwidth="0">로드 중...</iframe>
 		</div>
 		
 		<!--
@@ -135,8 +131,8 @@
 https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/gviz/tq?tqx=out:html&tq&gid=0
 
 시트 JSON
-https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script
-https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script&min-row=1&min-col=1
+https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script
+https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1
 인프런
 codemike
 #zh!(qth^9Via(xA

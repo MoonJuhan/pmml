@@ -5,54 +5,33 @@
     <title>jQuery를 이용한 JSON 데이터 구하기</title>
     <script src="Jquery/jquery-3.3.1.min.js"></script>
 	  
-    <script>
-	$(document).ready(function() {
-	  $('#target').click(function() {
-	    $.getJSON('JSON/ex1.json', function(data) {
-	      var html = '';
-	      $.each(data, function(entryIndex, entry) {
-	    	  html += '<div class="entry">';
-	    	  html += '<h3 class="term">' + entry.term + '</h3>';
-	    	  html += '<div class="part">' + entry.part + '</div>';
-	    	  html += '<div class="definition">';
-	    	  html += entry.definition;
-	    	  html += '</div>';
-	    	  html += '</div>';
-	      });
-	      console.log(html);
-	      $('#dictionary').html(html);
-	    });
-	    return false;
-	  });
-	});
-		
-		$(document).ready(function() {
-	  $('#target2').click(function() {
-	    $.getJSON('JSON/data.json', function(data) {
-	      var html = '';
-	      $.each(data, function(entryIndex, entry) {
-	    	  html += '<div class="entry">';
-	    	  html += '<div class="part">' + entry.$t + '</div>';
-	    	  html += '</div>';
-	      });
-	      console.log(html);
-	      $('#dictionary').html(html);
-	    });
-	    return false;
-	  });
-	});
-    </script>
-  </head>
-  <body>
+
+	  
+		<script>
+			var GSSurl = 'JSON.data.json';
+			
+		$.getJSON(GSSurl,function(data){
+
+	var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
+
+	for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
+
+		$("body").append(entry[i].title.$t);// .title.$t 에는 1행의 내용이 들어있습니다.
+
+		$("body").append(entry[i].content.$t);// .content.$t 에는 나머지행의 데이터가 header정보와 함께 들어있습니다.
+
+	} 
+
+});
+		</script>
+	</head>
+	
+	<body>
     <div id="container">
       <div class="letters">
         <div class="letter" id="target">
           <h3><a href="#">클릭</a></h3>
       	</div>
-		  
-		  <div class="letter" id="target2">
-			  <h3><a href="#">2클릭</a></h3>
-		  </div>
 		  
    	  </div>
       	      
