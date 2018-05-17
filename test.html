@@ -40,9 +40,9 @@
 			$.getJSON(GSSurl,function(data){
 				var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
 				for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
-					$(".ggsdata").append(<h3>,entry[i].title.$t,</h3>);// .title.$t 에는 1행의 내용이 들어있습니다.
+					$(".ggsdata").append(entry[i].title.$t);// .title.$t 에는 1행의 내용이 들어있습니다.
 					$(".ggsdata").append(</ br>);
-					$(".ggsdata").append(<p>,entry[i].content.$t,</p>);// .content.$t 에는 나머지행의 데이터가 header정보와 함께 들어있습니다.
+					$(".ggsdata").append(entry[i].content.$t);// .content.$t 에는 나머지행의 데이터가 header정보와 함께 들어있습니다.
 				}
 			});
 			
