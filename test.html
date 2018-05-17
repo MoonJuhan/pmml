@@ -14,7 +14,7 @@
 		<script>
 			var GSSfile = "JSON/data.json";
 			var GSSurl = "https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&callback=?";
-			var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1";
+			var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?";
 			$.getJSON(GSScurl,function(data){
 				var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
 				for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
