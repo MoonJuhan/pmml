@@ -6,10 +6,6 @@
 /* Header Style */
 .header {
 	font-family: 'RBNo2';
-	width: 1200px;
-	margin-top: 40px;
-	margin-left: auto;
-	margin-right: auto;
 	height: 100px;
 }
 
@@ -18,7 +14,7 @@
 }
 .header .title a {
 	font-weight: bold;
-	font-size: 3em;
+	font-size: 2.5em;
 	text-decoration: none;
 	color: black;
 }
@@ -35,7 +31,7 @@
 	text-decoration: none;
 	color: black;
 	display: block;
-	font-size: 2.5em;
+	font-size: 2em;
 	/* font-weight: bold;*/
 }
 
