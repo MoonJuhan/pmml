@@ -11,21 +11,7 @@
 		<title>PMML</title>
 		
 		<script src="/WebTest/Jquery/jquery-3.3.1.min.js"></script>
-		
-		<script>
-			var GSSurl = "https://spreadsheets.google.com/feeds/list/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&callback=?";
-			var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?";
-			$.getJSON(GSScurl,function(data){
-				var entry=data.feed.entry;//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
-				for(var i in entry){ // 각 행에대해 아래 스크립트를 실행합니다.
-					$(".ggsdata").append(entry[i].title.$t);// .title.$t 에는 1행의 내용이 들어있습니다.
-					$(".ggsdata").append("<br>");
-					$(".ggsdata").append(entry[i].content.$t);// .content.$t 에는 나머지행의 데이터가 header정보와 함께 들어있습니다.
-					$(".ggsdata").append("<br>");
-				}
-			});
-		</script>
-		
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	</head>
 	<body>
 		<div class="header container">
@@ -47,12 +33,30 @@
 		
 		<div class="content">
 			
-			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0">
-				
-			</iframe>
-			
-			<div class="ggsdata">
+			<div id="app">
+				<input
+					   id ="name1"
+					   type="text"
+					   v-on:input="updateValue($event.target.value)">
+				<br>
+				이름 : <span v-html="name"></span>
+				<br>     
+				학번 : <span v-html="stuID"></span>      
+				<br>      
+				남은날 : <span v-html="dday"></span>      
+				<br>      
+				입대일 : <span v-html="inday"></span>      
+				<br>      
+				전역일 : <span v-html="outday"></span>   
+				<br>   
+				소속 : <span v-html="regiment"></span>      
+				<br>     
+				보직 : <span v-html="assignment"></span>
 			</div>
+			
+			<iframe 
+					id="googlesheet" 
+					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
 		</div>
 		
 		<!--
@@ -67,7 +71,7 @@ codemike
 #zh!(qth^9Via(xA
 -->
 		
-		
+		<script src = "/WebTest/PMML/finder.js"></script>
 	</body>
 	
 	
