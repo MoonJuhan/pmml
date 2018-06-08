@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="For PandoraCube">
     <meta name="robots" content="noindex">
-    <meta http-equiv="author" content="MJ">
+	
     <link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
     <link href="/PMML/materialize/css/materialize.css" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -36,25 +35,50 @@
     <div class="container #ffffff white">
         <div id="app">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s4">
                     <input id="name1" type="text" class="validate" v-on:input="updateValue($event.target.value)">
                     <label class="active" for="name1">이름</label>
                 </div>
-            </div>
-
-            <br> 이름 : <span v-html="name"></span>
-            <br> 학번 : <span v-html="stuID"></span>
-            <br> 남은날 : <span v-html="dday"></span>
-            <br> 입대일 : <span v-html="inday"></span>
-            <br> 전역일 : <span v-html="outday"></span>
-            <br> 소속 : <span v-html="regiment"></span>
-            <br> 보직 : <span v-html="assignment"></span>
-        </div>
+				
+				<div class="progress col s4">
+					<div class="determinate" style="width: 70%"></div>
+				</div>
+				
+				<div class="col s4">
+					<br> 
+					남은날 : <span v-html="dday"></span>
+					<br> 
+					입대일 : <span v-html="inday"></span>
+					<br> 
+					전역일 : <span v-html="outday"></span>
+				</div>
+				
+				<div class="col s4">
+					<br> 
+					이름 : <span v-html="name"></span>
+					<br> 
+					학번 : <span v-html="stuID"></span>
+					<br> 
+					소속 : <span v-html="regiment"></span>
+				</div>
+				
+				<div class="col s4">
+					<br> 
+					보직 : <span v-html="assignment"></span>
+				</div>
+			</div>
+		</div>
 
 
         <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
     </div>
-    <!--
+   
+    <script src="/PMML/JS/finder.js"></script>
+</body>
+
+</html>
+
+ <!--
          시트 쿼리
          https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/gviz/tq?tqx=out:html&tq&gid=0
          
@@ -65,7 +89,3 @@
          codemike
          #zh!(qth^9Via(xA
          -->
-    <script src="/PMML/JS/finder.js"></script>
-</body>
-
-</html>
