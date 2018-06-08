@@ -35,48 +35,51 @@
     <div class="container #ffffff white">
         <div id="app">
             <div class="row">
-                <div class="input-field col s4">
-                    <input id="name1" type="text" class="validate" v-on:input="updateValue($event.target.value)">
-                    <label class="active" for="name1">이름</label>
-                </div>
-				
-				<div class="progress col s4">
-					<div class="determinate" style="width: 70%"></div>
+				<div class="col s4">
+					<div class="card-panel N/A transparent">
+						<div class="input-field">
+							<input id="name1" type="text" class="validate" v-on:input="updateValue($event.target.value)">
+							<label class="active" for="name1">이름</label>
+						</div>
+					</div>
 				</div>
 				
 				<div class="col s4">
-					<br> 
-					남은날 : <span v-html="dday"></span>
-					<br> 
-					입대일 : <span v-html="inday"></span>
-					<br> 
-					전역일 : <span v-html="outday"></span>
+					<div class="card-panel N/A transparent">
+						진행도
+						<div class="progress">
+							<div class="determinate" style="width: 50%"></div>
+						</div>
+					</div>
 				</div>
 				
 				<div class="col s4">
-					<br> 
-					이름 : <span v-html="name"></span>
-					<br> 
-					학번 : <span v-html="stuID"></span>
-					<br> 
-					소속 : <span v-html="regiment"></span>
+					<div class="card-panel N/A transparent">
+						남은날 : <span v-html="dday"></span>
+						<br> 
+						입대일 : <span v-html="inday"></span>
+						<br> 
+						전역일 : <span v-html="outday"></span>
+					</div>
 				</div>
 				
 				<div class="col s4">
-					<br> 
-					보직 : <span v-html="assignment"></span>
+					<div class="card-panel N/A transparent">
+						이름 : <span v-html="name"></span>
+						<br> 
+						학번 : <span v-html="stuID"></span>
+						<br> 
+						소속 : <span v-html="regiment"></span>
+					</div>
 				</div>
 				
+				<div class="col s4">
+					<div class="card-panel N/A transparent">
+						보직 : <span v-html="assignment"></span>
+					</div>
+				</div>
 				
-				<div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">textsms</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Autocomplete</label>
-        </div>
-      </div>
-    </div>
+				  
 			</div>
 		</div>
 
