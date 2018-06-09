@@ -15,7 +15,8 @@ var example2 = new Vue({
     inday: '입대일',
     outday: '전역일',
     regiment: '소속',
-    assignment: '보직'
+    assignment: '보직',
+	  percent: '0'
     
   },
   // 메소드는 `methods` 객체 안에 정의합니다
@@ -39,6 +40,21 @@ var example2 = new Vue({
           this.regiment = entry[in1].content.$t;
           in1++;
           this.assignment = entry[in1].content.$t;
+			
+		
+		  var strDate1 = this.inday; 
+          var strDate2 = this.outday; 
+          var arr1 = strDate1.split('.'); 
+          var arr2 = strDate2.split('.'); 
+          var dat1 = new Date(arr1[0], arr1[1], arr1[2]); 
+          var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
+      
+          // 날짜 차이 알아 내기
+          var diff = dat2 - dat1;
+          var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+          var allday = parseInt(diff/currDay);
+          
+          this.percent = (allday - this.dday) / allday * 100;
         }
 		  /*
 		  else{
@@ -49,6 +65,8 @@ var example2 = new Vue({
 			  this.regiment = "...";
 			  this.assignment = "...";
 		  }*/
+		  
+		  
       }
     }
   }
