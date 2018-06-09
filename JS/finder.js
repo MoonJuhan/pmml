@@ -40,6 +40,7 @@ var example2 = new Vue({
           in1++;
           this.assignment = entry[in1].content.$t;
         }
+		  /*
 		  else{
 			  this.stuID = "...";
 			  this.dday = "000";
@@ -47,7 +48,7 @@ var example2 = new Vue({
 			  this.outday = "00.00.00";
 			  this.regiment = "...";
 			  this.assignment = "...";
-		  }
+		  }*/
       }
     }
   }
