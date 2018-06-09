@@ -48,7 +48,7 @@
                     <div class="card-panel N/A transparent">
                         진행도
                         <div class="progress">
-                            <div class="determinate" style="width: 50%"></div>
+                            <div class="determinate" v-bind:style="styleObject"></div>
                         </div>
 						<span v-html="percent"></span>%
                     </div>

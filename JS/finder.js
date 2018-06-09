@@ -16,7 +16,10 @@ var example2 = new Vue({
     outday: '전역일',
     regiment: '소속',
     assignment: '보직',
-	  percent: '0'
+	  percent: '0',
+	  styleObject: {
+		  width: '0%'
+	  }
     
   },
   // 메소드는 `methods` 객체 안에 정의합니다
@@ -55,6 +58,7 @@ var example2 = new Vue({
           var allday = parseInt(diff/currDay);
           
           this.percent = (allday - this.dday) / allday * 100;
+			this.styleObject.width = percent + '%';
         }
 		  /*
 		  else{
