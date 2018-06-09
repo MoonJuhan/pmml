@@ -16,10 +16,10 @@ var example2 = new Vue({
     outday: '전역일',
     regiment: '소속',
     assignment: '보직',
-	  percent: '0',
-	  styleObject: {
-		  width: '0%'
-	  }
+    test: '50',
+    gagestyle: {
+      width: '0%'
+    }
     
   },
   // 메소드는 `methods` 객체 안에 정의합니다
@@ -43,9 +43,8 @@ var example2 = new Vue({
           this.regiment = entry[in1].content.$t;
           in1++;
           this.assignment = entry[in1].content.$t;
-			
-		
-		  var strDate1 = this.inday; 
+          
+          var strDate1 = this.inday; 
           var strDate2 = this.outday; 
           var arr1 = strDate1.split('.'); 
           var arr2 = strDate2.split('.'); 
@@ -57,21 +56,11 @@ var example2 = new Vue({
           var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
           var allday = parseInt(diff/currDay);
           
-          this.percent = (allday - this.dday) / allday * 100;
-			this.styleObject.width = percent + '%';
+          this.test = (allday - this.dday) / allday * 100;
+          this.gagestyle.width = this.test + '%';
+          
         }
-		  /*
-		  else{
-			  this.stuID = "...";
-			  this.dday = "000";
-			  this.inday = "00.00.00";
-			  this.outday = "00.00.00";
-			  this.regiment = "...";
-			  this.assignment = "...";
-		  }*/
-		  
-		  
       }
-    }
+    }  
   }
 });
