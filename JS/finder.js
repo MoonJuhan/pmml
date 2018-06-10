@@ -15,34 +15,37 @@ $.getJSON(GSScurl, function(data) {
     var x = 0;
 
     for (var i in entry) {
-        if (entry[i].title.$t.substring(0, 1) == 'A' && entry[i].title.$t.substring(1, 2) > 2) {
-            member_list[x] = new Object();
-            member_list[x].name = entry[i].content.$t;
-            var y = i;
-            for (var z = 0; z < 8; z++) {
-                switch (entry[y].title.$t.substring(0, 1)) {
-                    case 'B':
-                        member_list[x].stuID = entry[y].content.$t;
-                        break;
-                    case 'C':
-                        member_list[x].dday = entry[y].content.$t;
-                        break;
-                    case 'D':
-                        member_list[x].inday = entry[y].content.$t;
-                        break;
-                    case 'E':
-                        member_list[x].outday = entry[y].content.$t;
-                        break;
-                    case 'F':
-                        member_list[x].regiment = entry[y].content.$t;
-                        break;
-                    case 'G':
-                        member_list[x].assignment = entry[y].content.$t;
-                        break;
+        if (entry[i].title.$t.substring(0, 1) == 'A') {
+            if (entry[i].title.$t != 'A1' && entry[i].title.$t != 'A2') {
+
+                member_list[x] = new Object();
+                member_list[x].name = entry[i].content.$t;
+                var y = i;
+                for (var z = 0; z < 8; z++) {
+                    switch (entry[y].title.$t.substring(0, 1)) {
+                        case 'B':
+                            member_list[x].stuID = entry[y].content.$t;
+                            break;
+                        case 'C':
+                            member_list[x].dday = entry[y].content.$t;
+                            break;
+                        case 'D':
+                            member_list[x].inday = entry[y].content.$t;
+                            break;
+                        case 'E':
+                            member_list[x].outday = entry[y].content.$t;
+                            break;
+                        case 'F':
+                            member_list[x].regiment = entry[y].content.$t;
+                            break;
+                        case 'G':
+                            member_list[x].assignment = entry[y].content.$t;
+                            break;
+                    }
+                    y++;
                 }
-                y++;
+                x++;
             }
-            x++;
         }
     }
 });
