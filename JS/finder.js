@@ -16,7 +16,6 @@ var example2 = new Vue({
     outday: '전역일',
     regiment: '소속',
     assignment: '보직',
-    percent: '0',
     gagestyle: {
       width: '0%'
     }
@@ -56,8 +55,8 @@ var example2 = new Vue({
           var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
           var allday = parseInt(diff/currDay);
           
-          this.percent = (allday - this.dday) / allday * 100;
-          this.gagestyle.width = this.percent + '%';
+          var percent = (allday - this.dday) / allday * 100;
+          this.gagestyle.width = percent + '%';
           
         }
       }

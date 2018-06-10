@@ -7,8 +7,8 @@
 
     <link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
     <link href="/PMML/materialize/css/materialize.css" type="text/css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>PMML</title>
+   
+	<title>PMML</title>
     <script src="/PMML/materialize/js/materialize.js"></script>
     <script src="/PMML/Jquery/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -50,7 +50,7 @@
                         <div class="progress">
                             <div class="determinate" v-bind:style="gagestyle"></div>
                         </div>
-						<span v-html="percent"></span>%
+						<span v-html="gagestyle.width"></span>
                     </div>
                 </div>
 
