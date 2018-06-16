@@ -12,6 +12,9 @@
     <script src="/PMML/materialize/js/materialize.js"></script>
     <script src="/PMML/Jquery/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	
+	<!-- axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body class="#eceff1 blue-grey lighten-5">
@@ -41,6 +44,9 @@
                             <input id="name1" type="text" class="validate" v-on:input="updateValue($event.target.value)">
                             <label class="active" for="name1">이름</label>
                         </div>
+						<button v-on:click="clickbtn">
+							버튼
+						</button>
                     </div>
                 </div>
 

@@ -50,6 +50,7 @@ $.getJSON(GSScurl, function(data) {
     }
 });
 
+
 var example2 = new Vue({
     el: '#app',
     data: {
@@ -97,6 +98,15 @@ var example2 = new Vue({
 
                 }
             }
-        }
+        },
+		clickbtn: function(){
+			axios.get(GSScurl)
+  .then(function (response) {
+    alert(response + "yes");
+  })
+  .catch(function (error) {
+    alert(error + "fail");
+  });
+		}
     }
 });
