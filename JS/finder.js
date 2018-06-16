@@ -94,13 +94,7 @@ var example2 = new Vue({
             }
         },
 		clickbtn: function(){
-			axios.get(GSScurl)
-  .then(function (response) {
-    alert(response + "yes");
-  })
-  .catch(function (error) {
-    alert(error + "fail");
-  });
+			alert("버튼 클릭!");
 		}
     }
 });
@@ -111,7 +105,6 @@ var testob = {
 	};
 	
 	$(document).ready(function() {
-      console.log( $('input.autocomplete'));
       $('input.autocomplete').autocomplete({
         data: testob, 
         limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
