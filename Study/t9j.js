@@ -11,6 +11,7 @@ if (GSStest == "https") {
 
 $.getJSON(GSScurl, function(data) {
     entry = data.feed.entry;
+   console.log(entry);
     //구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.	
     var x = 0;
 
@@ -47,6 +48,8 @@ $.getJSON(GSScurl, function(data) {
     }
 });
 
+
+
 var example2 = new Vue({
     el: '#app',
     data: {
@@ -65,6 +68,16 @@ var example2 = new Vue({
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
         updateValue: function(value) {
+          axios.get(GSScurl)
+          .then(function(response){
+            console.log(response);
+          })
+          .catch(
+            function(error){
+              console.log(error);
+            });
+           
+          
             var name2 = document.getElementById("name1").value;
             this.name = name2;
 
@@ -98,38 +111,25 @@ var example2 = new Vue({
     }
 });
 
-/*
-clickbtn: function () {
-      var t1 = document.getElementById("name1").value;
-      
-      // document.write(t1);
-      
-      var t2 = t1.substring(0, 1);
-      var t3 = t1.substring(1, 2);
-      // document.write(t1 + " ");
-      // document.write(t2 + " "); // 알파벳
-      // document.write(t3 + " "); // 숫자
+$(document).ready(function() {
+  $('.modal').modal();
+  $('select').material_select();
+  $('input.autocomplete').autocomplete2({
+    data: [
+      {id:1,text:'강승곤',img:'http://placehold.it/250x250'},
+      {id:2,text:'김건',img:'http://placehold.it/250x250'},
+      {id:3,text:'강재훈',img:'http://placehold.it/250x250'},
+      {id:4,text:'문주한',img:'http://placehold.it/250x250'}
+    ]
+  });
+});
 
-      var strDate1 = "17. 3. 6"; 
-      var strDate2 = "18. 12. 5"; 
-      var arr1 = strDate1.split('.'); 
-      var arr2 = strDate2.split('.'); 
-      var dat1 = new Date(arr1[0], arr1[1], arr1[2]); 
-      var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
-      
-      
-      // 날짜 차이 알아 내기
-var diff = dat2 - dat1;
-var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
-
- 
-document.write("* 날짜 두개 : " + strDate1 + ", " + strDate2 + "<br/>");
-document.write("* 일수 차이 : " + parseInt(diff/currDay) + " 일<br/>");
+  function getId() {
+    alert($('#autocomplete').data('id'));
+  }
 
 
 
 
 
       
-    }
-*/

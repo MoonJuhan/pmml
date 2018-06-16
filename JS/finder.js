@@ -1,13 +1,7 @@
 var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?";
 var entry;
 var member_list = new Array();
-/*
-var GSStest = GSScurl.substring(0, 5);
-if (GSStest == "https") {
-    document.write(GSStest);
-    // alert("로드가 안됩니다 잠시후 다시 시도해 주세요.");
-}
-*/
+
 
 $.getJSON(GSScurl, function(data) {
     entry = data.feed.entry;
