@@ -111,8 +111,9 @@ var testob = {
 	};
 	
 	$(document).ready(function() {
-  $('input.autocomplete').autocomplete({
-			  data: testob,
-			  limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
-		  });
+      console.log( $('input.autocomplete'));
+      $('input.autocomplete').autocomplete({
+        data: testob, 
+        limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
+      });
 });
