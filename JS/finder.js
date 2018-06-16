@@ -104,3 +104,15 @@ var example2 = new Vue({
 		}
     }
 });
+
+var testob = {
+		apple:null,
+		banana:null
+	};
+	
+	$(document).ready(function() {
+  $('input.autocomplete').autocomplete({
+			  data: testob,
+			  limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
+		  });
+});
