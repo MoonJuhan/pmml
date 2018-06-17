@@ -2,6 +2,30 @@ var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa
 var entry;
 var member_list = new Array();
 
+// Router Test
+var Header = {
+	template : '<header class="no-padding"><div class="navbar-fixed"><nav class="navfeature #37474f blue-grey darken-1"><div class="container nav-wrapper"><a href="#" class="waves-effect waves-light brand-logo"><span class="navmenu">PMML</span></a><ul id="nav" class="hide-on-med-and-down right"><li><router-link class="navmenu" to="/about">About</router-link></li><li><router-link class="navmenu" to="/list">List</router-link></li><li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a></li></ul></div></nav></div></header>'
+};
+
+var Footer = {
+	template : '<footer class="page-footer #bdbdbd grey lighten-1"><div class="footer-copyright"><div class="container">© 2014 Copyright Text<a class="grey-text text-lighten-4 right" href="#!">More Links</a></div></div></footer>'	
+};
+
+var router = new VueRouter({
+	mode : 'history',
+	routes : [{
+		path : '/',
+		components : {
+			header : Header,
+			footer : Footer
+		}
+	}]
+});
+
+// Autocomplete Test
+var testob = new Object();
+testob.name = null;
+
 
 $.getJSON(GSScurl, function(data) {
     entry = data.feed.entry;
@@ -14,6 +38,8 @@ $.getJSON(GSScurl, function(data) {
 
                 member_list[x] = new Object();
                 member_list[x].name = entry[i].content.$t;
+				testob[member_list[x].name] = null;
+				
                 var y = i;
                 for (var z = 0; z < 8; z++) {
                     switch (entry[y].title.$t.substring(0, 1)) {
@@ -98,11 +124,6 @@ var example2 = new Vue({
 		}
     }
 });
-
-var testob = {
-		apple:null,
-		banana:null
-	};
 	
 	$(document).ready(function() {
       $('input.autocomplete').autocomplete({
@@ -110,5 +131,6 @@ var testob = {
         limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
       });
 });
+
 console.log(testob);
 console.log(member_list);
