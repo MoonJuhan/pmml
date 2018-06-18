@@ -14,7 +14,7 @@ var Header = {
                     <ul id="nav" class="hide-on-med-and-down right">\
                         <li><router-link class="navmenu" to="/about">About</router-link></li>\
                         <li><router-link class="navmenu" to="/list">List</router-link></li>\
-                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a></li>\
+                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>\</li>\
                     </ul>\
                 </div>\
             </nav>\
@@ -32,14 +32,18 @@ var Footer = {
         </div>\
     </footer>'	
 };
+		
+		var Con = {
+			template : '<h1>This is Contents</h1>'
+		};
 
 var router = new VueRouter({
-	mode : 'history',
 	routes : [{
 		path : '/',
 		components : {
 			header : Header,
-			footer : Footer
+			footer : Footer,
+			default : Con
 		}
 	}]
 });
@@ -93,9 +97,9 @@ $.getJSON(GSScurl, function(data) {
 });
 
 
-var example2 = new Vue({
-	router,
+var app = new Vue({
     el: '#app',
+	router,
     data: {
         name: '이름',
         stuID: '학번',
@@ -157,3 +161,10 @@ var example2 = new Vue({
 
 console.log(testob);
 console.log(member_list);
+
+
+    
+
+	
+
+
