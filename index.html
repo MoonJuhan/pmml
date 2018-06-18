@@ -28,26 +28,7 @@
 
 <body class="#eceff1 blue-grey lighten-5">
 	<router-view name="header"></router-view>
-	<router-view name="content"></router-view>
-	<router-view name="footer"></router-view>
 	
-    <header class="no-padding">
-        <div class="navbar-fixed">
-            <nav class="navfeature #37474f blue-grey darken-1">
-                <div class="container nav-wrapper">
-                    <a href="#" class="waves-effect waves-light brand-logo">
-                  <span class="navmenu">PMML</span>
-                  </a>
-                    <ul id="nav" class="hide-on-med-and-down right">
-                        <li><router-link class="navmenu" to="/about">About</router-link></li>
-                        <li><router-link class="navmenu" to="/list">List</router-link></li>
-                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-
     <div class="container #ffffff white">
         <div id="app">
             <div class="row">
@@ -103,19 +84,8 @@
     </div>
 
     <script src="/PMML/JS/finder.js"></script>
-
-    <footer class="page-footer #bdbdbd grey lighten-1">
-
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
 	
-	
-
+	<router-view name="footer"></router-view>
 </body>
 
 </html>
