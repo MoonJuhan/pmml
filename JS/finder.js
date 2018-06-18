@@ -4,11 +4,33 @@ var member_list = new Array();
 
 // Router Test
 var Header = {
-	template : '<header class="no-padding"><div class="navbar-fixed"><nav class="navfeature #37474f blue-grey darken-1"><div class="container nav-wrapper"><a href="#" class="waves-effect waves-light brand-logo"><span class="navmenu">PMML</span></a><ul id="nav" class="hide-on-med-and-down right"><li><router-link class="navmenu" to="/about">About</router-link></li><li><router-link class="navmenu" to="/list">List</router-link></li><li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a></li></ul></div></nav></div></header>'
+	template : '<header class="no-padding">\
+        <div class="navbar-fixed">\
+            <nav class="navfeature #37474f blue-grey darken-1">\
+                <div class="container nav-wrapper">\
+                    <a href="#" class="waves-effect waves-light brand-logo">\
+                  <span class="navmenu">PMML</span>\
+                  </a>\
+                    <ul id="nav" class="hide-on-med-and-down right">\
+                        <li><router-link class="navmenu" to="/about">About</router-link></li>\
+                        <li><router-link class="navmenu" to="/list">List</router-link></li>\
+                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a></li>\
+                    </ul>\
+                </div>\
+            </nav>\
+        </div>\
+    </header>'
 };
 
 var Footer = {
-	template : '<footer class="page-footer #bdbdbd grey lighten-1"><div class="footer-copyright"><div class="container">© 2014 Copyright Text<a class="grey-text text-lighten-4 right" href="#!">More Links</a></div></div></footer>'	
+	template : '<footer class="page-footer #bdbdbd grey lighten-1">\
+        <div class="footer-copyright">\
+            <div class="container">\
+                © 2014 Copyright Text\
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>\
+            </div>\
+        </div>\
+    </footer>'	
 };
 
 var router = new VueRouter({
@@ -72,6 +94,7 @@ $.getJSON(GSScurl, function(data) {
 
 
 var example2 = new Vue({
+	router,
     el: '#app',
     data: {
         name: '이름',
