@@ -2,94 +2,7 @@ var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa
 var entry;
 var member_list = new Array();
 
-// Router Test
-var Header = {
-	template : '<header class="no-padding">\
-        <div class="navbar-fixed">\
-            <nav class="navfeature #37474f blue-grey darken-1">\
-                <div class="container nav-wrapper">\
-                    <a href="#" class="waves-effect waves-light brand-logo">\
-                  <span class="navmenu">PMML</span>\
-                  </a>\
-                    <ul id="nav" class="hide-on-med-and-down right">\
-                        <li><router-link class="navmenu" to="/about">About</router-link></li>\
-                        <li><router-link class="navmenu" to="/list">List</router-link></li>\
-                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>\</li>\
-                    </ul>\
-                </div>\
-            </nav>\
-        </div>\
-    </header>'
-};
 
-var Footer = {
-	template : '<footer class="page-footer #bdbdbd grey lighten-1">\
-        <div class="footer-copyright">\
-            <div class="container">\
-                © 2014 Copyright Text\
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>\
-            </div>\
-        </div>\
-    </footer>'	
-};
-		
-		var Con = {
-			template : '<div class="container #ffffff white">\
-            <div class="row">\
-                <div class="col s4">\
-                    <div class="card-panel N/A transparent">\
-                        <div class="input-field">\
-                            <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">\
-                            <label class="active" for="name1">이름</label>\
-                        </div>\
-                        <button v-on:click="clickbtn">\
-							버튼\
-						</button>\
-                    </div>\
-                </div>\
-                <div class="col s4">\
-                    <div class="card-panel N/A transparent">\
-                        진행도\
-                        <div class="progress">\
-                            <div class="determinate" v-bind:style="gagestyle"></div>\
-                        </div>\
-                        <span v-html="gagestyle.width"></span>\
-                    </div>\
-                </div>\
-                <div class="col s4">\
-                    <div class="card-panel N/A transparent">\
-                        남은날 : <span v-html="dday"></span>\
-                        <br> 입대일 : <span v-html="inday"></span>\
-                        <br> 전역일 : <span v-html="outday"></span>\
-                    </div>\
-                </div>\
-                <div class="col s4">\
-                    <div class="card-panel N/A transparent">\
-                        이름 : <span v-html="name"></span>\
-                        <br> 학번 : <span v-html="stuID"></span>\
-                        <br> 소속 : <span v-html="regiment"></span>\
-                    </div>\
-                </div>\
-                <div class="col s4">\
-                    <div class="card-panel N/A transparent">\
-                        보직 : <span v-html="assignment"></span>\
-                    </div>\
-                </div>\
-            </div>\
-            <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>\
-        </div>'
-		};
-
-var router = new VueRouter({
-	routes : [{
-		path : '/',
-		components : {
-			header : Header,
-			footer : Footer,
-			default : Con
-		}
-	}]
-});
 
 // Autocomplete Test
 var testob = new Object();
@@ -193,6 +106,95 @@ var app = new Vue({
 			alert("버튼 클릭!");
 		}
     }
+});
+
+// Router Test
+var Header = {
+	template : '<header class="no-padding">\
+        <div class="navbar-fixed">\
+            <nav class="navfeature #37474f blue-grey darken-1">\
+                <div class="container nav-wrapper">\
+                    <a href="#" class="waves-effect waves-light brand-logo">\
+                  <span class="navmenu">PMML</span>\
+                  </a>\
+                    <ul id="nav" class="hide-on-med-and-down right">\
+                        <li><router-link class="navmenu" to="/about">About</router-link></li>\
+                        <li><router-link class="navmenu" to="/list">List</router-link></li>\
+                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>\</li>\
+                    </ul>\
+                </div>\
+            </nav>\
+        </div>\
+    </header>'
+};
+
+var Footer = {
+	template : '<footer class="page-footer #bdbdbd grey lighten-1">\
+        <div class="footer-copyright">\
+            <div class="container">\
+                © 2014 Copyright Text\
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>\
+            </div>\
+        </div>\
+    </footer>'	
+};
+		
+		var Con = {
+			template : '<div class="container #ffffff white">\
+            <div class="row">\
+                <div class="col s4">\
+                    <div class="card-panel N/A transparent">\
+                        <div class="input-field">\
+                            <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">\
+                            <label class="active" for="name1">이름</label>\
+                        </div>\
+                        <button v-on:click="clickbtn">\
+							버튼\
+						</button>\
+                    </div>\
+                </div>\
+                <div class="col s4">\
+                    <div class="card-panel N/A transparent">\
+                        진행도\
+                        <div class="progress">\
+                            <div class="determinate" v-bind:style="gagestyle"></div>\
+                        </div>\
+                        <span v-html="gagestyle.width"></span>\
+                    </div>\
+                </div>\
+                <div class="col s4">\
+                    <div class="card-panel N/A transparent">\
+                        남은날 : <span v-html="dday"></span>\
+                        <br> 입대일 : <span v-html="inday"></span>\
+                        <br> 전역일 : <span v-html="outday"></span>\
+                    </div>\
+                </div>\
+                <div class="col s4">\
+                    <div class="card-panel N/A transparent">\
+                        이름 : <span v-html="name"></span>\
+                        <br> 학번 : <span v-html="stuID"></span>\
+                        <br> 소속 : <span v-html="regiment"></span>\
+                    </div>\
+                </div>\
+                <div class="col s4">\
+                    <div class="card-panel N/A transparent">\
+                        보직 : <span v-html="assignment"></span>\
+                    </div>\
+                </div>\
+            </div>\
+            <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>\
+        </div>'
+		};
+
+var router = new VueRouter({
+	routes : [{
+		path : '/',
+		components : {
+			header : Header,
+			footer : Footer,
+			default : Con
+		}
+	}]
 });
 	
 	$(document).ready(function() {
