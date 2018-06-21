@@ -86,7 +86,7 @@ var router = new VueRouter({
 		components : {
 			header : Header,
 			footer : Footer,
-			default : <content_view></content_view>
+			default : '<content_view></content_view>'
 		}
 	}]
 });
