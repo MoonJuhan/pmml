@@ -64,7 +64,7 @@ var router = new VueRouter({
 
 // Autocomplete Test
 var testob = new Object();
-testob.name = null;
+testob[문주한] = null;
 
 
 $.getJSON(GSScurl, function(data) {
@@ -133,6 +133,11 @@ var app = new Vue({
             var name2 = document.getElementById("name1").value;
             this.name = name2;
 
+			$('input.autocomplete').autocomplete({
+        data: testob, 
+        limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
+      });
+			
             for (var i = 0; i < member_list.length; i++) { // 각 행에대해 아래 스크립트를 실행합니다.
                 if (member_list[i].name == name2) {
                     this.stuID = member_list[i].stuID;
@@ -165,14 +170,14 @@ var app = new Vue({
 		}
     }
 });
-	
+	/*
 	$(document).ready(function() {
       $('input.autocomplete').autocomplete({
         data: testob, 
         limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
       });
 });
-
+*/
 console.log(testob);
 console.log(member_list);
 
