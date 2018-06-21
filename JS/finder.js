@@ -32,18 +32,34 @@ var Footer = {
         </div>\
     </footer>'	
 };
-		
 
-
-var router = new VueRouter({
-	routes : [{
-		path : '/',
-		components : {
+var routes = [
+	{	
+		path: '/',	
+		components: {	
+			header : Header,	
+			footer : Footer
+		}
+	},
+	{
+		path: '/about',
+		components: {
+			header : Header,
+			footer : Footer
+		}
+	},
+	{
+		path: '/list',
+		components: {
 			header : Header,
 			footer : Footer
 		}
 	}
-	]
+];
+
+
+var router = new VueRouter({
+	routes
 });
 
 // Autocomplete Test
@@ -97,7 +113,7 @@ $.getJSON(GSScurl, function(data) {
 
 var app = new Vue({
     el: '#app',
-	router,
+	router: router,
     data: {
         name: '이름',
         stuID: '학번',
