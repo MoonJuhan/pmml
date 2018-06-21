@@ -80,13 +80,17 @@ Vue.component('content_view', {
         </div>'
 });
 
+var con = {
+	template: '<content_view></content_view'
+}
+
 var router = new VueRouter({
 	routes : [{
 		path : '/',
 		components : {
 			header : Header,
 			footer : Footer,
-			default : '<content_view></content_view>'
+			default : con
 		}
 	}]
 });
