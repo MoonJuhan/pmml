@@ -33,8 +33,8 @@ var Footer = {
     </footer>'	
 };
 		
-		var Con = {
-			template : '<div class="container #ffffff white">\
+Vue.component('content_view', {
+	template : '<div class="container #ffffff white">\
             <div class="row">\
                 <div class="col s4">\
                     <div class="card-panel N/A transparent">\
@@ -78,7 +78,7 @@ var Footer = {
             </div>\
             <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>\
         </div>'
-		};
+});
 
 var router = new VueRouter({
 	routes : [{
@@ -86,7 +86,7 @@ var router = new VueRouter({
 		components : {
 			header : Header,
 			footer : Footer,
-			default : Con
+			default : <content_view></content_view>
 		}
 	}]
 });
