@@ -81,7 +81,7 @@ Vue.component('content_view', {
 });
 
 var con = {
-	template: '<content_view></content_view'
+	template: '#con_template'
 }
 
 var router = new VueRouter({
