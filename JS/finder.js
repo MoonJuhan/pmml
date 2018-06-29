@@ -12,7 +12,7 @@ var Header = {
                   <span class="navmenu">PMML</span>\
                   </a>\
                     <ul id="nav" class="hide-on-med-and-down right">\
-                        <li><router-link class="navmenu" to="/about">About</router-link></li>\
+                        <li><a class="navmenu" href="list.html">About</router-link></li>\
                         <li><router-link class="navmenu" to="/list">List</router-link></li>\
                         <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>\</li>\
                     </ul>\
@@ -130,8 +130,7 @@ var app = new Vue({
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
         updateValue: function(value) {
-            var name2 = document.getElementById("name1").value;
-            this.name = name2;
+			this.name = value;
 
 			$('input.autocomplete').autocomplete({
 				data: testob,
@@ -139,7 +138,7 @@ var app = new Vue({
 			});
 			
             for (var i = 0; i < member_list.length; i++) { // 각 행에대해 아래 스크립트를 실행합니다.
-                if (member_list[i].name == name2) {
+                if (member_list[i].name == value) {
                     this.stuID = member_list[i].stuID;
                     this.dday = member_list[i].dday;
                     this.inday = member_list[i].inday;
