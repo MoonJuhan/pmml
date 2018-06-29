@@ -30,18 +30,18 @@
     <div id="app">
 
         <router-view name="header"></router-view>
-		
+
         <div class="container #ffffff white">
             <div class="row">
                 <div class="col s4">
                     <div class="card-panel N/A transparent">
                         <div class="input-field">
-                            <input id="name1" type="text" class="validate autocomplete"  v-on:input="updateValue()">
+                            <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue()">
                             <label class="active" for="name1">이름</label>
                         </div>
                         <button v-on:click="clickbtn">
-							버튼
-						</button>
+                            버튼
+                        </button>
                     </div>
                 </div>
                 <div class="col s4">
@@ -55,34 +55,41 @@
                 </div>
                 <div class="col s4">
                     <div class="card-panel N/A transparent">
-                        남은날 : <span v-html="dday"></span>
-                        <br> 입대일 : <span v-html="inday"></span>
-                        <br> 전역일 : <span v-html="outday"></span>
+                        남은날 :
+                        <span v-html="dday"></span>
+                        <br> 입대일 :
+                        <span v-html="inday"></span>
+                        <br> 전역일 :
+                        <span v-html="outday"></span>
                     </div>
                 </div>
                 <div class="col s4">
                     <div class="card-panel N/A transparent">
-                        이름 : <span v-html="name"></span>
-                        <br> 학번 : <span v-html="stuID"></span>
-                        <br> 소속 : <span v-html="regiment"></span>
+                        이름 :
+                        <span v-html="name"></span>
+                        <br> 학번 :
+                        <span v-html="stuID"></span>
+                        <br> 소속 :
+                        <span v-html="regiment"></span>
                     </div>
                 </div>
                 <div class="col s4">
                     <div class="card-panel N/A transparent">
-                        보직 : <span v-html="assignment"></span>
+                        보직 :
+                        <span v-html="assignment"></span>
                     </div>
                 </div>
             </div>
             <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
         </div>
-		
-        <router-view name="footer"></router-view>
 
+        <router-view name="footer"></router-view>
 
     </div>
 </body>
 
 <script src="/PMML/JS/finder.js"></script>
+
 </html>
 
 <!--

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="For PandoraCube">
-		<meta name="robots" content="noindex">
-		<meta http-equiv="author" content="MJ">
-		
-		<!-- Vue.js -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="For PandoraCube">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="author" content="MJ">
+
+    <!-- Vue.js -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <!-- Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" />
@@ -22,86 +23,89 @@
 
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		
-		<link href="/WebTest/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
-		<title>PMML Vue-Router Test</title>
 
-	</head>
-	<body>
-		<div id="vuediv">
-			
-		
-		<div class="header">
-			<div class="title">
-				<a href="pmmlindex.html">
-					PandoraCube Military Member List
-				</a>
-			</div>
-				
-			<div class="nav">
-				<ul> 
-					<li><a href="test.vue"></a></li>
-					<li><router-link class="menuLink" to="/">t1</router-link></li>
-					<li><router-link class="navmenu" to="/t2">t2</router-link></li>
-					<li><router-link class="menuLink" to="/t3">t3</router-link></li>
-				</ul> 
-			</div>
-			
-		</div>
-		
-		<div class="content">
-			<router-view></router-view>
-			<my-component></my-component>
-		</div>
-		
-		</div>
-		
-		<script>
-			Vue.component('my-component', {
-				template: '<div>사용자 정의 컴포넌트 입니다!</div>'
-			})
-			
-						var page_t1 = { template: '<p>T1</p>' };
-			var page_t2 = { template: '<p>T2</p>' };
-			var page_t3 = { template: '<p>T3</p>' };
+    <link href="/WebTest/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
+    <title>PMML Vue-Router Test</title>
 
-var routes = [
-	{	
-		path: '/',	
-		components: {	
-			default: page_t1
-		}
-	},
-	{
-		path: '/t2',
-		components: {
-			default: page_t2
-		}
-	},
-	{
-		path: '/t3',
-		components: {
-			default: page_t3
-		}
-	}
-];
+</head>
 
+<body>
+    <div id="vuediv">
 
-var router = new VueRouter({
-	routes
-});
-			
-			// 루트 인스턴스 생성
-			new Vue({
-				el: '#vuediv',
-				router
-			})
-			
-		
+        <div class="header">
+            <div class="title">
+                <a href="pmmlindex.html">
+                    PandoraCube Military Member List
+                </a>
+            </div>
 
-			
-			
-		</script>
-	</body>
-	
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="test.vue"></a>
+                    </li>
+                    <li>
+                        <router-link class="menuLink" to="/">t1</router-link>
+                    </li>
+                    <li>
+                        <router-link class="navmenu" to="/t2">t2</router-link>
+                    </li>
+                    <li>
+                        <router-link class="menuLink" to="/t3">t3</router-link>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="content">
+            <router-view></router-view>
+            <my-component></my-component>
+        </div>
+
+    </div>
+
+    <script>
+        Vue.component('my-component', {
+            template: '<div>사용자 정의 컴포넌트 입니다!</div>'
+        })
+        var page_t1 = {
+            template: '<p>T1</p>'
+        };
+        var page_t2 = {
+            template: '<p>T2</p>'
+        };
+        var page_t3 = {
+            template: '<p>T3</p>'
+        };
+        var routes = [{
+                path: '/',
+                components: {
+                    default: page_t1
+                }
+            },
+            {
+                path: '/t2',
+                components: {
+                    default: page_t2
+                }
+            },
+            {
+                path: '/t3',
+                components: {
+                    default: page_t3
+                }
+            }
+        ];
+        var router = new VueRouter({
+            routes
+        });
+        // 루트 인스턴스 생성
+        new Vue({
+            el: '#vuediv',
+            router
+        })
+    </script>
+</body>
+
 </html>
