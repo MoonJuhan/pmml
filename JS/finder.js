@@ -2,66 +2,6 @@ var GSScurl = "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa
 var entry;
 var member_list = new Array();
 
-// Router Test
-var Header = {
-	template : '<header class="no-padding">\
-        <div class="navbar-fixed">\
-            <nav class="navfeature #37474f blue-grey darken-1">\
-                <div class="container nav-wrapper">\
-                    <a href="#" class="waves-effect waves-light brand-logo">\
-                  <span class="navmenu">PMML</span>\
-                  </a>\
-                    <ul id="nav" class="hide-on-med-and-down right">\
-                        <li><a class="navmenu" href="list.html">About</router-link></li>\
-                        <li><router-link class="navmenu" to="/list">List</router-link></li>\
-                        <li><a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>\</li>\
-                    </ul>\
-                </div>\
-            </nav>\
-        </div>\
-    </header>'
-};
-
-var Footer = {
-	template : '<footer class="page-footer #bdbdbd grey lighten-1">\
-        <div class="footer-copyright">\
-            <div class="container">\
-                © 2014 Copyright Text\
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>\
-            </div>\
-        </div>\
-    </footer>'	
-};
-
-var routes = [
-	{	
-		path: '/',	
-		components: {	
-			header : Header,	
-			footer : Footer
-		}
-	},
-	{
-		path: '/about',
-		components: {
-			header : Header,
-			footer : Footer
-		}
-	},
-	{
-		path: '/list',
-		components: {
-			header : Header,
-			footer : Footer
-		}
-	}
-];
-
-
-var router = new VueRouter({
-	routes
-});
-
 // Autocomplete Test
 var testob = new Object();
 testob['문주한'] = null;
@@ -113,7 +53,6 @@ $.getJSON(GSScurl, function(data) {
 
 var app = new Vue({
     el: '#app',
-	router: router,
     data: {
         name: '이름',
         stuID: '학번',
@@ -163,10 +102,7 @@ var app = new Vue({
 
                 }
             }
-        },
-		clickbtn: function(){
-			alert("버튼 클릭!");
-		}
+        }
     }
 });
 
