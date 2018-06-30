@@ -45,10 +45,23 @@ html, body {
     padding: 10px 20px 10px 20px;
 }
 
-.page-footer {
+.customfooter {
+	display: block;
+	padding-top: 20px;
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.footer-copyright {
-	background-color: rgba(193, 191, 188, 0.8);
+.cumtomcopyright {
+	font-weight: 300;
+	    overflow: hidden;
+    min-height: 50px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 0px;
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(51,51,51,0.08);
 }
