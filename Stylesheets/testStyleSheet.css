@@ -12,7 +12,7 @@
     height: 300px;
 }
 
-.card {
+.customcard {
 	transition: box-shadow .25s;
     padding: 24px;
     margin: .5rem 0 1rem 0;
