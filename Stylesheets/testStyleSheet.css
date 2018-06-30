@@ -1,5 +1,10 @@
 #app {
-	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+    background-image: linear-gradient(-3deg, #d7d2cc 0%, #304352 96%);
+    color: white;
+}
+
+.navfeature {
+    background: rgba(48, 67, 82, 0.2);
 }
 
 #googlesheet {
@@ -9,6 +14,7 @@
 
 .card-panel {
     height: 120px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .navmenu {

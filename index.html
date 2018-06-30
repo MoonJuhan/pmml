@@ -31,7 +31,7 @@
 
         <header class="no-padding">
             <div class="navbar-fixed">
-                <nav class="navfeature #37474f blue-grey darken-1">
+                <nav class="navfeature">
                     <div class="container nav-wrapper">
                         <a href="#" class="waves-effect waves-light brand-logo">
                             <span class="pmml-logo">PMML</span>
@@ -52,10 +52,10 @@
             </div>
         </header>
 
-        <div class="container #ffffff white">
+        <div class="container">
             <div class="row contents">
                 <div class="col s4">
-                    <div class="card-panel N/A transparent">
+                    <div class="card-panel">
                         <div class="input-field">
                             <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
                             <label class="active" for="name1">이름</label>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel N/A transparent">
+                    <div class="card-panel">
                         진행도
                         <div class="progress">
                             <div class="determinate" v-bind:style="gagestyle"></div>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel N/A transparent">
+                    <div class="card-panel">
                         남은날 :
                         <span v-html="dday"></span>
                         <br> 입대일 :
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel N/A transparent">
+                    <div class="card-panel">
                         이름 :
                         <span v-html="name"></span>
                         <br> 학번 :
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel N/A transparent">
+                    <div class="card-panel">
                         보직 :
                         <span v-html="assignment"></span>
                     </div>
