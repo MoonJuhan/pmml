@@ -6,6 +6,7 @@ html, body {
     background-image: linear-gradient(-3deg, #d7d2cc 0%, #304352 96%);
     color: white;
 	height: 100%;
+	margin-bottom: -70px;
 }
 
 .navfeature {
@@ -42,4 +43,12 @@ html, body {
 
 .contents {
     padding: 10px 20px 10px 20px;
+}
+
+.page-footer {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.footer-copyright {
+	background-color: rgba(193, 191, 188, 0.8);
 }
