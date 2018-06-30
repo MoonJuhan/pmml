@@ -66,42 +66,51 @@ var app = new Vue({
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
         updateValue: function(value) {
+            console.log(event.target.value);
             this.name = value;
 
-            $('input.autocomplete').autocomplete({
-                data: testob,
-                limit: 5 // The max amount of results that can be shown at once. Default: Infinity.
-            });
-
-            for (var i = 0; i < member_list.length; i++) {
-                // 각 행에대해 아래 스크립트를 실행합니다.
-                if (member_list[i].name == value) {
-                    this.stuID = member_list[i].stuID;
-                    this.dday = member_list[i].dday;
-                    this.inday = member_list[i].inday;
-                    this.outday = member_list[i].outday;
-                    this.regiment = member_list[i].regiment;
-                    this.assignment = member_list[i].assignment;
-
-                    var strDate1 = this.inday;
-                    var strDate2 = this.outday;
-                    var arr1 = strDate1.split('.');
-                    var arr2 = strDate2.split('.');
-                    var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
-                    var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
-
-                    // 날짜 차이 알아 내기
-                    var diff = dat2 - dat1;
-                    var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
-                    var allday = parseInt(diff / currDay);
-
-                    var percent = (allday - this.dday) / allday * 100;
-                    this.gagestyle.width = percent + '%';
-                }
-            }
+            auto(); // autocomplete
+            find_member(value);
         }
     }
 });
 
-console.log(testob);
-console.log(member_list);
+var find_member = function(value) {
+    for (var i = 0; i < member_list.length; i++) {
+        // 각 행에대해 아래 스크립트를 실행합니다.
+        if (member_list[i].name == value) {
+            app.stuID = member_list[i].stuID;
+            app.dday = member_list[i].dday;
+            app.inday = member_list[i].inday;
+            app.outday = member_list[i].outday;
+            app.regiment = member_list[i].regiment;
+            app.assignment = member_list[i].assignment;
+
+            var strDate1 = app.inday;
+            var strDate2 = app.outday;
+            var arr1 = strDate1.split('.');
+            var arr2 = strDate2.split('.');
+            var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
+            var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
+
+            // 날짜 차이 알아 내기
+            var diff = dat2 - dat1;
+            var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
+            var allday = parseInt(diff / currDay);
+
+            var percent = (allday - app.dday) / allday * 100;
+            app.gagestyle.width = percent + '%';
+        }
+    }
+};
+
+var auto = function() {
+    $('input.autocomplete').autocomplete({
+        data: testob,
+        limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
+        onAutocomplete: function() {
+            app.name = event.target.value;
+            find_member(event.target.value);
+        }
+    });
+};
