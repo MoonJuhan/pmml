@@ -66,7 +66,6 @@ var app = new Vue({
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
         updateValue: function(value) {
-            console.log(event.target.value);
             this.name = value;
 
             auto(); // autocomplete

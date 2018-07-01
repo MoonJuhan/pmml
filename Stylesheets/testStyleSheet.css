@@ -45,10 +45,25 @@ html, body {
     padding: 10px 20px 10px 20px;
 }
 
+/* Footer */
 .page-footer {
-	background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0)!important;
 }
 
 .footer-copyright {
-	background-color: rgba(193, 191, 188, 0.8);
+	background-color: rgba(193, 191, 188, 0.8)!important;
+}
+
+/* Autocomplete Dropdown */
+
+.dropdown-content li>a, .dropdown-content li>span {
+  background: rgba(66, 80, 91, 0.8);
+  color: hsla(206, 16%, 70%, 1)!important;
+}
+
+.dropdown-content{
+  background: rgb(66, 80, 91);
+}
+.autocomplete-content li .highlight {
+  color: white!important;
 }
