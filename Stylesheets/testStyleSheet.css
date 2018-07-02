@@ -20,12 +20,11 @@ html, body {
 
 .customcard {
 	transition: box-shadow .25s;
-    padding: 24px;
-    margin: .5rem 0 1rem 0;
-    border-radius: 2px;
-    height: 120px;
-    background: rgba(0, 0, 0, 0.1);
-	
+	padding: 24px;
+	margin: .5rem 0 1rem 0;
+	border-radius: 2px;
+	height: 150px;
+	background: rgba(0, 0, 0, 0.1);
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 
@@ -52,6 +51,17 @@ html, body {
 
 .footer-copyright {
 	background-color: rgba(193, 191, 188, 0.8)!important;
+}
+
+/* Input Field */
+
+.input-field {
+	width: 100px;
+}
+
+#name1 {
+	font-size: x-large;
+    width: 100px;
 }
 
 /* Autocomplete Dropdown */
