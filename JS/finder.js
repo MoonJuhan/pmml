@@ -19,8 +19,14 @@ $.getJSON(GSScurl, function(data) {
                 member_list[x].name = entry[i].content.$t;
                 testob[member_list[x].name] = null;
 
-                var y = i;
-                for (var z = 0; z < 8; z++) {
+                var y = i+1;
+                for (var z = 0; z < 9; z++) {
+					if(z != 0){
+						if(entry[y].title.$t.substring(0, 1) == 'A'){
+							z = 9;
+						}
+					}
+					
                     switch (entry[y].title.$t.substring(0, 1)) {
                         case 'B':
                             member_list[x].stuID = entry[y].content.$t;
