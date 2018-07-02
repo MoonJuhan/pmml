@@ -21,13 +21,13 @@ $.getJSON(GSScurl, function(data) {
 
                 var y = i+1;
                 for (var z = 0; z < 9; z++) {
-					if(z != 0){
-						if(entry[y].title.$t.substring(0, 1) == 'A'){
-							z = 9;
-						}
+					var check_a = entry[y].title.$t.substring(0, 1);
+					
+					if(check_a == 'A'){
+						z = 9;
 					}
 					
-                    switch (entry[y].title.$t.substring(0, 1)) {
+                    switch (check_a) {
                         case 'B':
                             member_list[x].stuID = entry[y].content.$t;
                             break;
