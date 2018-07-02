@@ -40,6 +40,15 @@ $.getJSON(GSScurl, function(data) {
                         case 'G':
                             member_list[x].assignment = entry[y].content.$t;
                             break;
+						case 'H':
+                            member_list[x].comment_etc = entry[y].content.$t;
+                            break;
+						case 'K':
+							member_list[x].department = entry[y].content.$t;
+							break;
+						case 'L':
+							member_list[x].comment_pan = entry[y].content.$t;
+							break;
                     }
                     y++;
                 }
@@ -59,6 +68,9 @@ var app = new Vue({
         outday: '전역일',
         regiment: '소속',
         assignment: '보직',
+		comment_etc: '기타 코멘트',
+		department: '학과',
+		comment_pan: '동아리 코멘트',
         gagestyle: {
             width: '0%'
         }
@@ -84,6 +96,9 @@ var find_member = function(value) {
             app.outday = member_list[i].outday;
             app.regiment = member_list[i].regiment;
             app.assignment = member_list[i].assignment;
+			app.comment_etc = member_list[i].comment_etc;
+			app.department = member_list[i].department;
+			app.comment_pan = member_list[i].comment_pan;
 
             var strDate1 = app.inday;
             var strDate2 = app.outday;

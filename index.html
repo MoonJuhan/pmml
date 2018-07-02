@@ -59,6 +59,12 @@
                         <div class="input-field">
                             <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
                             <label class="active" for="name1">이름</label>
+                            학번 :
+                            <span v-html="stuID"></span>
+                            <br> 학과 :
+                            <span v-html="department"></span>
+                            <br> 동아리 코멘트 :
+                            <span v-html="comment_pan"></span>
                         </div>
                     </div>
                 </div>
@@ -69,11 +75,7 @@
                             <div class="determinate" v-bind:style="gagestyle"></div>
                         </div>
                         <span v-html="gagestyle.width"></span>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customcard">
-                        남은날 :
+                        <br> 남은날 :
                         <span v-html="dday"></span>
                         <br> 입대일 :
                         <span v-html="inday"></span>
@@ -81,22 +83,18 @@
                         <span v-html="outday"></span>
                     </div>
                 </div>
+
                 <div class="col s4">
                     <div class="customcard">
-                        이름 :
-                        <span v-html="name"></span>
-                        <br> 학번 :
-                        <span v-html="stuID"></span>
-                        <br> 소속 :
+                        소속 :
                         <span v-html="regiment"></span>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="customcard">
-                        보직 :
+                        <br> 보직 :
                         <span v-html="assignment"></span>
+                        <br> 기타 코멘트 :
+                        <span v-html="comment_etc"></span>
                     </div>
                 </div>
+
             </div>
             <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
         </div>
