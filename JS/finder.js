@@ -19,7 +19,9 @@ $.getJSON(GSScurl, function(data) {
                 member_list[x].name = entry[i].content.$t;
                 testob[member_list[x].name] = null;
 
-                var y = i+1;
+                var y = i;
+				y++;
+				
                 for (var z = 0; z < 9; z++) {
 					var check_a = entry[y].title.$t.substring(0, 1);
 					
