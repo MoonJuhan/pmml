@@ -54,21 +54,23 @@
 
         <div class="container">
             <div class="row contents">
-                <div class="col s4">
+                <div class="col l7 m12 s12">
                     <div class="customcard">
                         <div class="input-field">
                             <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
                             <label class="active" for="name1">이름</label>
                         </div>
-						학번 :
+						<div>
+							학번 :
                             <span v-html="stuID"></span>
                             <br> 학과 :
                             <span v-html="department"></span>
                             <br> 동아리 코멘트 :
                             <span v-html="comment_pan"></span>
+						</div>
                     </div>
                 </div>
-                <div class="col s4">
+                <div class="col l5 m12 s12">
                     <div class="customcard">
                         진행도
                         <div class="progress">
@@ -84,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="col s4">
+                <div class="col l4 m6 s6">
                     <div class="customcard">
                         소속 :
                         <span v-html="regiment"></span>
