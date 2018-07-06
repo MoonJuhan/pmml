@@ -96,6 +96,16 @@
 						<br> 단축 예정일 수 : 
                     </div>
                 </div>
+				
+				<div class="col l6 m12 s12">
+                    <div class="customcard">
+                        진행도
+                        <div class="progress">
+                            <div class="determinate" v-bind:style="gagestyle"></div>
+                        </div>
+                        <span v-html="gagestyle.width"></span>
+                    </div>
+                </div>
 
             </div>
             <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
