@@ -138,7 +138,9 @@ var auto = function() {
 };
 
 window.onload = function(){
-	alert("페이지 로드 가 끝났어요!");
+	if(member_list.length == 0){
+		alert("멤버들의 정보가 로드되지 않았습니다. 새로고침을 하여 주십시오.");	
+	}
 };
 
 
