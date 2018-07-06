@@ -136,3 +136,9 @@ var auto = function() {
         }
     });
 };
+
+window.onload = function(){
+	alert("페이지 로드 가 끝났어요!");
+};
+
+
