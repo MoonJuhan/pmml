@@ -70,14 +70,17 @@
 						</div>
                     </div>
                 </div>
-                <div class="col l5 m12 s12">
+				
+				<div class="col l5 m12 s12">
                     <div class="customcard">
-                        진행도
-                        <div class="progress">
-                            <div class="determinate" v-bind:style="gagestyle"></div>
-                        </div>
-                        <span v-html="gagestyle.width"></span>
-                        <br> 남은날 :
+                       소속 :
+                        <span v-html="regiment"></span>
+                    </div>
+                </div>
+				
+				<div class="col l4 m12 s12">
+                    <div class="customcard">
+						남은날 :
                         <span v-html="dday"></span>
                         <br> 입대일 :
                         <span v-html="inday"></span>
@@ -85,15 +88,12 @@
                         <span v-html="outday"></span>
                     </div>
                 </div>
-
-                <div class="col l4 m6 s6">
+				
+				<div class="col l4 m12 s12">
                     <div class="customcard">
-                        소속 :
-                        <span v-html="regiment"></span>
-                        <br> 보직 :
-                        <span v-html="assignment"></span>
-                        <br> 기타 코멘트 :
-                        <span v-html="comment_etc"></span>
+						일과 일수 : 
+						<br> 휴일 수 : 
+						<br> 단축 예정일 수 : 
                     </div>
                 </div>
 
