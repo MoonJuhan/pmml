@@ -66,9 +66,15 @@ $.getJSON(GSScurl, function(data) {
     }
 });
 
+// Modal
+Vue.component('modal', {
+  template: '#modal-template'
+});
+
 var app = new Vue({
     el: '#app',
     data: {
+		showModal: false,
         name: '이름',
         stuID: '학번',
         dday: '남은날',
@@ -139,7 +145,7 @@ var auto = function() {
 
 window.onload = function(){
 	if(member_list.length == 0){
-		alert("멤버들의 정보가 로드되지 않았습니다. 새로고침을 하여 주십시오.");	
+		app.showModal = true;	
 	}
 };
 
