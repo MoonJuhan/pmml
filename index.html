@@ -2,180 +2,179 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
 
-    <link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
+	<link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
 
-    <title>PMML</title>
-    <!-- Vue.js -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <!-- Materialize CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" />
+	<title>PMML</title>
+	<!-- Vue.js -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- Materialize CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" />
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<!-- Materialize JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-    <!-- Vue-Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+	<!-- Vue-Router -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
 
-    <!-- axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div id="app">
+	<div id="app">
 
-        <header class="no-padding">
-            <div class="navbar-fixed">
-                <nav class="navfeature">
-                    <div class="container nav-wrapper">
-                        <a href="#" class="waves-effect waves-light brand-logo">
-                            <span class="pmml-logo">PMML</span>
-                        </a>
-                        <ul id="nav" class="hide-on-med-and-down right">
-                            <li>
-                                <a class="navmenu" href="list.html">TestList</a>
-                            </li>
-                            <li>
-                                <a class="navmenu" href="study.html">TestStudy</a>
-                            </li>
-                            <li>
-                                <a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+		<header class="no-padding">
+			<div class="navbar-fixed">
+				<nav class="navfeature">
+					<div class="container nav-wrapper">
+						<a href="#" class="waves-effect waves-light brand-logo">
+							<span class="pmml-logo">PMML</span>
+						</a>
+						<ul id="nav" class="hide-on-med-and-down right">
+							<li>
+								<a class="navmenu" href="list.html">TestList</a>
+							</li>
+							<li>
+								<a class="navmenu" href="study.html">TestStudy</a>
+							</li>
+							<li>
+								<a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
 
-        <div class="container">
-            <div class="row contents">
-                <div class="col l7 m12 s12">
-                    <div class="customcard">
-                        <div class="input-field">
-                            <input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
-                            <label class="active" for="name1">이름</label>
-                        </div>
+		<div class="container">
+			<div class="row contents">
+				<div class="col l7 m12 s12">
+					<div class="customcard">
+						<div class="input-field">
+							<input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
+							<label class="active" for="name1">이름</label>
+						</div>
 						<div>
 							학번 :
-                            <span v-html="stuID"></span>
-                            <br> 학과 :
-                            <span v-html="department"></span>
-                            <br> 동아리 코멘트 :
-                            <span v-html="CommentPan"></span>
+							<span v-html="stuID"></span>
+							<br> 학과 :
+							<span v-html="department"></span>
+							<br> 동아리 코멘트 :
+							<span v-html="CommentPan"></span>
 						</div>
-                    </div>
-                </div>
-				
+					</div>
+				</div>
+
 				<div class="col l5 m12 s12">
-                    <div class="customcard">
-                       소속 :
-                        <span v-html="regiment"></span>
-                    </div>
-                </div>
-				
+					<div class="customcard">
+						소속 :
+						<span v-html="regiment"></span>
+					</div>
+				</div>
+
 				<div class="col l4 m12 s12">
-                    <div class="customcard">
+					<div class="customcard">
 						남은날 :
-                        <span v-html="dday"></span>
-                        <br> 입대일 :
-                        <span v-html="inday"></span>
-                        <br> 전역일 :
-                        <span v-html="outday"></span>
-                    </div>
-                </div>
-				
+						<span v-html="dday"></span>
+						<br> 입대일 :
+						<span v-html="inday"></span>
+						<br> 전역일 :
+						<span v-html="outday"></span>
+					</div>
+				</div>
+
 				<div class="col l4 m12 s12">
-                    <div class="customcard">
-						일과 일수 : 
-						<br> 휴일 수 : 
-						<br> 단축 예정일 수 : 
-                    </div>
-                </div>
-				
+					<div class="customcard">
+						일과 일수 :
+						<br> 휴일 수 :
+						<br> 단축 예정일 수 :
+					</div>
+				</div>
+
 				<div class="col l4 m12 s12">
-                    <div class="customcard">
-                       	보직 :
-                        <span v-html="assignment"></span>
-                        <br> 기타 코멘트 :
-                        <span v-html="CommentEtc"></span>
-                    </div>
-                </div>
-				
+					<div class="customcard">
+						보직 :
+						<span v-html="assignment"></span>
+						<br> 기타 코멘트 :
+						<span v-html="CommentEtc"></span>
+					</div>
+				</div>
+
 				<div class="col l6 m12 s12">
-                    <div class="customcard">
-                        진행도
-                        <div class="progress">
-                            <div class="determinate" v-bind:style="gagestyle"></div>
-                        </div>
-                        <span v-html="gagestyle.width"></span>
-                    </div>
-                </div>
+					<div class="customcard">
+						진행도
+						<div class="progress">
+							<div class="determinate" v-bind:style="gagestyle"></div>
+						</div>
+						<span v-html="gagestyle.width"></span>
+					</div>
+				</div>
 
 				<button id="show-modal" @click="showModal = true">Show Modal</button>
-  <!-- use the modal component, pass in the prop -->
-  <modal v-if="showModal" @close="showModal = false">
-    <!--
+				<!-- use the modal component, pass in the prop -->
+				<modal v-if="showModal" @close="showModal = false">
+					<!--
       you can use custom content here to overwrite
       default content
     -->
-    <h3 slot="header">custom header</h3>
-  </modal>
-				
-				
-            </div>
-            <iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
-        </div>
-    </div>
+					<h3 slot="header">멤버들의 정보가 로드되지 않았습니다.</h3>
+					<p slot="body">
+						새로고침을 해보십시오.
+					</p>
+				</modal>
 
-    <footer class="page-footer">
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
+			</div>
+			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
+		</div>
+	</div>
+
+	<footer class="page-footer">
+		<div class="footer-copyright">
+			<div class="container">
+				© 2014 Copyright Text
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
 
 </body>
 
 <script src="/PMML/JS/finder.js"></script>
-	<!-- template for the modal component -->
+<!-- template for the modal component -->
 <script type="text/x-template" id="modal-template">
-  <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container">
+	<transition name="modal">
+		<div class="modal-mask">
+			<div class="modal-wrapper">
+				<div class="modal-container">
 
-          <div class="modal-header">
-            <slot name="header">
-              멤버들의 정보가 로드되지 않았습니다.
-            </slot>
-          </div>
+					<div class="modal-header">
+						<slot name="header">
+						</slot>
+					</div>
 
-          <div class="modal-body">
-            <slot name="body">
-              새로고침을 해보십시오.
-            </slot>
-          </div>
+					<div class="modal-body">
+						<slot name="body">
+						</slot>
+					</div>
 
-          <div class="modal-footer">
-            <slot name="footer">
-              
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
-            </slot>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition>
+					<div class="modal-footer">
+						<slot name="footer">
+
+							<button class="modal-default-button" @click="$emit('close')">
+								OK
+							</button>
+						</slot>
+					</div>
+				</div>
+			</div>
+		</div>
+	</transition>
 </script>
-	
 
 </html>
