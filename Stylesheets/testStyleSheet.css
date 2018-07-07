@@ -1,25 +1,28 @@
+body {
+	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+}
 #app {
-    background-image: linear-gradient(-3deg, #d7d2cc 0%, #304352 96%);
-    color: white;
+	color: white;
 }
 
 .navfeature {
-    background: rgba(48, 67, 82, 0.2);
+	background: rgba(48, 67, 82, 0.2);
 }
 
 #googlesheet {
-    width: 100%;
-    height: 300px;
+	width: 100%;
+	height: 300px;
 }
 
 .customcard {
-	transition: box-shadow .25s;
+	transition: box-shadow 0.25s;
 	padding: 24px;
-	margin: .5rem 0 1rem 0;
+	margin: 0.5rem 0 1rem 0;
 	border-radius: 2px;
 	height: 150px;
 	background: rgba(0, 0, 0, 0.1);
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+		0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .brand-logo {
@@ -31,21 +34,21 @@
 }
 
 .navmenu {
-    font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 .contents {
-    padding: 10px 20px 10px 20px;
+	padding: 10px 20px 10px 20px;
 }
 
 /* Footer */
 .page-footer {
-	background-color: rgba(0, 0, 0, 0)!important;	
-    padding-top: 0px!important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	padding-top: 0px !important;
 }
 
 .footer-copyright {
-	background-color: rgba(193, 191, 188, 0.8)!important;
+	background-color: rgba(193, 191, 188, 0.8) !important;
 }
 
 /* Input Field */
@@ -57,63 +60,70 @@
 
 #name1 {
 	font-size: x-large;
-    width: 100px;
+	width: 100px;
 }
 
 /* Autocomplete Dropdown */
 
-.dropdown-content li>a, .dropdown-content li>span {
-  background: rgba(66, 80, 91, 0.8);
-  color: hsla(206, 16%, 70%, 1)!important;
+.dropdown-content li > a,
+.dropdown-content li > span {
+	background: rgba(66, 80, 91, 0.8);
+	color: hsla(206, 16%, 70%, 1) !important;
 }
 
-.dropdown-content{
-  background: rgb(66, 80, 91);
+.dropdown-content {
+	background: rgb(66, 80, 91);
 }
 .autocomplete-content li .highlight {
-  color: white!important;
+	color: white !important;
 }
 
 /* modal css */
+@media (max-width: 992px) {
+	.modal-container {
+		width: 500px;
+	}
+}
+
 .modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .4);
-  display: table;
-  transition: opacity .3s ease;
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: table;
+	transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .modal-container {
-  width: 700px;
-  margin: 0px auto;
-  padding: 20px 30px;    
+	width: 700px;
+	margin: 0px auto;
+	padding: 20px 30px;
 	background-color: rgba(45, 53, 59, 0.8);
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+	border-radius: 2px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+	transition: all 0.3s ease;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
+	margin-top: 0;
+	color: #42b983;
 }
 
 .modal-body {
-  margin: 20px 0;
+	margin: 20px 0;
 }
 
 .modal-default-button {
-  float: right;
+	float: right;
 }
 
 /*
@@ -126,15 +136,15 @@
  */
 
 .modal-enter {
-  opacity: 0;
+	opacity: 0;
 }
 
 .modal-leave-active {
-  opacity: 0;
+	opacity: 0;
 }
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
