@@ -112,7 +112,11 @@
 						<div class="progress">
 							<div class="determinate" v-bind:style="gagestyle"></div>
 						</div>
-						<span v-html="gagestyle.width"></span>
+						<div>
+							<span v-html="gagestyle.width"></span>
+							<span class="gage2" v-html="remaingage">반대</span>
+						</div>
+						
 					</div>
 				</div>
 

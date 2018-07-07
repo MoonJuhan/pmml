@@ -87,7 +87,8 @@ var app = new Vue({
 		CommentPan: '동아리 코멘트',
         gagestyle: {
             width: '0%'
-        }
+        },
+		remaingage: '0%'
     },
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
@@ -127,6 +128,8 @@ var find_member = function(value) {
             var allday = parseInt(diff / currDay);
 
             var percent = (allday - app.dday) / allday * 100;
+			percent = percent.toFixed(2);
+			app.remaingage = (100 - percent) + '%';
             app.gagestyle.width = percent + '%';
         }
     }
