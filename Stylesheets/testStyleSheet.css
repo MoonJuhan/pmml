@@ -105,7 +105,6 @@ body {
 .modal-container {
 	width: 700px;
 	margin: 0px auto;
-	padding: 20px 30px;
 	background-color: rgba(45, 53, 59, 0.8);
 	border-radius: 2px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
@@ -113,19 +112,21 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
+.modal-header h4 {
+	padding: 20px 30px;
 	margin-top: 0;
 	color: #42b983;
 }
 
 .modal-body {
+	padding: 0px 30px;
 	margin: 20px 0;
 }
 
-.modal-default-button {
-	float: right;
+.modal-footer {
+	padding: 0px 30px 20px 30px;
+	text-align: right;
 }
-
 /*
  * The following styles are auto-applied to elements with
  * transition="modal" when their visibility is toggled
