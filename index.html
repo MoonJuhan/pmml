@@ -128,9 +128,6 @@
 						새로고침을 해보십시오.
 					</p>
 					<div slot="footer">
-						<button class="modal-default-button" @click="$emit('close')">
-								OK
-							</button>
 					</div>
 				</modal>
 
@@ -170,6 +167,11 @@
 
 					<div class="modal-footer">
 						<slot name="footer">
+						<button class="modal-default-button" @click="$emit('close')">
+								OK
+							</button>
+							
+							<a class="waves-effect waves-light btn"  @click="$emit('close')">button</a>
 						</slot>
 					</div>
 				</div>
