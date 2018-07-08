@@ -3,7 +3,7 @@ var GSScurl =
 var entry;
 var member_list = new Array();
 
-// Autocomplete Test
+// Autocomplete DB
 var testob = new Object();
 testob['문주한'] = null;
 
@@ -100,7 +100,6 @@ var app = new Vue({
         }
     }
 });
-
 var find_member = function(value) {
     for (var i = 0; i < member_list.length; i++) {
         // 각 행에대해 아래 스크립트를 실행합니다.
@@ -140,8 +139,10 @@ var auto = function() {
         data: testob,
         limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function() {
-            app.name = event.target.value;
-            find_member(event.target.value);
+			var inputdata = document.getElementById('name1').value;
+        	
+            app.name = inputdata;
+            find_member(inputdata);
         }
     });
 };
