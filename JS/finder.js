@@ -129,7 +129,7 @@ var find_member = function(value) {
 
             var percent = (allday - app.dday) / allday * 100;
 			percent = percent.toFixed(2);
-			app.remaingage = (100 - percent) + '%';
+			app.remaingage = (100 - percent).toFixed(2) + '%';
             app.gagestyle.width = percent + '%';
         }
     }
