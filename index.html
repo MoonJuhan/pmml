@@ -59,13 +59,15 @@
 						<div class="input-field">
 							<input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
 							<label class="active" for="name1">이름</label>
+							<span>
+								학번 :<span v-html="stuID"></span>
+							</span>
+							<span>
+								학과 :<span v-html="department"></span>
+							</span>
 						</div>
 						<div>
-							학번 :
-							<span v-html="stuID"></span>
-							<br> 학과 :
-							<span v-html="department"></span>
-							<br> 동아리 코멘트 :
+							동아리 코멘트 :
 							<span v-html="CommentPan"></span>
 						</div>
 					</div>
