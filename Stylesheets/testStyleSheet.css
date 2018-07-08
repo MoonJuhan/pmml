@@ -1,3 +1,11 @@
+@font-face {
+  font-family: D2Coding;
+  src: url('PMML/Font/D2Coding-Ver1.3.2-20180524.ttc');
+}
+html {
+	font-family: D2Coding;
+}
+
 body {
 	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
