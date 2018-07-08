@@ -48,7 +48,6 @@ body {
 	height: 300px;
 }
 
-
 /* Input Field */
 
 .input-field {
@@ -135,7 +134,7 @@ body {
 }
 
 .modal-body p {
-	color: rgb(255, 255, 255;
+	color: rgb(255, 255, 255);
 }
 
 .modal-footer {
