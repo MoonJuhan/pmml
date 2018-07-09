@@ -1,11 +1,11 @@
 var GSScurl =
     'https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?';
 var entry;
-var member_list = new Array();
+var memberList = [];
 
 // Autocomplete DB
-var testob = new Object();
-testob['문주한'] = null;
+var autocompleteDB = {};
+autocompleteDB['문주한'] = null;
 
 $.getJSON(GSScurl, function(data) {
     entry = data.feed.entry;
@@ -15,9 +15,8 @@ $.getJSON(GSScurl, function(data) {
     for (var i in entry) {
         if (entry[i].title.$t.substring(0, 1) == 'A') {
             if (entry[i].title.$t != 'A1' && entry[i].title.$t != 'A2') {
-                member_list[x] = new Object();
-                member_list[x].name = entry[i].content.$t;
-                testob[member_list[x].name] = null;
+                memberList[x].name = entry[i].content.$t;
+                autocompleteDB[memberList[x].name] = null;
 
                 var y = i;
 				y++;
@@ -31,31 +30,37 @@ $.getJSON(GSScurl, function(data) {
 					
                     switch (check_a) {
                         case 'B':
-                            member_list[x].stuID = entry[y].content.$t;
+                            memberList[x].stuID = entry[y].content.$t;
                             break;
                         case 'C':
-                            member_list[x].dday = entry[y].content.$t;
+                            memberList[x].dday = entry[y].content.$t;
                             break;
                         case 'D':
-                            member_list[x].inday = entry[y].content.$t;
+                            memberList[x].enlistDay = entry[y].content.$t;
                             break;
                         case 'E':
-                            member_list[x].outday = entry[y].content.$t;
+                            memberList[x].dischargeDay = entry[y].content.$t;
                             break;
                         case 'F':
-                            member_list[x].regiment = entry[y].content.$t;
+                            memberList[x].regiment = entry[y].content.$t;
                             break;
                         case 'G':
-                            member_list[x].assignment = entry[y].content.$t;
+                            memberList[x].assignment = entry[y].content.$t;
                             break;
 						case 'H':
-                            member_list[x].CommentEtc = entry[y].content.$t;
+                            memberList[x].commentEtc = entry[y].content.$t;
+                            break;
+						case 'I':
+                            memberList[x].vacation = entry[y].content.$t;
+                            break;
+						case 'J':
+                            memberList[x].comment = entry[y].content.$t;
                             break;
 						case 'K':
-							member_list[x].department = entry[y].content.$t;
+							memberList[x].department = entry[y].content.$t;
 							break;
 						case 'L':
-							member_list[x].CommentPan = entry[y].content.$t;
+							memberList[x].commentPan = entry[y].content.$t;
 							break;
                     }
                     y++;
@@ -78,17 +83,19 @@ var app = new Vue({
         name: '이름',
         stuID: '학번',
         dday: '남은날',
-        inday: '입대일',
-        outday: '전역일',
+        enlistDay: '입대일',
+        dischargeDay: '전역일',
         regiment: '소속',
         assignment: '보직',
-		CommentEtc: '기타 코멘트',
+		commentEtc: '기타 코멘트',
 		department: '학과',
-		CommentPan: '동아리 코멘트',
+		commentPan: '동아리 코멘트',
         gagestyle: {
             width: '0%'
         },
-		remaingage: '0%'
+		remaingage: '0%',
+		vacation: '',
+		comment: ''
     },
     // 메소드는 `methods` 객체 안에 정의합니다
     methods: {
@@ -96,26 +103,28 @@ var app = new Vue({
             this.name = value;
 
             auto(); // autocomplete
-            find_member(value);
+            findMember(value);
         }
     }
 });
-var find_member = function(value) {
-    for (var i = 0; i < member_list.length; i++) {
+var findMember = function(value) {
+    for (var i = 0; i < memberList.length; i++) {
         // 각 행에대해 아래 스크립트를 실행합니다.
-        if (member_list[i].name == value) {
-            app.stuID = member_list[i].stuID;
-            app.dday = member_list[i].dday;
-            app.inday = member_list[i].inday;
-            app.outday = member_list[i].outday;
-            app.regiment = member_list[i].regiment;
-            app.assignment = member_list[i].assignment;
-			app.CommentEtc = member_list[i].CommentEtc;
-			app.department = member_list[i].department;
-			app.CommentPan = member_list[i].CommentPan;
+        if (memberList[i].name == value) {
+            app.stuID = memberList[i].stuID;
+            app.dday = memberList[i].dday;
+            app.enlistDay = memberList[i].enlistDay;
+            app.dischargeDay = memberList[i].dischargeDay;
+            app.regiment = memberList[i].regiment;
+            app.assignment = memberList[i].assignment;
+			app.commentEtc = memberList[i].commentEtc;
+			app.department = memberList[i].department;
+			app.commentPan = memberList[i].commentPan;
+			app.vacation = memberList[i].vacation;
+			app.comment = memberList[i].comment;
 
-            var strDate1 = app.inday;
-            var strDate2 = app.outday;
+            var strDate1 = app.enlistDay;
+            var strDate2 = app.dischargeDay;
             var arr1 = strDate1.split('.');
             var arr2 = strDate2.split('.');
             var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
@@ -124,9 +133,9 @@ var find_member = function(value) {
             // 날짜 차이 알아 내기
             var diff = dat2 - dat1;
             var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
-            var allday = parseInt(diff / currDay);
+            var allDay = parseInt(diff / currDay);
 
-            var percent = (allday - app.dday) / allday * 100;
+            var percent = (allDay - app.dday) / allDay * 100;
 			percent = percent.toFixed(2);
 			app.remaingage = (100 - percent).toFixed(2) + '%';
             app.gagestyle.width = percent + '%';
@@ -136,19 +145,19 @@ var find_member = function(value) {
 
 var auto = function() {
     $('input.autocomplete').autocomplete({
-        data: testob,
+        data: autocompleteDB,
         limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function() {
-			var inputdata = document.getElementById('name1').value;
+			var inputData = document.getElementById('name1').value;
         	
-            app.name = inputdata;
-            find_member(inputdata);
+            app.name = inputData;
+            findMember(inputData);
         }
     });
 };
 
 window.onload = function(){
-	if(member_list.length == 0){
+	if(memberList.length == 0){
 		app.showModal = true;	
 	}
 };
