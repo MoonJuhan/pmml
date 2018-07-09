@@ -122,6 +122,15 @@
 						
 					</div>
 				</div>
+				
+				<div class="col l4 m6 s12">
+					<div class="customcard">
+						다음 휴가 계획 :
+						<span v-html="vacation"></span>
+						<br> 남길 말 :
+						<span v-html="comment"></span>
+					</div>
+				</div>
 
 				<button id="show-modal" @click="showModal = true">Show Modal</button>
 				<!-- use the modal component, pass in the prop -->
