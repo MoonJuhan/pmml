@@ -69,7 +69,7 @@
 						</div>
 						<div>
 							동아리 코멘트 :
-							<span v-html="CommentPan"></span>
+							<span v-html="commentPan"></span>
 						</div>
 					</div>
 				</div>
@@ -84,11 +84,11 @@
 				<div class="col l4 m6 s12">
 					<div class="customcard">
 						남은날 :
-						<span v-html="dday"></span>
+						<span v-html="remainDay"></span>
 						<br> 입대일 :
-						<span v-html="inday"></span>
+						<span v-html="enlistDay"></span>
 						<br> 전역일 :
-						<span v-html="outday"></span>
+						<span v-html="dischargeDay"></span>
 					</div>
 				</div>
 
@@ -104,8 +104,8 @@
 					<div class="customcard">
 						보직 :
 						<span v-html="assignment"></span>
-						<br> 기타 코멘트 :
-						<span v-html="CommentEtc"></span>
+						<br> 보직 코멘트 :
+						<span v-html="commentEtc"></span>
 					</div>
 				</div>
 

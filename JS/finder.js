@@ -33,7 +33,7 @@ $.getJSON(GSScurl, function(data) {
 							memberList[x].stuID = entry[y].content.$t;
 							break;
 						case 'C':
-							memberList[x].dday = entry[y].content.$t;
+							memberList[x].remainDay = entry[y].content.$t;
 							break;
 						case 'D':
 							memberList[x].enlistDay = entry[y].content.$t;
@@ -82,7 +82,7 @@ var app = new Vue({
 		showModal: false,
 		name: '이름',
 		stuID: '학번',
-		dday: '남은날',
+		remainDay: '남은날',
 		enlistDay: '입대일',
 		dischargeDay: '전역일',
 		regiment: '소속',
@@ -115,7 +115,7 @@ var findMember = function(value) {
 		// 각 행에대해 아래 스크립트를 실행합니다.
 		if (memberList[i].name == value) {
 			app.stuID = memberList[i].stuID;
-			app.dday = memberList[i].dday;
+			app.remainDay = memberList[i].remainDay;
 			app.enlistDay = memberList[i].enlistDay;
 			app.dischargeDay = memberList[i].dischargeDay;
 			app.regiment = memberList[i].regiment;
@@ -138,7 +138,7 @@ var findMember = function(value) {
 			var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
 			var allDay = parseInt(diff / currDay);
 
-			var percent = (allDay - app.dday) / allDay * 100;
+			var percent = (allDay - app.remainDay) / allDay * 100;
 			percent = percent.toFixed(2);
 			app.remaingage = (100 - percent).toFixed(2) + '%';
 			app.gagestyle.width = percent + '%';
