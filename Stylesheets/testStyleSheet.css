@@ -2,6 +2,7 @@
 
 body {
 	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+	letter-spacing: 0.4px;
 	font-family: 'Nanum Gothic', sans-serif;
 }
 #app {
@@ -27,7 +28,7 @@ body {
 
 @media (min-width: 992px) {
 	.mobile-tab {
-		display:none;
+		display: none;
 	}
 }
 
