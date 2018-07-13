@@ -83,23 +83,23 @@ Vue.component('modal', {
 var app = new Vue({
 	el: '#app',
 	data: {
-		showModal: false,
 		name: '',
-		stuID: '',
-		remainDay: '',
-		enlistDay: '',
-		dischargeDay: '',
-		regiment: '',
-		assignment: '',
-		commentEtc: '',
-		department: '',
-		commentPan: '',
+		stuID: '00학번',
+		department: '무슨과일까?',
+		commentPan: '동아리에선 이런 사람 이였다',
+		regiment: '찾는 중 입니다',
+		remainDay: '얼마나 남았을까?',
+		enlistDay: '이미 갔습니다',
+		dischargeDay: '나는 돌아온다',
+		assignment: '이 사람의 보직은?',
+		commentEtc: '찾는 중 입니다',
 		gagestyle: {
 			width: '0%'
 		},
-		remaingage: '0%',
-		vacation: '',
-		comment: ''
+		remaingage: '100%',
+		vacation: '언제 휴가 나오는가',
+		comment: '할 말 있습니다!',
+		showModal: false
 	},
 	// 메소드는 `methods` 객체 안에 정의합니다
 	methods: {
@@ -107,6 +107,7 @@ var app = new Vue({
 			this.name = value;
 
 			auto(); // autocomplete
+			dataReset();
 			findMember(value);
 		},
 		personInfoResize: function() {
@@ -161,6 +162,27 @@ var auto = function() {
 			findMember(inputData);
 		}
 	});
+};
+
+var dataReset = function() {
+	app.stuID = '00학번';
+	app.department = '무슨과일까?';
+	app.commentPan = '동아리에선 이런 사람 이였다';
+
+	app.regiment = '찾는 중 입니다';
+
+	app.remainDay = '얼마나 남았을까?';
+	app.enlistDay = '이미 갔습니다';
+	app.dischargeDay = '나는 돌아온다';
+
+	app.assignment = '이 사람의 보직은?';
+	app.commentEtc = '찾는 중 입니다';
+
+	app.remaingage = '100%';
+	app.gagestyle.width = '0%';
+
+	app.vacation = '언제 휴가 나오는가';
+	app.comment = '할 말 있습니다!';
 };
 
 window.onload = function() {
