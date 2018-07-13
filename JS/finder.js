@@ -15,7 +15,11 @@ $.getJSON(GSScurl, function(data) {
 	for (var i in entry) {
 		if (entry[i].title.$t.substring(0, 1) == 'A') {
 			if (entry[i].title.$t != 'A1' && entry[i].title.$t != 'A2') {
-				memberList[x].name = entry[i].content.$t;
+				var person = {
+					name: entry[i].content.$t
+				};
+
+				memberList[x] = person;
 				autocompleteDB[memberList[x].name] = null;
 
 				var y = i;
