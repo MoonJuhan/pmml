@@ -22,6 +22,12 @@ body {
 	font-size: 1.3em;
 }
 
+@media (min-width: 992px) {
+	.mobile-tab {
+		display:none;
+	}
+}
+
 /* Contents */
 
 .customcard {

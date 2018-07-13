@@ -51,20 +51,35 @@
 					</div>
 				</nav>
 			</div>
+			<div class="nav-content mobile-tab">
+				<ul class="tabs tabs-transparent">
+					<li class="tab">
+						<a href="list.html">TestList</a>
+					</li>
+					<li class="tab">
+						<a href="study.html">TestStudy</a>
+					</li>
+					<li class="tab">
+						<a href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
+					</li>
+				</ul>
+			</div>
 		</header>
 
 		<div class="container">
 			<div class="row contents">
 				<div class="col l7 m6 s12">
 					<div class="customcard">
-						<div class="input-field"v-resize="personInfoResize">
+						<div class="input-field" v-resize="personInfoResize">
 							<input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
 							<label class="active" for="name1">이름</label>
 							<span>
-								학번 :<span v-html="stuID"></span>
+								학번 :
+								<span v-html="stuID"></span>
 							</span>
 							<span>
-								학과 :<span v-html="department"></span>
+								학과 :
+								<span v-html="department"></span>
 							</span>
 						</div>
 						<div>
@@ -119,10 +134,10 @@
 							<span v-html="gagestyle.width"></span>
 							<span class="gage2" v-html="remaingage"></span>
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 				<div class="col l4 m6 s12">
 					<div class="customcard">
 						다음 휴가 계획 :
@@ -142,8 +157,7 @@
 					<h4 slot="header">Load Fail</h4>
 					<p slot="body">
 						멤버들의 정보가 로드되지 않았습니다.
-						<br>
-						새로고침을 해보십시오.
+						<br> 새로고침을 해보십시오.
 					</p>
 				</modal>
 
@@ -183,7 +197,7 @@
 
 					<div class="modal-footer">
 						<slot name="footer">
-							<a class="waves-effect waves-light btn"  @click="$emit('close')">Close</a>
+							<a class="waves-effect waves-light btn" @click="$emit('close')">Close</a>
 						</slot>
 					</div>
 				</div>
