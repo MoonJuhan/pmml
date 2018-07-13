@@ -5,6 +5,24 @@ body {
 	letter-spacing: 0.4px;
 	font-family: 'Nanum Gothic', sans-serif;
 }
+
+@media only screen and (min-width: 1200px) {
+	html {
+		font-size: 15.5px !important;
+	}
+}
+@media only screen and (min-width: 992px) {
+	html {
+		font-size: 15px !important;
+	}
+}
+
+@media only screen and (min-width: 0) {
+	html {
+		font-size: 14.5px !important;
+	}
+}
+
 #app {
 	color: white;
 }
@@ -67,6 +85,9 @@ body {
 #name1 {
 	font-size: x-large;
 	width: 100px;
+}
+
+@media (min-width: 992px) {
 }
 
 /* Autocomplete Dropdown */
