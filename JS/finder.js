@@ -26,13 +26,13 @@ $.getJSON(GSScurl, function(data) {
 				y++;
 
 				for (var z = 0; z < 11; z++) {
-					var check_a = entry[y].title.$t.substring(0, 1);
+					var checkA = entry[y].title.$t.substring(0, 1);
 
-					if (check_a == 'A') {
+					if (checkA == 'A') {
 						z = 9;
 					}
 
-					switch (check_a) {
+					switch (checkA) {
 						case 'B':
 							memberList[x].stuID = entry[y].content.$t;
 							break;
@@ -46,7 +46,7 @@ $.getJSON(GSScurl, function(data) {
 							memberList[x].dischargeDay = entry[y].content.$t;
 							break;
 						case 'F':
-							memberList[x].regiment = entry[y].content.$t;
+							memberList[x].armyType = entry[y].content.$t;
 							break;
 						case 'G':
 							memberList[x].assignment = entry[y].content.$t;
@@ -86,8 +86,9 @@ var app = new Vue({
 		name: '',
 		stuID: '00학번',
 		department: '무슨과일까?',
-		commentPan: '동아리에선 이런 사람 이였다',
-		regiment: '찾는 중 입니다',
+		commentPan: '동아리에선 이런 사람 이었다',
+		armyType: '어디일까?',
+		regiment: '자세한 위치를 찾는 중 입니다',
 		remainDay: '얼마나 남았을까?',
 		enlistDay: '이미 갔습니다',
 		dischargeDay: '나는 돌아온다',
@@ -123,7 +124,15 @@ var findMember = function(value) {
 			app.remainDay = memberList[i].remainDay;
 			app.enlistDay = memberList[i].enlistDay;
 			app.dischargeDay = memberList[i].dischargeDay;
-			app.regiment = memberList[i].regiment;
+
+			var splitRegiment = memberList[i].armyType.split(' ');
+			var remainRegiment = '';
+			app.armyType = splitRegiment[0];
+			for (var x = 1; x < splitRegiment.length; x++) {
+				remainRegiment = remainRegiment + splitRegiment[x] + ' ';
+			}
+			app.regiment = remainRegiment;
+
 			app.assignment = memberList[i].assignment;
 			app.commentEtc = memberList[i].commentEtc;
 			app.department = memberList[i].department;
@@ -169,7 +178,7 @@ var dataReset = function() {
 	app.department = '무슨과일까?';
 	app.commentPan = '동아리에선 이런 사람 이였다';
 
-	app.regiment = '찾는 중 입니다';
+	app.armyType = '찾는 중 입니다';
 
 	app.remainDay = '얼마나 남았을까?';
 	app.enlistDay = '이미 갔습니다';
