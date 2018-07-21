@@ -37,34 +37,37 @@ $.getJSON(GSScurl, function(data) {
 							memberList[x].stuID = entry[y].content.$t;
 							break;
 						case 'C':
-							memberList[x].remainDay = entry[y].content.$t;
-							break;
-						case 'D':
 							memberList[x].enlistDay = entry[y].content.$t;
 							break;
-						case 'E':
+						case 'D':
 							memberList[x].dischargeDay = entry[y].content.$t;
 							break;
-						case 'F':
+						case 'E':
 							memberList[x].armyType = entry[y].content.$t;
 							break;
-						case 'G':
+						case 'F':
 							memberList[x].assignment = entry[y].content.$t;
 							break;
-						case 'H':
+						case 'G':
 							memberList[x].commentEtc = entry[y].content.$t;
 							break;
-						case 'I':
+						case 'H':
 							memberList[x].vacation = entry[y].content.$t;
 							break;
-						case 'J':
+						case 'I':
 							memberList[x].comment = entry[y].content.$t;
 							break;
-						case 'K':
+						case 'J':
 							memberList[x].department = entry[y].content.$t;
 							break;
-						case 'L':
+						case 'K':
 							memberList[x].commentPan = entry[y].content.$t;
+							break;
+						case 'L':
+							memberList[x].remainDay = entry[y].content.$t;
+							break;
+						case 'M':
+							memberList[x].workDay = entry[y].content.$t;
 							break;
 					}
 					y++;
@@ -92,6 +95,9 @@ var app = new Vue({
 		remainDay: '얼마나 남았을까?',
 		enlistDay: '이미 갔습니다',
 		dischargeDay: '나는 돌아온다',
+		workDay: '이 만큼 일해야 됨',
+		holiday: '이 만큼 쉬는 날',
+		shortenDay: '단축 소식이 없습니다',
 		assignment: '이 사람의 보직은?',
 		commentEtc: '찾는 중 입니다',
 		gagestyle: {
@@ -122,6 +128,8 @@ var findMember = function(value) {
 		if (memberList[i].name == value) {
 			app.stuID = memberList[i].stuID;
 			app.remainDay = memberList[i].remainDay;
+			app.workDay = memberList[i].workDay;
+			app.holiday = this.remainDay - this.workDay;
 			app.enlistDay = memberList[i].enlistDay;
 			app.dischargeDay = memberList[i].dischargeDay;
 
