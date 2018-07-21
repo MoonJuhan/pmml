@@ -25,7 +25,7 @@ $.getJSON(GSScurl, function(data) {
 				var y = i;
 				y++;
 
-				for (var z = 0; z < 11; z++) {
+				for (var z = 0; z < 12; z++) {
 					var checkA = entry[y].title.$t.substring(0, 1);
 
 					if (checkA == 'A') {
@@ -129,7 +129,7 @@ var findMember = function(value) {
 			app.stuID = memberList[i].stuID;
 			app.remainDay = memberList[i].remainDay;
 			app.workDay = memberList[i].workDay;
-			app.holiday = this.remainDay - this.workDay;
+			app.holiday = app.remainDay - app.workDay;
 			app.enlistDay = memberList[i].enlistDay;
 			app.dischargeDay = memberList[i].dischargeDay;
 
@@ -192,6 +192,10 @@ var dataReset = function() {
 	app.enlistDay = '이미 갔습니다';
 	app.dischargeDay = '나는 돌아온다';
 
+	app.workDay = '이 만큼 일해야 됨';
+	app.holiday = '이 만큼 쉬는 날';
+	app.shortenDay = '단축 소식이 없습니다';
+	
 	app.assignment = '이 사람의 보직은?';
 	app.commentEtc = '찾는 중 입니다';
 
