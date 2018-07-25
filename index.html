@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
 	<link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
-
+	
 	<title>PMML</title>
 	<!-- Vue.js -->
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -74,7 +74,7 @@
 			<div class="row contents">
 				<div class="col l3 m3 s12">
 					<div class="customcard">
-                      <span>입력</span>
+                      <span class="cardTitle">입력</span>
 						<div class="input-field" v-resize="personInfoResize">
 							<input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
 							<label class="active" for="name1">이름</label>
@@ -87,7 +87,7 @@
               
 <div class="col l5 m5 s12">
 					<div class="customcard">
-                      <span>학교 관련</span>
+                      <span class="cardTitle">학교 관련</span>
                       <br>
 						<span v-html="stuID"></span>
 							<span v-html="department"></span>
@@ -100,7 +100,7 @@
               
 				<div class="col l4 m4 s12">
 					<div class="customcard">
-						<span>소속</span>
+						<span class="cardTitle">소속</span>
 						<br>
 						<span v-html="armyType"></span>
 						<br>
@@ -110,7 +110,7 @@
 
 				<div class="col l4 m4 s12">
 					<div class="customcard">
-                     <span>날짜</span>
+                     <span class="cardTitle">날짜</span>
                       <br>
 						남은날 :
 						<span v-html="remainDay"></span>
@@ -123,7 +123,7 @@
 
 				<div class="col l4 m4 s12">
 					<div class="customcard">
-                      <span>날짜2</span>
+                      <span class="cardTitle">날짜2</span>
                       <br>
 						일과 일수 :
 						<span v-html="workDay"></span>
@@ -136,7 +136,7 @@
 
 				<div class="col l4 m4 s12">
 					<div class="customcard">
-                      <span>보직</span>
+                      <span class="cardTitle">보직</span>
                       <br>
 						<span v-html="assignment"></span>
 						<br> 보직 코멘트 :
@@ -146,7 +146,7 @@
 
 				<div class="col l6 m6 s12">
 					<div class="customcard">
-						<span>진행도</span>
+						<span class="cardTitle">진행도</span>
 						<div class="progress">
 							<div class="determinate" v-bind:style="gagestyle"></div>
 						</div>
@@ -160,7 +160,7 @@
 
 				<div class="col l6 m6 s12">
 					<div class="customcard">
-                      <span>기타</span>
+                      <span class="cardTitle">기타</span>
                       <br>
 						다음 휴가 계획 :
 						<span v-html="vacation"></span>
