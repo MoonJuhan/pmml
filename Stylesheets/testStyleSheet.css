@@ -87,8 +87,7 @@ body {
 }
 
 #name1 {
-	font-size: x-large;
-	width: 100px;
+	font-size: large;
 }
 
 @media (min-width: 992px) {
@@ -97,7 +96,6 @@ body {
 /* Autocomplete Dropdown */
 
 .dropdown-content {
-	width: 100px;
 	background: rgb(66, 80, 91);
 }
 
