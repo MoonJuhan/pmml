@@ -72,25 +72,35 @@
 
 		<div class="container">
 			<div class="row contents">
-				<div class="col l7 m7 s12">
+				<div class="col l3 m3 s12">
 					<div class="customcard">
+                      <span>입력</span>
 						<div class="input-field" v-resize="personInfoResize">
 							<input id="name1" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
 							<label class="active" for="name1">이름</label>
-							<span v-html="stuID"></span>
-							<span v-html="department"></span>
+							
 
 						</div>
-						<div>
+						
+					</div>
+				</div>
+              
+<div class="col l5 m5 s12">
+					<div class="customcard">
+                      <span>학교 관련</span>
+                      <br>
+						<span v-html="stuID"></span>
+							<span v-html="department"></span>
+                      <div>
 							동아리 코멘트 :
 							<span v-html="commentPan"></span>
 						</div>
 					</div>
 				</div>
-
-				<div class="col l5 m5 s12">
+              
+				<div class="col l4 m4 s12">
 					<div class="customcard">
-						소속
+						<span>소속</span>
 						<br>
 						<span v-html="armyType"></span>
 						<br>
@@ -100,6 +110,8 @@
 
 				<div class="col l4 m4 s12">
 					<div class="customcard">
+                     <span>날짜</span>
+                      <br>
 						남은날 :
 						<span v-html="remainDay"></span>
 						<br> 입대일 :
@@ -109,8 +121,10 @@
 					</div>
 				</div>
 
-				<div class="col l3 m4 s12">
+				<div class="col l4 m4 s12">
 					<div class="customcard">
+                      <span>날짜2</span>
+                      <br>
 						일과 일수 :
 						<span v-html="workDay"></span>
 						<br> 휴일 수 :
@@ -120,9 +134,10 @@
 					</div>
 				</div>
 
-				<div class="col l5 m5 s12">
+				<div class="col l4 m4 s12">
 					<div class="customcard">
-						보직 :
+                      <span>보직</span>
+                      <br>
 						<span v-html="assignment"></span>
 						<br> 보직 코멘트 :
 						<span v-html="commentEtc"></span>
@@ -131,7 +146,7 @@
 
 				<div class="col l6 m6 s12">
 					<div class="customcard">
-						진행도
+						<span>진행도</span>
 						<div class="progress">
 							<div class="determinate" v-bind:style="gagestyle"></div>
 						</div>
@@ -145,6 +160,8 @@
 
 				<div class="col l6 m6 s12">
 					<div class="customcard">
+                      <span>기타</span>
+                      <br>
 						다음 휴가 계획 :
 						<span v-html="vacation"></span>
 						<br> 남길 말 :
@@ -152,7 +169,7 @@
 					</div>
 				</div>
 
-				<button id="show-modal" @click="showModal = true">Show Modal</button>
+				
 				<!-- use the modal component, pass in the prop -->
 				<modal v-if="showModal" @close="showModal = false">
 					<!--
