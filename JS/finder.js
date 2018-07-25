@@ -186,7 +186,8 @@ var dataReset = function() {
 	app.department = '무슨과일까?';
 	app.commentPan = '동아리에선 이런 사람 이였다';
 
-	app.armyType = '찾는 중 입니다';
+	app.armyType = '어디일까?';
+	app.regiment = '자세한 위치를 찾는 중 입니다';
 
 	app.remainDay = '얼마나 남았을까?';
 	app.enlistDay = '이미 갔습니다';
@@ -195,7 +196,7 @@ var dataReset = function() {
 	app.workDay = '이 만큼 일해야 됨';
 	app.holiday = '이 만큼 쉬는 날';
 	app.shortenDay = '단축 소식이 없습니다';
-	
+
 	app.assignment = '이 사람의 보직은?';
 	app.commentEtc = '찾는 중 입니다';
 
