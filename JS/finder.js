@@ -173,7 +173,7 @@ var auto = function() {
 		data: autocompleteDB,
 		limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
 		onAutocomplete: function() {
-			var inputData = document.getElementById('name1').value;
+			var inputData = document.getElementById('inputName').value;
 
 			app.name = inputData;
 			findMember(inputData);
