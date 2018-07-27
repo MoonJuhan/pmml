@@ -45,11 +45,6 @@ body {
 }
 
 /* Contents */
-
-.contents {
-	margin: 1rem;
-}
-
 .customcard {
 	transition: box-shadow 0.25s;
 	padding: 16px;
@@ -78,6 +73,27 @@ body {
 	height: 300px;
 }
 
+@media screen and (min-width: 992px) {
+	.contents {
+		margin: 1rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contents {
+		margin: 1rem;
+	}
+	
+	.customcard {
+		margin: 0 0 0.8rem 0;
+		height: auto;
+	}
+
+	#inputCard {
+		    height: 9em;
+	}
+}
+
 /* Input Field */
 
 .input-field {
@@ -99,7 +115,7 @@ body {
 	transform: translateY(-60%) !important;
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
 }
 
 /* Autocomplete Dropdown */
@@ -120,19 +136,19 @@ body {
 
 /* modal css */
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
 	.modal-container {
 		width: 700px;
 	}
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
 	.modal-container {
 		width: 70%;
 	}
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 	.modal-container {
 		width: 80%;
 	}
