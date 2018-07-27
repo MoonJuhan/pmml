@@ -52,9 +52,13 @@ body {
 
 /* Contents */
 
+.contents {
+	margin: 1rem;
+}
+
 .customcard {
 	transition: box-shadow 0.25s;
-	padding: 16px 24px;
+	padding: 16px;
 	margin: 0.5rem 0 1rem 0;
 	border-radius: 2px;
 	height: 9.8em;
@@ -67,9 +71,11 @@ body {
 	font-size: 1.4em;
 }
 
-.contents {
-	padding: 5px 0px 10px 0px;
+.cardContents {
+	padding: 2px 4px;
 }
+
+
 
 .gage2 {
 	float: right;
@@ -84,10 +90,21 @@ body {
 
 .input-field {
 	height: 45px;
+	margin-top: initial!important;
+	padding: 8px;
 }
 
-#name1 {
+#inputName {
 	font-size: large;
+}
+
+#nameLabel {
+	padding: inherit;
+}
+
+.input-field label:not(.label-icon).active {
+    -webkit-transform: translateY(-60%)!important;
+    transform: translateY(-60%)!important;
 }
 
 @media (min-width: 992px) {
