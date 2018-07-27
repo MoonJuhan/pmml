@@ -6,28 +6,15 @@ body {
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
-@media only screen and (min-width: 1200px) {
-	html {
-		font-size: 15.5px !important;
-	}
-}
-@media only screen and (min-width: 992px) {
-	html {
-		font-size: 15px !important;
-	}
-}
-
-@media only screen and (min-width: 0) {
-	html {
-		font-size: 14.5px !important;
-	}
-}
-
 #app {
 	color: white;
 }
 
 /* Header */
+.navbar-fixed {
+	height: 3.5em !important;
+}
+
 .navfeature {
 	background: rgba(89, 97, 100, 0.8);
 }
@@ -44,9 +31,16 @@ body {
 	font-size: 1.3em;
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
 	.mobile-tab {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.navfeature {
+		height: inherit;
+		line-height: 3.5em;
 	}
 }
 
@@ -75,8 +69,6 @@ body {
 	padding: 2px 4px;
 }
 
-
-
 .gage2 {
 	float: right;
 }
@@ -90,7 +82,7 @@ body {
 
 .input-field {
 	height: 45px;
-	margin-top: initial!important;
+	margin-top: initial !important;
 	padding: 8px;
 }
 
@@ -103,8 +95,8 @@ body {
 }
 
 .input-field label:not(.label-icon).active {
-    -webkit-transform: translateY(-60%)!important;
-    transform: translateY(-60%)!important;
+	-webkit-transform: translateY(-60%) !important;
+	transform: translateY(-60%) !important;
 }
 
 @media (min-width: 992px) {
