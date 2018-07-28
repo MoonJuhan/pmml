@@ -83,14 +83,14 @@ body {
 	.contents {
 		margin: 1rem;
 	}
-	
+
 	.customcard {
 		margin: 0 0 0.8rem 0;
 		height: auto;
 	}
 
 	#inputCard {
-		    height: 9em;
+		height: 9em;
 	}
 }
 
