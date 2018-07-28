@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
 
+html {
+	height: 100%;
+}
+
 body {
 	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
 	letter-spacing: 0.4px;
 	font-family: 'Nanum Gothic', sans-serif;
+	height: inherit;
 }
 
 #app {
@@ -230,4 +235,10 @@ body {
 .page-footer {
 	background-color: rgba(90, 98, 101, 0.8) !important;
 	padding-top: 0px !important;
+}
+
+@media screen and (min-width: 600px) {
+	#app {
+		height: calc(100vh - 50px);
+	}
 }
