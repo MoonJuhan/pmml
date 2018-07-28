@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-	<link href="/PMML/Stylesheets/testStyleSheet.css" type="text/css" rel="stylesheet" />
+	<link href="/PMML/Stylesheets/MainStyleSheet.css" type="text/css" rel="stylesheet" />
 
 	<title>PMML</title>
 	<!-- Vue.js -->
@@ -23,9 +23,6 @@
 	<!-- Vue-Router -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
 
-	<!-- Vuetify.js -->
-	<!-- <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet"> 스타일시트 충돌 -->
-	<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
 </head>
 
 <body>
@@ -57,11 +54,11 @@
 					<li class="tab">
 						<a class="active" href="https://moonjuhan.github.io/PMML/">Finder</a>
 					</li>
-					
+
 					<li class="tab">
 						<a href="study.html">About</a>
 					</li>
-					
+
 					<li class="tab">
 						<a target="_self" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
 					</li>
@@ -76,7 +73,7 @@
 						<span class="cardTitle">입력</span>
 						<div class="input-field" v-resize="personInfoResize">
 							<input id="inputName" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
-							<label id ="nameLabel" class="active" for="inputName">이름</label>
+							<label id="nameLabel" class="active" for="inputName">이름</label>
 						</div>
 					</div>
 				</div>
@@ -154,12 +151,14 @@
 				<div class="col l6 m6 s12">
 					<div class="customcard">
 						<span class="cardTitle">진행도</span>
-						<div class="progress">
-							<div class="determinate" v-bind:style="gagestyle"></div>
-						</div>
-						<div>
-							<span v-html="gagestyle.width"></span>
-							<span class="gage2" v-html="remaingage"></span>
+						<div class="cardContents">
+							<div class="progress">
+								<div class="determinate" v-bind:style="gagestyle"></div>
+							</div>
+							<div>
+								<span v-html="gagestyle.width"></span>
+								<span class="gage2" v-html="remaingage"></span>
+							</div>
 						</div>
 
 					</div>
@@ -180,10 +179,6 @@
 
 				<!-- use the modal component, pass in the prop -->
 				<modal v-if="showModal" @close="showModal = false">
-					<!--
-      you can use custom content here to overwrite
-      default content
-    -->
 					<h4 slot="header">Load Fail</h4>
 					<p slot="body">
 						멤버들의 정보가 로드되지 않았습니다.
@@ -192,6 +187,7 @@
 				</modal>
 
 			</div>
+			
 			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
 		</div>
 	</div>
@@ -208,6 +204,7 @@
 </body>
 
 <script src="/PMML/JS/finder.js"></script>
+	
 <!-- template for the modal component -->
 <script type="text/x-template" id="modal-template">
 	<transition name="modal">
