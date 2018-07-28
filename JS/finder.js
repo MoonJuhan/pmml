@@ -116,9 +116,6 @@ var app = new Vue({
 			auto(); // autocomplete
 			dataReset();
 			findMember(value);
-		},
-		personInfoResize: function() {
-			// 리사이즈
 		}
 	}
 });
