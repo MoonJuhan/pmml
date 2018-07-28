@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+
+html {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+	letter-spacing: 0.4px;
+	font-family: 'Nanum Gothic', sans-serif;
+	height: inherit;
+}
+
+#app {
+	color: white;
+}
+
+/* Header */
+.navbar-fixed {
+	height: 3.5em !important;
+}
+
+.navfeature {
+	background: rgba(89, 97, 100, 0.8);
+}
+
+.brand-logo {
+	padding-left: 15px;
+}
+
+#nav {
+	padding-right: 15px;
+}
+
+.navmenu {
+	font-size: 1.3em;
+}
+
+@media screen and (min-width: 992px) {
+	.mobile-tab {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.navfeature {
+		height: inherit;
+		line-height: 3.5em;
+	}
+}
+
+/* Contents */
+.aboutCard {
+	transition: box-shadow 0.25s;
+	padding: 16px;
+	margin: 0.5rem 0 1rem 0;
+	border-radius: 2px;
+	height: 30em;
+	background: rgba(0, 0, 0, 0.23);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+		0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.cardTitle {
+	font-size: 1.4em;
+}
+
+.cardContents {
+	padding: 2px 4px;
+}
+
+.row {
+      margin-bottom: initial;
+}
+
+@media screen and (min-width: 992px) {
+	.contents {
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contents {
+		margin: 1rem;
+	}
+
+	.customcard {
+		margin: 0 0 0.8rem 0;
+		height: auto;
+	}
+
+	#inputCard {
+		height: 9em;
+	}
+}
+
+
+
+/* Footer */
+.page-footer {
+	background-color: rgba(90, 98, 101, 0.8) !important;
+	padding-top: 0px !important;
+}
+
