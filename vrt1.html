@@ -26,15 +26,17 @@
 			<router-link to="/vrt">Go to vrt</router-link>
 		</p>
 		<router-view></router-view>
+		
+		<script type="text/x-template" id="vueroutertest">
+	<span v-html="armyType"></span>
+	<br>
+	<span v-html="regiment"></span>	
+	</script>
 	</div>
 
 </body>
 <script src="/PMML/vrouter.js"></script>
 	
-	<script type="text/x-template" id="vueroutertest">
-	<span v-html="armyType"></span>
-	<br>
-	<span v-html="regiment"></span>	
-	</script>
+	
 	
 </html>
