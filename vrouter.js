@@ -16,15 +16,15 @@ var router = new VueRouter({
 	routes: [
 		{
 			path: '/foo',
-			components: body1
+			component: body1
 		},
 		{
 			path: '/bar',
-			components: body2
+			component: body2
 		},
 		{
 			path: '/vrt',
-			components: body3
+			component: body3
 		}
 	]
 });
