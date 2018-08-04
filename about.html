@@ -15,7 +15,9 @@
 
 	<!-- Materialize JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-
+	
+	<!-- Vue-Router -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
 </head>
 
 <body>
@@ -65,11 +67,15 @@
 					<div class="aboutCard">
 						<span class="cardTitle">About</span>
 						<div class="cardContents">
-							this is pmml!
+							<router-link to="/foo">Go to Foo</router-link>
+							<router-link to="/bar">Go to Bar</router-link>
 						</div>
 					</div>
 				</div>
-
+				
+				<router-view></router-view>
+				
+<!--
 				<div class="col l12 m12 s12">
 					<div class="aboutCard">
 						<span class="cardTitle">About</span>
@@ -78,6 +84,7 @@
 						</div>
 					</div>
 				</div>
+-->			
 			</div>
 
 		</div>
