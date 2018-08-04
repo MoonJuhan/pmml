@@ -43,6 +43,9 @@
 								<a class="navmenu" href="about.html">About</a>
 							</li>
 							<li>
+								<a class="navmenu" href="vrt1.html">VRT1</a>
+							</li>
+							<li>
 								<a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
 							</li>
 						</ul>
@@ -173,16 +176,12 @@
 							<br> 남길 말 :
 							<span v-html="comment"></span>
 							<br>
-							<router-link to="/foo">Go to Foo</router-link>
-							<router-link to="/bar">Go to Bar</router-link>
-							<router-link to="/vrt">Go to VRT</router-link>
 						</div>
 
 					</div>
 				</div>
 
 				
-				<router-view></router-view>
 				<!-- use the modal component, pass in the prop -->
 				<modal v-if="showModal" @close="showModal = false">
 					<h4 slot="header">Load Fail</h4>
