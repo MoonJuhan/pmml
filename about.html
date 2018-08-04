@@ -71,6 +71,7 @@
 						<div class="cardContents">
 							<router-link to="/foo">Go to Foo</router-link>
 							<router-link to="/bar">Go to Bar</router-link>
+							<router-link to="/vrt">Go to VRT</router-link>
 						</div>
 					</div>
 				</div>
@@ -103,4 +104,19 @@
 
 </body>
 <script src="/PMML/vrouter.js"></script>
+	
+	<script type="text/x-template" id="vueroutertest">
+	<div class="col l4 m4 s12">
+					<div class="customcard">
+						<span class="cardTitle">소속</span>
+						<div class="cardContents">
+							<span v-html="armyType"></span>
+							<br>
+							<span v-html="regiment"></span>
+						</div>
+
+					</div>
+				</div>
+	</script>
+	
 </html>
