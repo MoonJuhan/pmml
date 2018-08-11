@@ -37,16 +37,16 @@
 						</a>
 						<ul id="nav" class="hide-on-med-and-down right">
 							<li>
-								<a class="navmenu" href="#finder">Finder</a>
+								<a class="navmenu" href="index.html">Finder</a>
 							</li>
 							<li>
-								<a class="navmenu" href="#about">About</a>
+								<a class="navmenu" href="about.html">About</a>
 							</li>
 							<li>
 								<a class="navmenu" href="vrt1.html">VRT1</a>
 							</li>
 							<li>
-								<a class="navmenu" target="_self" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
+								<a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
 							</li>
 						</ul>
 					</div>
@@ -68,6 +68,9 @@
 				</ul>
 			</div>
 		</header>
+		
+		<div id="finder" class="col s12">Finder</div>
+    	<div id="about" class="col s12">Test 2</div>
 		
 		<div class="container">
 			<div class="row contents">
@@ -194,35 +197,6 @@
 			</div>
 			
 			<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
-		</div>
-		
-		<div id="about" class="container">
-			<div class="row contents">
-				<div class="col l12 m12 s12">
-					<div class="aboutCard">
-						<span class="cardTitle">About</span>
-						<div class="cardContents">
-							<router-link to="/foo">Go to Foo</router-link>
-							<router-link to="/bar">Go to Bar</router-link>
-							<router-link to="/vrt">Go to VRT</router-link>
-						</div>
-					</div>
-				</div>
-				
-				<router-view></router-view>
-				
-<!--
-				<div class="col l12 m12 s12">
-					<div class="aboutCard">
-						<span class="cardTitle">About</span>
-						<div class="cardContents">
-							this is pmml!
-						</div>
-					</div>
-				</div>
--->			
-			</div>
-
 		</div>
 	</div>
 
