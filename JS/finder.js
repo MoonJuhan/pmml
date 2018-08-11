@@ -25,7 +25,7 @@ $.getJSON(GSScurl, function(data) {
 				var y = i;
 				y++;
 
-				for (var z = 0; z < 12; z++) {
+				for (var z = 0; z < 13; z++) {
 					var checkA = entry[y].title.$t.substring(0, 1);
 
 					if (checkA == 'A') {
@@ -69,6 +69,9 @@ $.getJSON(GSScurl, function(data) {
 						case 'M':
 							memberList[x].workDay = entry[y].content.$t;
 							break;
+						case 'N':
+							memberList[x].shortenDay = entry[y].content.$t;
+							break;
 					}
 					y++;
 				}
@@ -97,7 +100,7 @@ var app = new Vue({
 		dischargeDay: '나는 돌아온다',
 		workDay: '이 만큼 일해야 됨',
 		holiday: '이 만큼 쉬는 날',
-		shortenDay: '단축 소식이 없습니다',
+		shortenDay: '이 만큼 이득봄!',
 		assignment: '이 사람의 보직은?',
 		commentEtc: '찾는 중 입니다',
 		gagestyle: {
@@ -127,6 +130,7 @@ var findMember = function(value) {
 			app.remainDay = memberList[i].remainDay;
 			app.workDay = memberList[i].workDay;
 			app.holiday = app.remainDay - app.workDay;
+			app.shortenDay = memberList[i].shortenDay;
 			app.enlistDay = memberList[i].enlistDay;
 			app.dischargeDay = memberList[i].dischargeDay;
 
@@ -192,7 +196,7 @@ var dataReset = function() {
 
 	app.workDay = '이 만큼 일해야 됨';
 	app.holiday = '이 만큼 쉬는 날';
-	app.shortenDay = '단축 소식이 없습니다';
+	app.shortenDay = '이 만큼 이득봄!';
 
 	app.assignment = '이 사람의 보직은?';
 	app.commentEtc = '찾는 중 입니다';
