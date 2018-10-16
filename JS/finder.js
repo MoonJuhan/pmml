@@ -29,7 +29,7 @@ $.getJSON(GSScurl, function(data) {
 					var checkA = entry[y].title.$t.substring(0, 1);
 
 					if (checkA == 'A') {
-						z = 9;
+						z = 13;
 					}
 
 					switch (checkA) {
