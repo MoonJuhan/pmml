@@ -9,10 +9,16 @@ body {
 	letter-spacing: 0.4px;
 	font-family: 'Nanum Gothic', sans-serif;
 	height: inherit;
+
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
 }
 
 #app {
 	color: white;
+	flex: 1 0 auto;
 }
 
 /* Header */
@@ -235,10 +241,4 @@ body {
 .page-footer {
 	background-color: rgba(90, 98, 101, 0.8) !important;
 	padding-top: 0px !important;
-}
-
-@media screen and (min-width: 600px) {
-	#app {
-		height: calc(100vh - 50px);
-	}
 }
