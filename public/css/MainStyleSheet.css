@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
+
+html {
+	height: 100%;
+}
+
+body {
+	background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+	letter-spacing: 0.4px;
+	font-family: 'Nanum Gothic', sans-serif;
+	height: inherit;
+}
+
+#app {
+	color: white;
+}
+
+/* Header */
+.navbar-fixed {
+	height: 3.5em !important;
+}
+
+.navfeature {
+	background: rgba(89, 97, 100, 0.8);
+}
+
+.brand-logo {
+	padding-left: 15px;
+}
+
+#nav {
+	padding-right: 15px;
+}
+
+.navmenu {
+	font-size: 1.3em;
+}
+
+@media screen and (min-width: 992px) {
+	.mobile-tab {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.navfeature {
+		height: inherit;
+		line-height: 3.5em;
+	}
+}
+
+/* Contents */
+.customcard {
+	transition: box-shadow 0.25s;
+	padding: 16px;
+	margin: 0.5rem 0 1rem 0;
+	border-radius: 2px;
+	height: 9.8em;
+	background: rgba(0, 0, 0, 0.23);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+		0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.cardTitle {
+	font-size: 1.4em;
+}
+
+.cardContents {
+	padding: 2px 4px;
+}
+
+.gage2 {
+	float: right;
+}
+
+#googlesheet {
+	width: 100%;
+	height: 300px;
+}
+
+@media screen and (min-width: 992px) {
+	.contents {
+		margin: 1rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contents {
+		margin: 1rem;
+	}
+
+	.customcard {
+		margin: 0 0 0.8rem 0;
+		height: auto;
+	}
+
+	#inputCard {
+		height: 9em;
+	}
+}
+
+/* Input Field */
+
+.input-field {
+	height: 45px;
+	margin-top: initial !important;
+	padding: 8px;
+}
+
+#inputName {
+	font-size: large;
+}
+
+#nameLabel {
+	padding: inherit;
+}
+
+.input-field label:not(.label-icon).active {
+	-webkit-transform: translateY(-60%) !important;
+	transform: translateY(-60%) !important;
+}
+
+@media screen and (min-width: 992px) {
+}
+
+/* Autocomplete Dropdown */
+
+.dropdown-content {
+	background: rgb(66, 80, 91);
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+	background: rgba(66, 80, 91, 0.8);
+	color: hsla(206, 16%, 70%, 1) !important;
+}
+
+.autocomplete-content li .highlight {
+	color: white !important;
+}
+
+/* modal css */
+
+@media screen and (min-width: 992px) {
+	.modal-container {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.modal-container {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.modal-container {
+		width: 80%;
+	}
+}
+
+.modal-mask {
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: table;
+	transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.modal-container {
+	margin: 0px auto;
+	background-color: rgba(45, 53, 59, 0.8);
+	border-radius: 2px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+	transition: all 0.3s ease;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h4 {
+	padding: 20px 30px;
+	margin-top: 0;
+	color: rgb(255, 255, 255);
+}
+
+.modal-body {
+	padding: 0px 30px;
+	margin: 20px 0;
+}
+
+.modal-body p {
+	color: rgb(255, 255, 255);
+}
+
+.modal-footer {
+	padding: 0px 30px 20px 30px;
+	text-align: right;
+}
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+	opacity: 0;
+}
+
+.modal-leave-active {
+	opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.btn {
+	background-color: #f16262 !important;
+}
+
+/* Footer */
+.page-footer {
+	background-color: rgba(90, 98, 101, 0.8) !important;
+	padding-top: 0px !important;
+}
+
+@media screen and (min-width: 600px) {
+	#app {
+		height: calc(100vh - 50px);
+	}
+}
