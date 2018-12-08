@@ -33,6 +33,17 @@ body {
 .brand-logo {
 	padding-left: 15px;
 }
+@media only screen and (min-width: 992px){
+	.pmml-logo {
+		margin: 5px;
+	}
+}
+
+@media only screen and (max-width: 992px){
+	.pmml-logo {
+		width: 100px;
+	}
+}
 
 #nav {
 	padding-right: 15px;
