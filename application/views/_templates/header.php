@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
 	<!--Stylesheet-->
-	<link href="<?php echo URL; ?>public/css/MainStyleSheet.css" rel="stylesheet">
+	<link href="<?php echo URL; ?>public/css/MainStyleSheet.css?ver=5" rel="stylesheet">
 
 	<title>PMML</title>
 
@@ -29,18 +29,18 @@
 			<div class="navbar-fixed">
 				<nav class="navfeature">
 					<div class="container nav-wrapper">
-						<a href="/" class="waves-effect waves-light brand-logo">
-							<span class="pmml-logo">PMML</span>
+						<a href="/" class="brand-logo">
+							<img src="<?php echo URL; ?>public/img/logo_pmml2.png" class="pmml-logo">
 						</a>
 						<ul id="nav" class="hide-on-med-and-down right">
 							<li>
-								<a class="navmenu" href="/">Finder</a>
+								<a class="waves-effect waves-light navmenu" href="/">Finder</a>
 							</li>
 							<li>
-								<a class="navmenu" href="/about">About</a>
+								<a class="waves-effect waves-light navmenu" href="/about">About</a>
 							</li>
 							<li>
-								<a class="navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
+								<a class="waves-effect waves-light navmenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
 							</li>
 						</ul>
 					</div>
