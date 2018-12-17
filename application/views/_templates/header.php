@@ -30,7 +30,7 @@
 			<div class="navbar-fixed">
 				<nav class="navfeature">
 					<div class="container nav-wrapper">
-						<a href="/" class="brand-logo">
+						<a href="/" class="image-logo">
 							<img src="<?php echo URL; ?>public/img/logo_pmml2.png" class="pmml-logo">
 						</a>
 						<ul id="nav" class="hide-on-med-and-down right">
@@ -49,6 +49,7 @@
 			</div>
 
 			<div class="nav-content mobile-tab">
+				<!--
 				<ul class="tabs tabs-transparent">
 					<li class="tab">
 						<a class="active" href="/">Finder</a>
@@ -62,7 +63,7 @@
 						<a target="_self" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing">Edit</a>
 					</li>
 				</ul>
-
+-->
 				<ul class="mobile-nav">
 					<li class="mobile-menu">
 						<a class="waves-effect waves-light" href="/">Finder</a>
