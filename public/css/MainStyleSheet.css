@@ -66,6 +66,37 @@ body {
 	}
 }
 
+.mobile-nav {
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 48px;
+	width: 100%;
+	background-color: transparent;
+	margin: 0 auto;
+	white-space: nowrap;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.mobile-nav .mobile-menu {
+	display: inline-block;
+	text-align: center;
+	line-height: 48px;
+	height: 48px;
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
+.mobile-nav .mobile-menu a {
+	color: #fff;
+}
+
 /* Contents */
 .customcard {
 	transition: box-shadow 0.25s;
@@ -75,7 +106,7 @@ body {
 	height: 9.8em;
 	background: rgba(0, 0, 0, 0.23);
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-		0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .cardTitle {
@@ -222,13 +253,13 @@ body {
 	text-align: right;
 }
 /*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
+* The following styles are auto-applied to elements with
+* transition="modal" when their visibility is toggled
+* by Vue.js.
+*
+* You can easily play with the modal transition by editing
+* these styles.
+*/
 
 .modal-enter {
 	opacity: 0;
