@@ -149,9 +149,9 @@ var app = new Vue({
 		remainDay: '얼마나 남았을까?',
 		enlistDay: '이미 갔습니다',
 		dischargeDay: '나는 돌아온다',
-		workDay: '이 만큼 일해야 됨',
-		holiday: '이 만큼 쉬는 날',
-		shortenDay: '이 만큼 이득봄!',
+		workDay: '언제 일과 끝남',
+		holiday: '사실 의미없음',
+		shortenDay: '이득봄!',
 		assignment: '이 사람의 보직은?',
 		commentEtc: '찾는 중 입니다',
 		gagestyle: {
