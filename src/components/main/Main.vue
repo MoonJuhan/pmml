@@ -6,53 +6,108 @@
       <v-flex xs0 lg1 xl1></v-flex>
 
       <v-flex xs12 lg10 xl10>
-        <v-container>
+        <v-container class="contentsDiv">
           <v-layout row wrap>
             <v-flex xs12 lg3 xl3>
               <v-card class="contentsCard">
-                <h1>{{ name }}</h1>
+                <div class="cardTitle">입력</div>
+                <div class="input-field">
+                  <input id="inputName" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
+                  <label id="nameLabel" class="active" for="inputName">이름</label>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg5 xl5>
               <v-card class="contentsCard">
-                <h1>{{ stuID }}</h1>
+                <div class="cardTitle">학교 관련</div>
+                <div class="cardContents">
+                  <span v-html="stuID"></span>
+                  <span v-html="department"></span>
+                  <div>
+                    동아리 코멘트 :
+                    <span v-html="commentPan"></span>
+                  </div>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg4 xl4>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">소속</div>
+                <div class="cardContents">
+                  <span v-html="armyType"></span>
+                  <br>
+                  <span v-html="regiment"></span>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg4 xl4>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">날짜</div>
+                <div class="cardContents">
+                  남은날 :
+                  <span v-html="remainDay"></span>
+                  <br> 입대일 :
+                  <span v-html="enlistDay"></span>
+                  <br> 전역일 :
+                  <span v-html="dischargeDay"></span>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg4 xl4>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">날짜</div>
+                <div class="cardContents">
+                  일과 일수 :
+                  <span v-html="workDay"></span>
+                  <br> 휴일 수 :
+                  <span v-html="holiday"></span>
+                  <br> 단축 일수 :
+                  <span v-html="shortenDay"></span>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg4 xl4>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">보직</div>
+                <div class="cardContents">
+
+                  <span v-html="assignment"></span>
+                  <br> 보직 코멘트 :
+                  <span v-html="commentEtc"></span>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg6 xl6>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">진행도</div>
+                <div class="cardContents">
+                  <div class="progress">
+                    <div class="determinate" v-bind:style="gagestyle"></div>
+                  </div>
+                  <div>
+                    <span v-html="gagestyle.width"></span>
+                    <span class="gage2" v-html="remaingage"></span>
+                  </div>
+                </div>
               </v-card>
             </v-flex>
 
             <v-flex xs12 lg6 xl6>
               <v-card class="contentsCard">
-                <h1>card</h1>
+                <div class="cardTitle">기타</div>
+                <div class="cardContents">
+                  다음 휴가 계획 :
+                  <span v-html="vacation"></span>
+                  <br> 남길 말 :
+                  <span v-html="comment"></span>
+                  <br>
+                </div>
               </v-card>
             </v-flex>
           </v-layout>
@@ -246,10 +301,30 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.contentsDiv{
+  width: 95%;
+}
 .contentsCard {
   margin-left : 1rem;
   margin-right : 1rem;
   margin-bottom: 1rem;
   height: 9.8rem;
+  text-align: left;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.23);
+}
+
+.cardTitle {
+  padding-top: 10px;
+  padding-left: 10px;
+	font-size: 1.4em;
+}
+
+.cardContents {
+	padding: 2px 4px;
+}
+
+.gage2 {
+	float: right;
 }
 </style>
