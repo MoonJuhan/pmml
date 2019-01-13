@@ -6,7 +6,9 @@
 
 
       <div class="logoDiv">
-        <v-btn class="logoImg" flat href="/"><h1 class="navMenuText">PMML</h1></v-btn>
+        <v-btn class="logoBtn" href="/" flat>
+          <img src="../assets/logo_pmml.png" class="logoImg">
+        </v-btn>
       </div>
 
       <v-spacer></v-spacer>
@@ -62,10 +64,10 @@ export default {
   height: 100%;
 }
 
-.logoImg {
-  border-style: none;
+.logoBtn {
+  padding: 0;
+  margin: 0px;
   height: 100%;
-  margin: 0;
 }
 
 .navMenuVar {
