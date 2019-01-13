@@ -6,4 +6,5 @@ Develop with Goorm IDE and Atom Editer
 
 Start : 18.04 ~ ing
 ## 개발 현황
+18.12 : 아파치, PHP 등을 이용해 서버에 올리는 것을 시도하고 있습니다.
 19.01 : Vue.js를 이용하여 프로젝트를 재구성 하고 있습니다.
