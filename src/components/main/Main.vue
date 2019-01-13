@@ -301,9 +301,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.contentsDiv{
-  width: 95%;
+@media screen and (min-width:1904px) {
+  .contentsDiv{
+    width: 90%;
+  }
 }
+
 .contentsCard {
   margin-left : 1rem;
   margin-right : 1rem;
