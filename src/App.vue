@@ -49,4 +49,9 @@ li {
 a {
   color: #42b983;
 }
+
+.v-autocomplete__content {
+  top: 33px!important;
+  left: 0px!important;
+}
 </style>
