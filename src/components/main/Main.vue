@@ -260,139 +260,148 @@
 
 <script>
 var sheetData_Active =
-"https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?";
+"https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1";
 var sheetData_Discharged =
-"https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script&min-row=1&min-col=1&callback=?";
+"https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/2/public/basic?alt=json-in-script&min-row=1&min-col=1";
 var entry;
 var memberList_A = [];
 var memberList_D = [];
-/*
-// Export JSON to List
-var exportJson = function(sheetData, list) {
-	$.getJSON(sheetData, function(data) {
-		entry = data.feed.entry;
-		//구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
-		var x = 0;
-		var sheetId;
-		if(entry[0].content.$t == "판도라큐브 군 복무 인원 리스트"){
-			sheetId = 1;
-		}else if(entry[0].content.$t == "판도라큐브 군 전역 인원 리스트"){
-			sheetId = 2;
-		}
-
-		for(var i in entry){
-			if (entry[i].title.$t.substring(0, 1) == 'A') {
-				if (entry[i].title.$t != 'A1' && entry[i].title.$t != 'A2') {
-					var condition = 1;
-
-					var y = i;
-					var person = {
-						name: entry[i].content.$t
-					};
-					list[x] = person;
-					autocompleteDB[person.name] = null;
-					y++;
-					while(condition){
-						if(y < entry.length){
-							var lineCode = entry[y].title.$t.substring(0, 1);
-
-							if (lineCode == 'A') {
-								condition = 0;
-							}
-						} else {
-							condition = 0;
-						}
-
-						if(sheetId == 1 && condition){
-							switch (lineCode) {
-								case 'B':
-								list[x].stuID = entry[y].content.$t;
-								break;
-								case 'C':
-								list[x].enlistDay = entry[y].content.$t;
-								break;
-								case 'D':
-								list[x].dischargeDay = entry[y].content.$t;
-								break;
-								case 'E':
-								list[x].armyType = entry[y].content.$t;
-								break;
-								case 'F':
-								list[x].assignment = entry[y].content.$t;
-								break;
-								case 'G':
-								list[x].commentEtc = entry[y].content.$t;
-								break;
-								case 'H':
-								list[x].vacation = entry[y].content.$t;
-								break;
-								case 'I':
-								list[x].comment = entry[y].content.$t;
-								break;
-								case 'J':
-								list[x].department = entry[y].content.$t;
-								break;
-								case 'K':
-								list[x].commentPan = entry[y].content.$t;
-								break;
-								case 'L':
-								list[x].remainDay = entry[y].content.$t;
-								break;
-								case 'M':
-								list[x].workDay = entry[y].content.$t;
-								break;
-								case 'N':
-								list[x].shortenDay = entry[y].content.$t;
-								break;
-							}
-						}else if(sheetId == 2 && condition){
-							switch (lineCode) {
-								case 'B':
-								list[x].stuID = entry[y].content.$t;
-								break;
-								case 'C':
-								list[x].enlistDay = entry[y].content.$t;
-								break;
-								case 'D':
-								list[x].dischargeDay = entry[y].content.$t;
-								break;
-								case 'E':
-								list[x].armyType = entry[y].content.$t;
-								break;
-								case 'F':
-								list[x].assignment = entry[y].content.$t;
-								break;
-								case 'G':
-								list[x].commentEtc = entry[y].content.$t;
-								break;
-								case 'H':
-								list[x].comment = entry[y].content.$t;
-								break;
-								case 'I':
-								list[x].department = entry[y].content.$t;
-								break;
-								case 'J':
-								list[x].commentPan = entry[y].content.$t;
-								break;
-							}
-						}
-						y++
-					}
-					x++;
-				}
-			}
-		}
-	});
-
-};
-exportJson(sheetData_Active, memberList_A);
-exportJson(sheetData_Discharged, memberList_D);
-*/
 
 // Autocomplete DB
 var autocompleteDB = [];
-autocompleteDB.push("문아무개");
-autocompleteDB.push("문아무개2");
+
+// Export JSON to List
+var exportJson = function(sheetDataLink, memberList) {
+  var sheetJson;
+  axios.get(sheetDataLink)
+  .then(function(response) {
+    sheetJson = response.data.slice(28,response.data.length -2);
+    entry = JSON.parse(sheetJson).feed.entry;
+
+
+    //구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
+    var x = 0;
+    var sheetId;
+    if(entry[0].content.$t == "판도라큐브 군 복무 인원 리스트"){
+      sheetId = 1;
+    }else if(entry[0].content.$t == "판도라큐브 군 전역 인원 리스트"){
+      sheetId = 2;
+    }
+
+    for(var i in entry){
+      if (entry[i].title.$t.substring(0, 1) == 'A') {
+        if (entry[i].title.$t != 'A1' && entry[i].title.$t != 'A2') {
+          var condition = 1;
+
+          var y = i;
+          y++;
+
+          autocompleteDB.push(entry[i].content.$t);
+
+          var person = {
+            name: entry[i].content.$t
+          };
+          memberList[x] = person;
+
+          while(condition){
+            if(y < entry.length){
+              var lineCode = entry[y].title.$t.substring(0, 1);
+
+              if (lineCode == 'A') {
+                condition = 0;
+              }
+            } else {
+              condition = 0;
+            }
+
+            if(sheetId == 1 && condition){
+              switch (lineCode) {
+                case 'B':
+                memberList[x].stuID = entry[y].content.$t;
+                break;
+                case 'C':
+                memberList[x].enlistDay = entry[y].content.$t;
+                break;
+                case 'D':
+                memberList[x].dischargeDay = entry[y].content.$t;
+                break;
+                case 'E':
+                memberList[x].armyType = entry[y].content.$t;
+                break;
+                case 'F':
+                memberList[x].assignment = entry[y].content.$t;
+                break;
+                case 'G':
+                memberList[x].commentEtc = entry[y].content.$t;
+                break;
+                case 'H':
+                memberList[x].vacation = entry[y].content.$t;
+                break;
+                case 'I':
+                memberList[x].comment = entry[y].content.$t;
+                break;
+                case 'J':
+                memberList[x].department = entry[y].content.$t;
+                break;
+                case 'K':
+                memberList[x].commentPan = entry[y].content.$t;
+                break;
+                case 'L':
+                memberList[x].remainDay = entry[y].content.$t;
+                break;
+                case 'M':
+                memberList[x].workDay = entry[y].content.$t;
+                break;
+                case 'N':
+                memberList[x].shortenDay = entry[y].content.$t;
+                break;
+              }
+            }else if(sheetId == 2 && condition){
+              switch (lineCode) {
+                case 'B':
+                memberList[x].stuID = entry[y].content.$t;
+                break;
+                case 'C':
+                memberList[x].enlistDay = entry[y].content.$t;
+                break;
+                case 'D':
+                memberList[x].dischargeDay = entry[y].content.$t;
+                break;
+                case 'E':
+                memberList[x].armyType = entry[y].content.$t;
+                break;
+                case 'F':
+                memberList[x].assignment = entry[y].content.$t;
+                break;
+                case 'G':
+                memberList[x].commentEtc = entry[y].content.$t;
+                break;
+                case 'H':
+                memberList[x].comment = entry[y].content.$t;
+                break;
+                case 'I':
+                memberList[x].department = entry[y].content.$t;
+                break;
+                case 'J':
+                memberList[x].commentPan = entry[y].content.$t;
+                break;
+              }
+            }
+
+            y++
+          }
+
+          x++;
+        }
+      }
+    }
+
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+};
+
 export default {
   data () {
     return {
@@ -422,12 +431,19 @@ export default {
     }
 
   },
+  created() {
+    exportJson(sheetData_Active, memberList_A);
+    exportJson(sheetData_Discharged, memberList_D);
+
+  },
   methods: {
     test() {
       console.log(autocompleteDB);
       console.log(this.nameDB);
-      console.log(sheetData_Active);
-      console.log(sheetData_Discharged);
+      console.log(entry);
+
+      console.log(memberList_A);
+      console.log(memberList_D);
       this.nameDB = autocompleteDB;
     },
     updateValue: function(value) {
