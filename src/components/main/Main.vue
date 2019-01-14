@@ -11,23 +11,26 @@
             <v-flex xs12 lg3 xl3>
               <v-card class="contentsCard">
                 <div class="cardTitle">입력</div>
+                <input v-on:input="updateValue3($event.target.value)">
                 <v-autocomplete
                 class="autocompleteInput"
                 v-model="model"
                 label="이름"
                 :items="nameDB"
                 @click="test();"
+                @keyup="updateValue($event.target.value);"
+                @change="updateValue($event);"
                 >
                 <v-slide-x-reverse-transition
                 slot="append"
                 mode="out-in"
                 >
-              </v-slide-x-reverse-transition>
-            </v-autocomplete>
-          </v-card>
-        </v-flex>
+                </v-slide-x-reverse-transition>
+                </v-autocomplete>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg5 xl5>
+            <v-flex xs12 lg5 xl5>
           <v-card class="contentsCard">
             <div class="cardTitle">학교 관련</div>
             <div class="cardContents">
@@ -39,9 +42,9 @@
               </div>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
+            <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">소속</div>
             <div class="cardContents">
@@ -50,9 +53,9 @@
               <span v-html="regiment"></span>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
+            <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">날짜</div>
             <div class="cardContents">
@@ -64,9 +67,9 @@
               <span v-html="dischargeDay"></span>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
+            <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">날짜</div>
             <div class="cardContents">
@@ -78,9 +81,9 @@
               <span v-html="shortenDay"></span>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
+            <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">보직</div>
             <div class="cardContents">
@@ -90,9 +93,9 @@
               <span v-html="commentEtc"></span>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg6 xl6>
+            <v-flex xs12 lg6 xl6>
           <v-card class="contentsCard">
             <div class="cardTitle">진행도</div>
             <div class="cardContents">
@@ -105,9 +108,9 @@
               </div>
             </div>
           </v-card>
-        </v-flex>
+            </v-flex>
 
-        <v-flex xs12 lg6 xl6>
+            <v-flex xs12 lg6 xl6>
           <v-card class="contentsCard">
             <div class="cardTitle">기타</div>
             <div class="cardContents">
@@ -118,144 +121,12 @@
               <br>
             </div>
           </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-flex>
-</v-layout>
-</v-container>
-
-
-<!--
-<div class="container">
-
-<div class="row contents">
-
-<div class="col l3 m3 s12">
-<div id="inputCard" class="customcard">
-<span class="cardTitle">입력</span>
-<div class="input-field">
-<input id="inputName" type="text" class="validate autocomplete" v-on:input="updateValue($event.target.value)">
-<label id="nameLabel" class="active" for="inputName">이름</label>
-</div>
-</div>
-</div>
-
-<div class="col l5 m5 s12">
-<div class="customcard">
-<span class="cardTitle">학교 관련</span>
-<div class="cardContents">
-<span v-html="stuID"></span>
-<span v-html="department"></span>
-<div>
-동아리 코멘트 :
-<span v-html="commentPan"></span>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="col l4 m4 s12">
-<div class="customcard">
-<span class="cardTitle">소속</span>
-<div class="cardContents">
-<span v-html="armyType"></span>
-<br>
-<span v-html="regiment"></span>
-</div>
-
-</div>
-</div>
-
-<div class="col l4 m4 s12">
-<div class="customcard">
-<span class="cardTitle">날짜</span>
-<div class="cardContents">
-남은날 :
-<span v-html="remainDay"></span>
-<br> 입대일 :
-<span v-html="enlistDay"></span>
-<br> 전역일 :
-<span v-html="dischargeDay"></span>
-</div>
-
-</div>
-</div>
-
-<div class="col l4 m4 s12">
-<div class="customcard">
-<span class="cardTitle">날짜</span>
-<div class="cardContents">
-일과 일수 :
-<span v-html="workDay"></span>
-<br> 휴일 수 :
-<span v-html="holiday"></span>
-<br> 단축 일수 :
-<span v-html="shortenDay"></span>
-</div>
-
-</div>
-</div>
-
-<div class="col l4 m4 s12">
-<div class="customcard">
-<span class="cardTitle">보직</span>
-<div class="cardContents">
-
-<span v-html="assignment"></span>
-<br> 보직 코멘트 :
-<span v-html="commentEtc"></span>
-</div>
-
-</div>
-</div>
-
-<div class="col l6 m6 s12">
-<div class="customcard">
-<span class="cardTitle">진행도</span>
-<div class="cardContents">
-<div class="progress">
-<div class="determinate" v-bind:style="gagestyle"></div>
-</div>
-<div>
-<span v-html="gagestyle.width"></span>
-<span class="gage2" v-html="remaingage"></span>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="col l6 m6 s12">
-<div class="customcard">
-<span class="cardTitle">기타</span>
-<div class="cardContents">
-다음 휴가 계획 :
-<span v-html="vacation"></span>
-<br> 남길 말 :
-<span v-html="comment"></span>
-<br>
-</div>
-
-</div>
-</div>
-
-
-<modal v-if="showModal" @close="showModal = false">
-<h4 slot="header">Load Fail</h4>
-<p slot="body">
-멤버들의 정보가 로드되지 않았습니다.
-<br> 새로고침을 해보십시오.
-</p>
-</modal>
-
-</div>
-
-<iframe id="googlesheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"></iframe>
-
-</div>
--->
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -278,8 +149,6 @@ var exportJson = function(sheetDataLink, memberList) {
     sheetJson = response.data.slice(28,response.data.length -2);
     entry = JSON.parse(sheetJson).feed.entry;
 
-
-    //구글 스프레드 시트의 모든 내용은 feed.entry에 담겨있습니다.
     var x = 0;
     var sheetId;
     if(entry[0].content.$t == "판도라큐브 군 복무 인원 리스트"){
@@ -437,26 +306,18 @@ export default {
 
   },
   methods: {
-    test() {
-      console.log(autocompleteDB);
-      console.log(this.nameDB);
-      console.log(entry);
-
-      console.log(memberList_A);
-      console.log(memberList_D);
+    test: function() {
       this.nameDB = autocompleteDB;
     },
     updateValue: function(value) {
-      this.name = value;
-
-      dataReset();
-      findMember_A(value);
-      findMember_D(value);
+      dataReset(this);
+      findMember_A(value, this);
+      findMember_D(value, this);
     }
   }
 }
 
-var findMember_A = function(value) {
+var findMember_A = function(value, app) {
   for (var i = 0; i < memberList_A.length; i++) {
     // 각 행에대해 아래 스크립트를 실행합니다.
     if (memberList_A[i].name == value) {
@@ -503,7 +364,7 @@ var findMember_A = function(value) {
   }
 };
 
-var findMember_D = function(value) {
+var findMember_D = function(value, app) {
   for (var i = 0; i < memberList_D.length; i++) {
     // 각 행에대해 아래 스크립트를 실행합니다.
     if (memberList_D[i].name == value) {
@@ -564,7 +425,7 @@ var auto = function() {
   });
 };
 
-var dataReset = function() {
+var dataReset = function(app) {
   app.stuID = '00학번';
   app.department = '무슨과일까?';
   app.commentPan = '동아리에선 이런 사람 이였다';
