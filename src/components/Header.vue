@@ -17,7 +17,7 @@
       <v-toolbar-items class="hidden-xs-and-down navMenuVar">
         <v-btn class="navMenu" @click="go1();" flat>Finder</v-btn>
         <v-btn class="navMenu" @click="go2();" flat>About</v-btn>
-        <v-btn class="navMenu" @click="go3();" flat>Edit</v-btn>
+        <v-btn class="navMenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing" flat>Edit</v-btn>
       </v-toolbar-items>
 
       <v-flex xs1 lg1 xl2></v-flex>
