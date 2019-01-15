@@ -16,7 +16,7 @@
                 v-model="model"
                 label="이름"
                 :items="nameDB"
-                @click="test();"
+                @click="clickInput();"
                 @keyup="updateValue($event.target.value);"
                 @change="updateValue($event);"
                 >
@@ -131,6 +131,7 @@
 </template>
 
 <script>
+// Sheet Data
 var sheetData_Active =
 "https://spreadsheets.google.com/feeds/cells/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/1/public/basic?alt=json-in-script&min-row=1&min-col=1";
 var sheetData_Discharged =
@@ -260,15 +261,12 @@ var exportJson = function(sheetDataLink, memberList) {
                 break;
               }
             }
-
             y++
           }
-
           x++;
         }
       }
     }
-
   })
   .catch(function(error) {
     console.log(error);
@@ -308,111 +306,108 @@ export default {
 
   },
   methods: {
-    test: function() {
+    clickInput: function() {
       this.nameDB = autocompleteDB;
     },
     updateValue: function(value) {
       dataReset(this);
-      findMember_A(value, this);
-      findMember_D(value, this);
+      findMember(value, this);
     }
   }
 }
 
-var findMember_A = function(value, app) {
+var findMember = function(value, app) {
   for (var i = 0; i < memberList_A.length; i++) {
-    // 각 행에대해 아래 스크립트를 실행합니다.
     if (memberList_A[i].name == value) {
-      app.stuID = memberList_A[i].stuID;
-      app.remainDay = memberList_A[i].remainDay;
-      app.workDay = memberList_A[i].workDay;
-      app.holiday = app.remainDay - app.workDay;
-      app.shortenDay = memberList_A[i].shortenDay;
-      app.enlistDay = memberList_A[i].enlistDay;
-      app.dischargeDay = memberList_A[i].dischargeDay;
+      findMemberInfo(memberList_A[i], app, 1);
+    }
+  }
 
-      var splitRegiment = memberList_A[i].armyType.split(' ');
-      var remainRegiment = '';
-      app.armyType = splitRegiment[0];
-      for (var x = 1; x < splitRegiment.length; x++) {
-        remainRegiment = remainRegiment + splitRegiment[x] + ' ';
-      }
-      app.regiment = remainRegiment;
-
-      app.assignment = memberList_A[i].assignment;
-      app.commentEtc = memberList_A[i].commentEtc;
-      app.department = memberList_A[i].department;
-      app.commentPan = memberList_A[i].commentPan;
-      app.vacation = memberList_A[i].vacation;
-      app.comment = memberList_A[i].comment;
-
-      var strDate1 = app.enlistDay;
-      var strDate2 = app.dischargeDay;
-      var arr1 = strDate1.split('.');
-      var arr2 = strDate2.split('.');
-      var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
-      var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
-
-      // 날짜 차이 알아 내기
-      var diff = dat2 - dat1;
-      var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
-      var allDay = parseInt(diff / currDay);
-
-      var percent = (allDay - app.remainDay) / allDay * 100;
-      percent = percent.toFixed(2);
-      app.remaingage = (100 - percent).toFixed(2) + '%';
-      app.gagestyle = percent;
+  for (var j = 0; j < memberList_D.length; j++) {
+    if (memberList_D[j].name == value) {
+      findMemberInfo(memberList_D[j], app, 0);
     }
   }
 };
 
-var findMember_D = function(value, app) {
-  for (var i = 0; i < memberList_D.length; i++) {
-    // 각 행에대해 아래 스크립트를 실행합니다.
-    if (memberList_D[i].name == value) {
-      console.log(memberList_D[i]);
-      app.stuID = memberList_D[i].stuID;
-      app.remainDay = 0;
-      app.workDay = 0;
-      app.holiday = 0;
-      app.shortenDay = memberList_D[i].shortenDay;
-      app.enlistDay = memberList_D[i].enlistDay;
-      app.dischargeDay = memberList_D[i].dischargeDay;
+var findMemberInfo = function(memberList, app, active){
+    // 학교 관련
+    app.stuID = memberList.stuID;
+    app.department = memberList.department;
+    app.commentPan = memberList.commentPan;
 
-      var splitRegiment = memberList_D[i].armyType.split(' ');
-      var remainRegiment = '';
-      app.armyType = splitRegiment[0];
-      for (var x = 1; x < splitRegiment.length; x++) {
-        remainRegiment = remainRegiment + splitRegiment[x] + ' ';
-      }
-      app.regiment = remainRegiment;
-
-      app.assignment = memberList_D[i].assignment;
-      app.commentEtc = memberList_D[i].commentEtc;
-      app.department = memberList_D[i].department;
-      app.commentPan = memberList_D[i].commentPan;
-      app.vacation = "평생 휴가 입니다.";
-      app.comment = memberList_D[i].comment;
-
-      app.remaingage = '0%';
-      app.gagestyle = 100;
+    //소속
+    var splitRegiment = memberList.armyType.split(' ');
+    var remainRegiment = '';
+    app.armyType = splitRegiment[0];
+    for (var x = 1; x < splitRegiment.length; x++) {
+      remainRegiment = remainRegiment + splitRegiment[x] + ' ';
     }
-  }
-};
+    app.regiment = remainRegiment;
 
-var auto = function() {
-  $('input.autocomplete').autocomplete({
-    data: autocompleteDB,
-    limit: 5, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function() {
-      var inputData = document.getElementById('inputName').value;
+    //날짜
+    app.enlistDay = memberList.enlistDay;
+    app.dischargeDay = memberList.dischargeDay;
+    app.shortenDay = memberList.shortenDay;
 
-      app.name = inputData;
-      findMember_A(inputData);
-      findMember_D(inputData);
+    //보직
+    app.assignment = memberList.assignment;
+    app.commentEtc = memberList.commentEtc;
+
+    //기타
+    app.comment = memberList.comment;
+
+    // 진행
+    app.remaingage = '0%';
+    app.gagestyle = 100;
+    if(active){
+      findMemberInfo_A(memberList, app);
+    }else{
+      findMemberInfo_D(app);
     }
-  });
-};
+}
+
+var findMemberInfo_A = function(memberList, app){
+  //날짜
+  app.remainDay = memberList.remainDay;
+  app.workDay = memberList.workDay;
+  app.holiday = app.remainDay - app.workDay;
+
+  //기타
+  app.vacation = memberList.vacation;
+
+  // 진행
+  var strDate1 = app.enlistDay;
+  var strDate2 = app.dischargeDay;
+  var arr1 = strDate1.split('.');
+  var arr2 = strDate2.split('.');
+  var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
+  var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
+
+  // 날짜 차이 알아 내기
+  var diff = dat2 - dat1;
+  var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
+  var allDay = parseInt(diff / currDay);
+
+  var percent = (allDay - app.remainDay) / allDay * 100;
+  percent = percent.toFixed(2);
+  app.remaingage = (100 - percent).toFixed(2) + '%';
+  app.gagestyle = percent;
+}
+
+var findMemberInfo_D = function(app){
+    //날짜
+    app.remainDay = "끝이 왔다";
+    app.workDay = "밖에서 일하겠습니다";
+    app.holiday = "밖에서 쉬겠습니다";
+
+    //기타
+    app.vacation = "평생 휴가 입니다";
+
+    // 진행
+    app.remaingage = '0%';
+    app.gagestyle = 100;
+}
 
 var dataReset = function(app) {
   app.stuID = '00학번';
