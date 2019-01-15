@@ -11,7 +11,6 @@
             <v-flex xs12 lg3 xl3>
               <v-card class="contentsCard">
                 <div class="cardTitle">입력</div>
-                <input v-on:input="updateValue3($event.target.value)">
                 <v-autocomplete
                 class="autocompleteInput"
                 v-model="model"
@@ -25,12 +24,12 @@
                 slot="append"
                 mode="out-in"
                 >
-                </v-slide-x-reverse-transition>
-                </v-autocomplete>
-              </v-card>
-            </v-flex>
+              </v-slide-x-reverse-transition>
+            </v-autocomplete>
+          </v-card>
+        </v-flex>
 
-            <v-flex xs12 lg5 xl5>
+        <v-flex xs12 lg5 xl5>
           <v-card class="contentsCard">
             <div class="cardTitle">학교 관련</div>
             <div class="cardContents">
@@ -42,9 +41,9 @@
               </div>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg4 xl4>
+        <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">소속</div>
             <div class="cardContents">
@@ -53,9 +52,9 @@
               <span v-html="regiment"></span>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg4 xl4>
+        <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">날짜</div>
             <div class="cardContents">
@@ -67,9 +66,9 @@
               <span v-html="dischargeDay"></span>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg4 xl4>
+        <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">날짜</div>
             <div class="cardContents">
@@ -81,9 +80,9 @@
               <span v-html="shortenDay"></span>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg4 xl4>
+        <v-flex xs12 lg4 xl4>
           <v-card class="contentsCard">
             <div class="cardTitle">보직</div>
             <div class="cardContents">
@@ -93,24 +92,26 @@
               <span v-html="commentEtc"></span>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg6 xl6>
+        <v-flex xs12 lg6 xl6>
           <v-card class="contentsCard">
             <div class="cardTitle">진행도</div>
             <div class="cardContents">
-              <div class="progress">
-                <div class="determinate" v-bind:style="gagestyle"></div>
-              </div>
+              <v-progress-linear
+              color="blue"
+              height="8"
+              :value="gagestyle"
+              ></v-progress-linear>
               <div>
-                <span v-html="gagestyle.width"></span>
+                <span v-html="gagestyle"></span>%
                 <span class="gage2" v-html="remaingage"></span>
               </div>
             </div>
           </v-card>
-            </v-flex>
+        </v-flex>
 
-            <v-flex xs12 lg6 xl6>
+        <v-flex xs12 lg6 xl6>
           <v-card class="contentsCard">
             <div class="cardTitle">기타</div>
             <div class="cardContents">
@@ -121,12 +122,12 @@
               <br>
             </div>
           </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-flex>
-    </v-layout>
-  </v-container>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-flex>
+</v-layout>
+</v-container>
 </template>
 
 <script>
@@ -254,6 +255,9 @@ var exportJson = function(sheetDataLink, memberList) {
                 case 'J':
                 memberList[x].commentPan = entry[y].content.$t;
                 break;
+                case 'K':
+                memberList[x].shortenDay = entry[y].content.$t;
+                break;
               }
             }
 
@@ -288,9 +292,7 @@ export default {
       shortenDay: '이득봄!',
       assignment: '이 사람의 보직은?',
       commentEtc: '찾는 중 입니다',
-      gagestyle: {
-        width: '0%'
-      },
+      gagestyle: 0,
       remaingage: '100%',
       vacation: '언제 휴가 나오는가',
       comment: '할 말 있습니다!',
@@ -359,7 +361,7 @@ var findMember_A = function(value, app) {
       var percent = (allDay - app.remainDay) / allDay * 100;
       percent = percent.toFixed(2);
       app.remaingage = (100 - percent).toFixed(2) + '%';
-      app.gagestyle.width = percent + '%';
+      app.gagestyle = percent;
     }
   }
 };
@@ -368,10 +370,11 @@ var findMember_D = function(value, app) {
   for (var i = 0; i < memberList_D.length; i++) {
     // 각 행에대해 아래 스크립트를 실행합니다.
     if (memberList_D[i].name == value) {
+      console.log(memberList_D[i]);
       app.stuID = memberList_D[i].stuID;
-      app.remainDay = memberList_D[i].remainDay;
-      app.workDay = memberList_D[i].workDay;
-      app.holiday = app.remainDay - app.workDay;
+      app.remainDay = 0;
+      app.workDay = 0;
+      app.holiday = 0;
       app.shortenDay = memberList_D[i].shortenDay;
       app.enlistDay = memberList_D[i].enlistDay;
       app.dischargeDay = memberList_D[i].dischargeDay;
@@ -388,25 +391,11 @@ var findMember_D = function(value, app) {
       app.commentEtc = memberList_D[i].commentEtc;
       app.department = memberList_D[i].department;
       app.commentPan = memberList_D[i].commentPan;
-      app.vacation = memberList_D[i].vacation;
+      app.vacation = "평생 휴가 입니다.";
       app.comment = memberList_D[i].comment;
 
-      var strDate1 = app.enlistDay;
-      var strDate2 = app.dischargeDay;
-      var arr1 = strDate1.split('.');
-      var arr2 = strDate2.split('.');
-      var dat1 = new Date(arr1[0], arr1[1], arr1[2]);
-      var dat2 = new Date(arr2[0], arr2[1], arr2[2]);
-
-      // 날짜 차이 알아 내기
-      var diff = dat2 - dat1;
-      var currDay = 24 * 60 * 60 * 1000; // 시 * 분 * 초 * 밀리세컨
-      var allDay = parseInt(diff / currDay);
-
-      var percent = (allDay - app.remainDay) / allDay * 100;
-      percent = percent.toFixed(2);
-      app.remaingage = (100 - percent).toFixed(2) + '%';
-      app.gagestyle.width = percent + '%';
+      app.remaingage = '0%';
+      app.gagestyle = 100;
     }
   }
 };
@@ -445,7 +434,7 @@ var dataReset = function(app) {
   app.commentEtc = '찾는 중 입니다';
 
   app.remaingage = '100%';
-  app.gagestyle.width = '0%';
+  app.gagestyle = '0%';
 
   app.vacation = '언제 휴가 나오는가';
   app.comment = '할 말 있습니다!';
