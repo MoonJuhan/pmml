@@ -15,8 +15,8 @@
       <!--xs phone, sm pad, md pad & low pc, lg mid pc, xl high pc-->
 
       <v-toolbar-items class="hidden-xs-and-down navMenuVar">
-        <v-btn class="navMenu" @click="go1();" flat>Finder</v-btn>
-        <v-btn class="navMenu" @click="go2();" flat>About</v-btn>
+        <v-btn class="navMenu" @click="goFinder();" flat>Finder</v-btn>
+        <v-btn class="navMenu" @click="goAbout();" flat>About</v-btn>
         <v-btn class="navMenu" href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing" flat>Edit</v-btn>
       </v-toolbar-items>
 
@@ -29,13 +29,10 @@
 <script>
 export default {
   methods: {
-    go1: function() {
+    goFinder: function() {
       this.$router.push({path:'/'});
     },
-    go2: function() {
-      this.$router.push({path:'about'});
-    },
-    go3: function() {
+    goAbout: function() {
       this.$router.push({path:'about'});
     }
   }
