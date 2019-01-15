@@ -119,7 +119,7 @@
               ></v-progress-linear>
               <div>
                 <span v-html="gagestyle"></span>%
-                <span class="gage2" v-html="remaingage"></span>
+                <span class="remainGage" v-html="remaingage"></span>
               </div>
             </div>
           </v-card>
@@ -139,6 +139,13 @@
             </div>
           </v-card>
         </v-flex>
+
+        <iframe
+        class="googleSheet"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"
+        ></iframe>
+
+
       </v-layout>
     </v-container>
   </v-flex>
@@ -489,7 +496,14 @@ var dataReset = function(app) {
   padding: 13px;
   color: rgb(66, 80, 91);
 }
-.gage2 {
+.remainGage {
   float: right;
+}
+
+.googleSheet{
+  margin-left: 14px;
+  margin-right: 14px;
+  width: 100%;
+	height: 300px;
 }
 </style>
