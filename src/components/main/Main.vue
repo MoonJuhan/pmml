@@ -35,7 +35,7 @@
             <div class="cardContents">
               <span v-html="stuID"></span>
               <span v-html="department"></span>
-              <div>
+              <div class="secondLine">
                 동아리 코멘트 :
                 <span v-html="commentPan"></span>
               </div>
@@ -49,7 +49,7 @@
             <div class="cardContents">
               <span v-html="armyType"></span>
               <br>
-              <span v-html="regiment"></span>
+              <div v-html="regiment" class="secondLine"></div>
             </div>
           </v-card>
         </v-flex>
@@ -60,10 +60,15 @@
             <div class="cardContents">
               남은날 :
               <span v-html="remainDay"></span>
-              <br> 입대일 :
-              <span v-html="enlistDay"></span>
-              <br> 전역일 :
-              <span v-html="dischargeDay"></span>
+              <br>
+              <div class="secondLine">
+                입대일 :
+                <span v-html="enlistDay"></span>
+              </div>
+              <div class="secondLine">
+                전역일 :
+                <span v-html="dischargeDay"></span>
+              </div>
             </div>
           </v-card>
         </v-flex>
@@ -74,10 +79,16 @@
             <div class="cardContents">
               일과 일수 :
               <span v-html="workDay"></span>
-              <br> 휴일 수 :
-              <span v-html="holiday"></span>
-              <br> 단축 일수 :
-              <span v-html="shortenDay"></span>
+              <br>
+              <div class="secondLine">
+                휴일 수 :
+                <span v-html="holiday"></span>
+              </div>
+              <div class="secondLine">
+                단축 일수 :
+                <span v-html="shortenDay"></span>
+              </div>
+
             </div>
           </v-card>
         </v-flex>
@@ -88,8 +99,11 @@
             <div class="cardContents">
 
               <span v-html="assignment"></span>
-              <br> 보직 코멘트 :
-              <span v-html="commentEtc"></span>
+              <br>
+              <div class="secondLine">
+                보직 코멘트 :
+                <span v-html="commentEtc" class="secondLine"></span>
+              </div>
             </div>
           </v-card>
         </v-flex>
@@ -117,9 +131,11 @@
             <div class="cardContents">
               다음 휴가 계획 :
               <span v-html="vacation"></span>
-              <br> 남길 말 :
-              <span v-html="comment"></span>
               <br>
+              <div class="secondLine">
+                남길 말 :
+                <span v-html="comment"></span>
+              </div>
             </div>
           </v-card>
         </v-flex>
@@ -331,40 +347,40 @@ var findMember = function(value, app) {
 };
 
 var findMemberInfo = function(memberList, app, active){
-    // 학교 관련
-    app.stuID = memberList.stuID;
-    app.department = memberList.department;
-    app.commentPan = memberList.commentPan;
+  // 학교 관련
+  app.stuID = memberList.stuID;
+  app.department = memberList.department;
+  app.commentPan = memberList.commentPan;
 
-    //소속
-    var splitRegiment = memberList.armyType.split(' ');
-    var remainRegiment = '';
-    app.armyType = splitRegiment[0];
-    for (var x = 1; x < splitRegiment.length; x++) {
-      remainRegiment = remainRegiment + splitRegiment[x] + ' ';
-    }
-    app.regiment = remainRegiment;
+  //소속
+  var splitRegiment = memberList.armyType.split(' ');
+  var remainRegiment = '';
+  app.armyType = splitRegiment[0];
+  for (var x = 1; x < splitRegiment.length; x++) {
+    remainRegiment = remainRegiment + splitRegiment[x] + ' ';
+  }
+  app.regiment = remainRegiment;
 
-    //날짜
-    app.enlistDay = memberList.enlistDay;
-    app.dischargeDay = memberList.dischargeDay;
-    app.shortenDay = memberList.shortenDay;
+  //날짜
+  app.enlistDay = memberList.enlistDay;
+  app.dischargeDay = memberList.dischargeDay;
+  app.shortenDay = memberList.shortenDay;
 
-    //보직
-    app.assignment = memberList.assignment;
-    app.commentEtc = memberList.commentEtc;
+  //보직
+  app.assignment = memberList.assignment;
+  app.commentEtc = memberList.commentEtc;
 
-    //기타
-    app.comment = memberList.comment;
+  //기타
+  app.comment = memberList.comment;
 
-    // 진행
-    app.remaingage = '0%';
-    app.gagestyle = 100;
-    if(active){
-      findMemberInfo_A(memberList, app);
-    }else{
-      findMemberInfo_D(app);
-    }
+  // 진행
+  app.remaingage = '0%';
+  app.gagestyle = 100;
+  if(active){
+    findMemberInfo_A(memberList, app);
+  }else{
+    findMemberInfo_D(app);
+  }
 }
 
 var findMemberInfo_A = function(memberList, app){
@@ -396,17 +412,17 @@ var findMemberInfo_A = function(memberList, app){
 }
 
 var findMemberInfo_D = function(app){
-    //날짜
-    app.remainDay = "끝이 왔다";
-    app.workDay = "밖에서 일하겠습니다";
-    app.holiday = "밖에서 쉬겠습니다";
+  //날짜
+  app.remainDay = "끝이 왔다";
+  app.workDay = "밖에서 일하겠습니다";
+  app.holiday = "밖에서 쉬겠습니다";
 
-    //기타
-    app.vacation = "평생 휴가 입니다";
+  //기타
+  app.vacation = "평생 휴가 입니다";
 
-    // 진행
-    app.remaingage = '0%';
-    app.gagestyle = 100;
+  // 진행
+  app.remaingage = '0%';
+  app.gagestyle = 100;
 }
 
 var dataReset = function(app) {
@@ -457,13 +473,18 @@ var dataReset = function(app) {
 .cardTitle {
   padding-top: 10px;
   padding-left: 10px;
-  font-size: 1.4em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .cardContents {
-  padding: 2px 4px;
+  font-size: 1.25rem;
+  padding: 3px 10px;
 }
 
+.secondLine {
+  padding-top: 2px;
+}
 .autocompleteInput {
   padding: 13px;
   color: rgb(66, 80, 91);
