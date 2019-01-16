@@ -2,7 +2,7 @@
   <v-footer class="pa-3 footer pageFooter">
     <h1>PMML</h1>
     <v-spacer></v-spacer>
-    <div>opyright &copy; {{ new Date().getFullYear() }} MoonJuhan. All rights reserved.</div>
+    <div>Copyright &copy; {{ new Date().getFullYear() }} MoonJuhan. All rights reserved.</div>
   </v-footer>
 </template>
 
