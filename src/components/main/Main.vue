@@ -503,7 +503,7 @@ var dataReset = function(app) {
 .googleSheet{
   margin-left: 14px;
   margin-right: 14px;
-  width: 100%;
+  width: -webkit-fill-available;
 	height: 300px;
 }
 </style>
