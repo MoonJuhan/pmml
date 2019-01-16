@@ -1,10 +1,7 @@
 <template lang="html">
-
-
   <v-container>
     <v-layout row wrap>
       <v-flex xs0 lg1 xl1></v-flex>
-
       <v-flex xs12 lg10 xl10>
         <v-container class="contentsDiv">
           <v-layout row wrap>
@@ -20,137 +17,134 @@
                 @keyup="updateValue($event.target.value);"
                 @change="updateValue($event);"
                 >
-                <v-slide-x-reverse-transition
-                slot="append"
-                mode="out-in"
-                >
-              </v-slide-x-reverse-transition>
-            </v-autocomplete>
-          </v-card>
-        </v-flex>
+                  <v-slide-x-reverse-transition
+                  slot="append"
+                  mode="out-in"
+                  >
+                  </v-slide-x-reverse-transition>
+                </v-autocomplete>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg5 xl5>
-          <v-card class="contentsCard">
-            <div class="cardTitle">학교 관련</div>
-            <div class="cardContents">
-              <span v-html="stuID"></span>
-              <span v-html="department"></span>
-              <div class="secondLine">
-                동아리 코멘트 :
-                <span v-html="commentPan"></span>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg5 xl5>
+              <v-card class="contentsCard">
+                <div class="cardTitle">학교 관련</div>
+                <div class="cardContents">
+                  <span v-html="stuID"></span>
+                  <span v-html="department"></span>
+                  <div class="secondLine">
+                    동아리 코멘트 :
+                    <span v-html="commentPan"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
-          <v-card class="contentsCard">
-            <div class="cardTitle">소속</div>
-            <div class="cardContents">
-              <span v-html="armyType"></span>
-              <br>
-              <div v-html="regiment" class="secondLine"></div>
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg4 xl4>
+              <v-card class="contentsCard">
+                <div class="cardTitle">소속</div>
+                <div class="cardContents">
+                  <span v-html="armyType"></span>
+                  <br>
+                  <div v-html="regiment" class="secondLine"></div>
+                </div>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
-          <v-card class="contentsCard">
-            <div class="cardTitle">날짜</div>
-            <div class="cardContents">
-              남은날 :
-              <span v-html="remainDay"></span>
-              <br>
-              <div class="secondLine">
-                입대일 :
-                <span v-html="enlistDay"></span>
-              </div>
-              <div class="secondLine">
-                전역일 :
-                <span v-html="dischargeDay"></span>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg4 xl4>
+              <v-card class="contentsCard">
+                <div class="cardTitle">날짜</div>
+                <div class="cardContents">
+                  남은날 :
+                  <span v-html="remainDay"></span>
+                  <br>
+                  <div class="secondLine">
+                    입대일 :
+                    <span v-html="enlistDay"></span>
+                  </div>
+                  <div class="secondLine">
+                    전역일 :
+                    <span v-html="dischargeDay"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg4 xl4>
-          <v-card class="contentsCard">
-            <div class="cardTitle">날짜</div>
-            <div class="cardContents">
-              일과 일수 :
-              <span v-html="workDay"></span>
-              <br>
-              <div class="secondLine">
-                휴일 수 :
-                <span v-html="holiday"></span>
-              </div>
-              <div class="secondLine">
-                단축 일수 :
-                <span v-html="shortenDay"></span>
-              </div>
+            <v-flex xs12 lg4 xl4>
+              <v-card class="contentsCard">
+                <div class="cardTitle">날짜</div>
+                <div class="cardContents">
+                  일과 일수 :
+                  <span v-html="workDay"></span>
+                  <br>
+                  <div class="secondLine">
+                    휴일 수 :
+                    <span v-html="holiday"></span>
+                  </div>
+                  <div class="secondLine">
+                    단축 일수 :
+                    <span v-html="shortenDay"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg4 xl4>
+              <v-card class="contentsCard">
+                <div class="cardTitle">보직</div>
+                <div class="cardContents">
 
-        <v-flex xs12 lg4 xl4>
-          <v-card class="contentsCard">
-            <div class="cardTitle">보직</div>
-            <div class="cardContents">
+                  <span v-html="assignment"></span>
+                  <br>
+                  <div class="secondLine">
+                    보직 코멘트 :
+                    <span v-html="commentEtc" class="secondLine"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-              <span v-html="assignment"></span>
-              <br>
-              <div class="secondLine">
-                보직 코멘트 :
-                <span v-html="commentEtc" class="secondLine"></span>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg6 xl6>
+              <v-card class="contentsCard">
+                <div class="cardTitle">진행도</div>
+                <div class="cardContents">
+                  <v-progress-linear
+                  color="blue"
+                  height="8"
+                  :value="gagestyle"
+                  ></v-progress-linear>
+                  <div>
+                    <span v-html="gagestyle"></span>%
+                    <span class="remainGage" v-html="remaingage"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg6 xl6>
-          <v-card class="contentsCard">
-            <div class="cardTitle">진행도</div>
-            <div class="cardContents">
-              <v-progress-linear
-              color="blue"
-              height="8"
-              :value="gagestyle"
-              ></v-progress-linear>
-              <div>
-                <span v-html="gagestyle"></span>%
-                <span class="remainGage" v-html="remaingage"></span>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
+            <v-flex xs12 lg6 xl6>
+              <v-card class="contentsCard">
+                <div class="cardTitle">기타</div>
+                <div class="cardContents">
+                  다음 휴가 계획 :
+                  <span v-html="vacation"></span>
+                  <br>
+                  <div class="secondLine">
+                    남길 말 :
+                    <span v-html="comment"></span>
+                  </div>
+                </div>
+              </v-card>
+            </v-flex>
 
-        <v-flex xs12 lg6 xl6>
-          <v-card class="contentsCard">
-            <div class="cardTitle">기타</div>
-            <div class="cardContents">
-              다음 휴가 계획 :
-              <span v-html="vacation"></span>
-              <br>
-              <div class="secondLine">
-                남길 말 :
-                <span v-html="comment"></span>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
-
-        <iframe
-        class="googleSheet"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"
-        ></iframe>
-
-
-      </v-layout>
-    </v-container>
-  </v-flex>
-</v-layout>
-</v-container>
+            <iframe
+            class="googleSheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQquO5M8p9wZZZGKpHRW5kUM_6BRZxxtFiVjiXIMzqmjarCmx4H9tcHVYNiZsJinCKZIX0XDn8AsiXk/pubhtml/sheet?headers=false&gid=0"
+            ></iframe>
+          </v-layout>
+        </v-container>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -461,33 +455,6 @@ var dataReset = function(app) {
 </script>
 
 <style lang="css" scoped>
-@media screen and (min-width:1904px) {
-  .contentsDiv{
-    width: 90%;
-  }
-}
-
-.contentsCard {
-  margin-left : 1rem;
-  margin-right : 1rem;
-  margin-bottom: 1rem;
-  height: 9.8rem;
-  text-align: left;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.23);
-}
-
-.cardTitle {
-  padding-top: 10px;
-  padding-left: 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.cardContents {
-  font-size: 1.25rem;
-  padding: 3px 10px;
-}
 
 .secondLine {
   padding-top: 2px;

@@ -54,4 +54,33 @@ a {
   top: 33px!important;
   left: 0px!important;
 }
+
+/* Contents Card CSS */
+@media screen and (min-width:1904px) {
+  .contentsDiv{
+    width: 90%;
+  }
+}
+
+.contentsCard {
+  margin-left : 1rem;
+  margin-right : 1rem;
+  margin-bottom: 1rem;
+  height: 9.8rem;
+  text-align: left;
+  color: white!important;
+  background-color: rgba(0, 0, 0, 0.23)!important;
+}
+
+.cardTitle {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.cardContents {
+  font-size: 1.25rem;
+  padding: 3px 10px;
+}
 </style>
