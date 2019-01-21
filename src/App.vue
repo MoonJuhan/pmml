@@ -50,6 +50,7 @@ a {
   color: #42b983;
 }
 
+/* Autocomplete Menu CSS */
 .v-autocomplete__content {
   top: 33px!important;
   left: 0px!important;
@@ -84,6 +85,7 @@ a {
   padding: 3px 10px;
 }
 
+/* Mobile Tab Bar Color */
 .theme--light .v-tabs__bar {
   background-color: #ffffff00!important;
 }
