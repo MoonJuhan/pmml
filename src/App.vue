@@ -83,4 +83,9 @@ a {
   font-size: 1.25rem;
   padding: 3px 10px;
 }
+
+.theme--light .v-tabs__bar {
+  background-color: #ffffff00!important;
+}
+
 </style>

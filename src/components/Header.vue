@@ -24,8 +24,6 @@
 
       <v-toolbar-items class="hidden-lg-and-up navTabVar">
         <v-tabs
-        color="#ffffff00"
-        dark
         centered
         slider-color="white"
         >
