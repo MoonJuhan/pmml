@@ -12,6 +12,8 @@
                 class="autocompleteInput"
                 v-model="model"
                 label="이름"
+                color="gray"
+                dark
                 :items="nameDB"
                 @click="clickInput();"
                 @keyup="updateValue($event.target.value);"
@@ -461,7 +463,6 @@ var dataReset = function(app) {
 }
 .autocompleteInput {
   padding: 13px;
-  color: rgb(66, 80, 91);
 }
 .remainGage {
   float: right;
