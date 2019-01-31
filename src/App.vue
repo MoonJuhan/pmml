@@ -86,7 +86,7 @@ a {
 }
 
 /* Mobile Tab Bar Color */
-.theme--light .v-tabs__bar {
+.v-tabs__bar {
   background-color: #ffffff00!important;
 }
 
