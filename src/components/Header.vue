@@ -7,7 +7,9 @@
 
       <div class="logoDiv">
         <v-btn class="logoBtn" href="/" flat>
-          <img src="../assets/logo_pmml.png">
+          <!-- img src="../assets/logo_pmml.png"-->
+          <img src="../assets/logo_pmml_re.svg" class="svgLogo">
+
         </v-btn>
       </div>
 
@@ -121,6 +123,11 @@ export default {
 .tabBtnAbout {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.svgLogo {
+height: 64px;
+
 }
 
 </style>
