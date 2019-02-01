@@ -23,7 +23,7 @@
               <div class="aboutTitle"><span class="devText">Dev</span> History</div>
             </v-flex>
 
-            <v-flex xs6>
+            <v-flex xs12 sm6>
               <div class="aboutContents">
                 <h1 class="historyYear">2018</h1>
                 <table class="monthDiv">
@@ -59,7 +59,7 @@
               </div>
             </v-flex>
 
-            <v-flex xs6>
+            <v-flex xs12 sm6>
               <div class="aboutContents">
                 <h1 class="historyYear">2019</h1>
                 <table class="monthDiv">
@@ -111,6 +111,7 @@ export default {
 .historyYear{
   font-size: 2rem;
   padding-bottom: 5px;
+  padding-top: 1.2rem;
 }
 
 .historyMonth {
