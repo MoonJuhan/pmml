@@ -95,6 +95,24 @@ export default {
   height: 100%;
 }
 
+@media only screen and (max-width: 690px){
+  .svgLogo {
+    height: 4.4rem!important;
+    margin-top: 0.1rem;
+  }
+}
+
+@media only screen and (min-width: 691px) and (max-width: 960px){
+  .svgLogo {
+    height: 4rem!important;
+    margin-top: 0.1rem;
+  }
+}
+
+.svgLogo {
+height: 64px;
+}
+
 .navMenuVar {
   height: 100%;
 }
@@ -124,10 +142,4 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
 }
-
-.svgLogo {
-height: 64px;
-
-}
-
 </style>
