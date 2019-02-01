@@ -7,7 +7,7 @@
           <v-layout row wrap>
 
             <v-flex xs12>
-              <img src="../../assets/logo_pmml_re.svg" class="svgLogoinAbout">
+              <img src="../../assets/logo_pmml_03.svg" class="svgLogoinAbout">
               <div class="aboutTitle">About PMML</div>
               <div class="aboutContents">
                 <p class="contentsText">PMML(PandoraCube Military Member List) 프로젝트는 판도라큐브 회원중</p>

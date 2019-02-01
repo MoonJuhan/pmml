@@ -8,7 +8,7 @@
       <div class="logoDiv">
         <v-btn class="logoBtn" href="/" flat>
           <!-- img src="../assets/logo_pmml.png"-->
-          <img src="../assets/logo_pmml_re.svg" class="svgLogo">
+          <img src="../assets/logo_pmml_03.svg" class="svgLogo">
 
         </v-btn>
       </div>
