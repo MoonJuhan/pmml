@@ -74,7 +74,7 @@
 
             <v-flex xs12 lg4 xl4>
               <v-card class="contentsCard">
-                <div class="cardTitle">날짜</div>
+                <div class="cardTitle">일수</div>
                 <div class="cardContents">
                   일과 일수 :
                   <span v-html="workDay"></span>
@@ -462,7 +462,7 @@ var dataReset = function(app) {
   padding-top: 2px;
 }
 .autocompleteInput {
-  padding: 13px;
+  padding: 8px 18px;
 }
 .remainGage {
   float: right;

@@ -64,9 +64,9 @@ a {
 }
 
 .contentsCard {
-  margin-left : 1rem;
-  margin-right : 1rem;
-  margin-bottom: 1rem;
+  margin-left : 0.6rem;
+  margin-right : 0.6rem;
+  margin-bottom: 0.8rem;
   height: 9.8rem;
   text-align: left;
   color: white!important;
@@ -75,14 +75,14 @@ a {
 
 .cardTitle {
   padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 17px;
   font-size: 1.5em;
   font-weight: bold;
 }
 
 .cardContents {
   font-size: 1.25rem;
-  padding: 3px 10px;
+  padding: 2px 18px;
 }
 
 /* Mobile Tab Bar Color */
