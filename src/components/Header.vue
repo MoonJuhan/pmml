@@ -24,24 +24,6 @@
 
       <v-flex lg1 xl2 class="hidden-md-and-down"></v-flex>
 
-      <v-toolbar-items class="hidden-lg-and-up navTabVar">
-        <v-tabs
-        centered
-        slider-color="white"
-        >
-          <v-tab to="/" append ripple class="tabBtn">
-            Finder
-          </v-tab>
-
-          <v-tab to="/about" append ripple class="tabBtn tabBtnAbout">
-            About
-          </v-tab>
-
-          <v-tab href="https://docs.google.com/spreadsheets/d/14pDCMfhYCyTRfsl_RaWa-_viDwsNpGyLSRhHFMH3R1s/edit?usp=sharing" ripple class="tabBtn">
-            Edit
-          </v-tab>
-        </v-tabs>
-      </v-toolbar-items>
     </v-layout>
   </v-toolbar>
 
