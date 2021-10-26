@@ -12,7 +12,7 @@ PMML(PandoraCube Military Member List) 프로젝트는 판도라큐브 동아리
 
 Develop with Goorm IDE and Atom Editer
 
-Start : 18.04 ~ 19.02
+Period : 18.04 ~ 19.02
 
 ## 개발 내역
 
